@@ -2,21 +2,17 @@
 agents.py — Agent i Judge do multi-agent debate.
 
 Każdy Agent ma swój system_prompt, ale współdzieli model z innymi agentami.
+_generate zwraca (tekst, liczba_tokenów) żeby metryki były liczone na bieżąco.
 """
 
 import torch
 
 
 def _generate(model, tokenizer, messages, config):
-    """Wspólna funkcja generowania odpowiedzi z chat template.
+    """Generuje odpowiedź z chat template.
 
-    Args:
-        model: model HF
-        tokenizer: tokenizer HF
-        messages: lista dict {"role": ..., "content": ...}
-        config: dict z parametrami generowania
     Returns:
-        str — wygenerowany tekst
+        (str, int) — wygenerowany tekst i liczba nowych tokenów
     """
     prompt = tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
@@ -27,15 +23,15 @@ def _generate(model, tokenizer, messages, config):
         output_ids = model.generate(
             **inputs,
             max_new_tokens=config.get("max_new_tokens", 256),
-            max_length=None,  # wyłącz domyślny limit modelu
+            max_length=None,
             temperature=config.get("temperature", 0.7),
             do_sample=config.get("do_sample", True),
             pad_token_id=tokenizer.eos_token_id,
         )
 
-    # Dekodujemy tylko nowo wygenerowane tokeny
     new_tokens = output_ids[0][inputs["input_ids"].shape[1]:]
-    return tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+    text = tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+    return text, len(new_tokens)
 
 
 class Agent:
@@ -50,19 +46,14 @@ class Agent:
     def respond(self, conversation_history, config):
         """Generuje odpowiedź na podstawie historii rozmowy.
 
-        Args:
-            conversation_history: lista stringów — dotychczasowe wypowiedzi
-            config: dict z parametrami generowania
         Returns:
-            str — odpowiedź agenta
+            (str, int) — odpowiedź i liczba tokenów
         """
-        # Składamy całą historię debaty w jeden komunikat
         debate_so_far = "\n\n".join(conversation_history)
         messages = [
             {"role": "system", "content": self.system_prompt},
             {"role": "user", "content": debate_so_far + "\n\nTwoja odpowiedź:"},
         ]
-
         return _generate(self.model, self.tokenizer, messages, config)
 
 
@@ -77,12 +68,8 @@ class Judge:
     def summarize(self, debate_log, topic, config):
         """Podsumowuje całą debatę.
 
-        Args:
-            debate_log: lista dict {agent, round, text}
-            topic: temat debaty
-            config: dict z parametrami generowania
         Returns:
-            str — podsumowanie sędziego
+            (str, int) — podsumowanie i liczba tokenów
         """
         transcript = f"Temat debaty: {topic}\n\n"
         for entry in debate_log:
@@ -92,5 +79,4 @@ class Judge:
             {"role": "system", "content": self.system_prompt},
             {"role": "user", "content": transcript + "Podsumuj tę debatę:"},
         ]
-
         return _generate(self.model, self.tokenizer, messages, config)

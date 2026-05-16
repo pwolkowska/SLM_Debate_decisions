@@ -1,8 +1,14 @@
 """
 architectures.py — Trzy architektury wymiany informacji w debacie.
 
-Każda funkcja przyjmuje tych samych argumentów i zwraca debate_log:
-    debate_log = [{"agent": str, "round": int, "text": str}, ...]
+Każda funkcja zwraca debate_log — listę dict z polami:
+    {
+        "agent": str,
+        "round": int,
+        "text": str,
+        "tokens": int,          # liczba wygenerowanych tokenów
+        "history_len": int,     # ile wypowiedzi agent widział przed odpowiedzią
+    }
 
 Architektury:
     round_robin  — wszyscy widzą całą historię, stała kolejność
@@ -19,15 +25,19 @@ def round_robin(agents, judge, topic, num_rounds, config):
     history = [f"Temat debaty: {topic}"]
 
     for round_num in range(1, num_rounds + 1):
-        print(f"\n{'='*60}")
-        print(f"  RUNDA {round_num}")
-        print(f"{'='*60}")
-
+        print(f"\n--- Runda {round_num} ---")
         for agent in agents:
-            response = agent.respond(history, config)
-            debate_log.append({"agent": agent.name, "round": round_num, "text": response})
-            history.append(f"{agent.name}: {response}")
-            print(f"\n[{agent.name}]: {response}")
+            history_len = len(history)
+            text, tokens = agent.respond(history, config)
+            debate_log.append({
+                "agent": agent.name,
+                "round": round_num,
+                "text": text,
+                "tokens": tokens,
+                "history_len": history_len,
+            })
+            history.append(f"{agent.name}: {text}")
+            print(f"[{agent.name}] ({tokens} tok): {text[:120]}{'...' if len(text) > 120 else ''}")
 
     return debate_log
 
@@ -38,17 +48,19 @@ def relay(agents, judge, topic, num_rounds, config):
     previous_response = f"Temat debaty: {topic}"
 
     for round_num in range(1, num_rounds + 1):
-        print(f"\n{'='*60}")
-        print(f"  RUNDA {round_num}")
-        print(f"{'='*60}")
-
+        print(f"\n--- Runda {round_num} ---")
         for agent in agents:
-            # Agent widzi tylko temat + ostatnią wypowiedź
             history = [f"Temat debaty: {topic}", previous_response]
-            response = agent.respond(history, config)
-            debate_log.append({"agent": agent.name, "round": round_num, "text": response})
-            previous_response = f"{agent.name}: {response}"
-            print(f"\n[{agent.name}]: {response}")
+            text, tokens = agent.respond(history, config)
+            debate_log.append({
+                "agent": agent.name,
+                "round": round_num,
+                "text": text,
+                "tokens": tokens,
+                "history_len": 2,
+            })
+            previous_response = f"{agent.name}: {text}"
+            print(f"[{agent.name}] ({tokens} tok): {text[:120]}{'...' if len(text) > 120 else ''}")
 
     return debate_log
 
@@ -59,25 +71,26 @@ def free_for_all(agents, judge, topic, num_rounds, config):
     history = [f"Temat debaty: {topic}"]
 
     for round_num in range(1, num_rounds + 1):
-        print(f"\n{'='*60}")
-        print(f"  RUNDA {round_num}")
-        print(f"{'='*60}")
-
         shuffled = list(agents)
         random.shuffle(shuffled)
-        order = ", ".join(a.name for a in shuffled)
-        print(f"  Kolejność: {order}")
+        print(f"\n--- Runda {round_num} (kolejność: {', '.join(a.name for a in shuffled)}) ---")
 
         for agent in shuffled:
-            response = agent.respond(history, config)
-            debate_log.append({"agent": agent.name, "round": round_num, "text": response})
-            history.append(f"{agent.name}: {response}")
-            print(f"\n[{agent.name}]: {response}")
+            history_len = len(history)
+            text, tokens = agent.respond(history, config)
+            debate_log.append({
+                "agent": agent.name,
+                "round": round_num,
+                "text": text,
+                "tokens": tokens,
+                "history_len": history_len,
+            })
+            history.append(f"{agent.name}: {text}")
+            print(f"[{agent.name}] ({tokens} tok): {text[:120]}{'...' if len(text) > 120 else ''}")
 
     return debate_log
 
 
-# Mapowanie nazw z configu na funkcje
 ARCHITECTURES = {
     "round_robin": round_robin,
     "relay": relay,
