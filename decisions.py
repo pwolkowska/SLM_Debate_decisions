@@ -19,8 +19,6 @@ Każda funkcja zwraca słownik:
                 "reached": bool,
             }
         ],
-        # dla judge:
-        "judge_tokens": int,
     }
 """
 
@@ -29,23 +27,9 @@ from agents import _generate
 
 
 # =============================================================================
-# 1. JUDGE
+# 1. VOTING
 # =============================================================================
-def judge_decision(agents, judge, debate_log, topic, config):
-    print("\n--- Protokół: judge ---")
-    verdict, tokens = judge.summarize(debate_log, topic, config)
-    print(f"[Sędzia] ({tokens} tok): {verdict[:120]}{'...' if len(verdict) > 120 else ''}")
-    return {
-        "protocol": "judge",
-        "final_answer": verdict,
-        "judge_tokens": tokens,
-    }
-
-
-# =============================================================================
-# 2. VOTING
-# =============================================================================
-def voting_decision(agents, judge, debate_log, topic, config):
+def voting_decision(agents, debate_log, topic, config):
     print("\n--- Protokół: voting ---")
     transcript = _format_transcript(debate_log, topic)
 
@@ -106,9 +90,9 @@ def voting_decision(agents, judge, debate_log, topic, config):
 
 
 # =============================================================================
-# 3. CONSENSUS
+# 2. CONSENSUS
 # =============================================================================
-def consensus_decision(agents, judge, debate_log, topic, config):
+def consensus_decision(agents, debate_log, topic, config):
     threshold = config.get("consensus_threshold", 0.66)
     max_rounds = config.get("max_consensus_rounds", 3)
     print(f"\n--- Protokół: consensus (próg: {threshold:.0%}) ---")
@@ -230,7 +214,6 @@ def _format_transcript(debate_log, topic):
 
 
 DECISIONS = {
-    "judge": judge_decision,
     "voting": voting_decision,
     "consensus": consensus_decision,
 }

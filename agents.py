@@ -1,5 +1,5 @@
 """
-agents.py — Agent i Judge do multi-agent debate.
+agents.py — Agent do multi-agent debate.
 
 Każdy Agent ma swój system_prompt, ale współdzieli model z innymi agentami.
 _generate zwraca (tekst, liczba_tokenów) żeby metryki były liczone na bieżąco.
@@ -18,6 +18,10 @@ def _generate(model, tokenizer, messages, config):
         messages, tokenize=False, add_generation_prompt=True
     )
     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+
+    seed = config.get("seed")
+    if seed is not None:
+        torch.manual_seed(seed)
 
     with torch.no_grad():
         output_ids = model.generate(
@@ -55,28 +59,4 @@ class Agent:
             {"role": "user", "content": debate_so_far + "\n\nTwoja odpowiedź:"},
         ]
         return _generate(self.model, self.tokenizer, messages, config)
-
-
-class Judge:
-    """Sędzia — podsumowuje debatę na końcu."""
-
-    def __init__(self, system_prompt, model, tokenizer):
-        self.system_prompt = system_prompt
-        self.model = model
-        self.tokenizer = tokenizer
-
-    def summarize(self, debate_log, topic, config):
-        """Podsumowuje całą debatę.
-
-        Returns:
-            (str, int) — podsumowanie i liczba tokenów
-        """
-        transcript = f"Temat debaty: {topic}\n\n"
-        for entry in debate_log:
-            transcript += f"[Runda {entry['round']}] {entry['agent']}: {entry['text']}\n\n"
-
-        messages = [
-            {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": transcript + "Podsumuj tę debatę:"},
-        ]
-        return _generate(self.model, self.tokenizer, messages, config)
+    

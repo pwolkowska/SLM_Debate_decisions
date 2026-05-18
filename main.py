@@ -8,7 +8,7 @@ Uruchomienie:
 Co robi:
   1. Wczytuje config.yaml
   2. Ładuje model z Hugging Face
-  3. Tworzy agentów i sędziego
+  3. Tworzy agentów
   4. Uruchamia wybraną architekturę debaty
   5. Uruchamia wybrany protokół decyzyjny
   6. Liczy metryki
@@ -19,7 +19,6 @@ Co robi:
 
 import argparse
 import json
-import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -27,7 +26,7 @@ import torch
 import yaml
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from agents import Agent, Judge
+from agents import Agent
 from architectures import ARCHITECTURES
 from decisions import DECISIONS
 from metrics import compute_all
@@ -67,21 +66,18 @@ def main():
         Agent(name=a["name"], system_prompt=a["system_prompt"], model=model, tokenizer=tokenizer)
         for a in config["agents"]
     ]
-    judge = Judge(
-        system_prompt=config["judge"]["system_prompt"], model=model, tokenizer=tokenizer
-    )
 
     # 4. Debata
     arch_name = config["architecture"]
-    decision_name = config.get("decision_protocol", "judge")
+    decision_name = config.get("decision_protocol", "consensus")
     print(f"Architektura: {arch_name} | Protokół: {decision_name}")
     print(f"Temat: {config['topic']}")
     print(f"Agenci: {', '.join(a.name for a in agents)}\n")
 
-    debate_log = ARCHITECTURES[arch_name](agents, judge, config["topic"], config["num_rounds"], config)
+    debate_log = ARCHITECTURES[arch_name](agents, config["topic"], config["num_rounds"], config)
 
     # 5. Decyzja
-    decision_result = DECISIONS[decision_name](agents, judge, debate_log, config["topic"], config)
+    decision_result = DECISIONS[decision_name](agents, debate_log, config["topic"], config)
 
     # 6. Metryki
     print("\nLiczę metryki...")
@@ -118,6 +114,7 @@ def _build_result(config, debate_log, decision_result, metryki, output_arg):
                 "temperature": config.get("temperature"),
                 "max_new_tokens": config.get("max_new_tokens"),
                 "do_sample": config.get("do_sample"),
+                "seed": config.get("seed"),
             },
             "consensus_threshold": config.get("consensus_threshold"),
             "max_consensus_rounds": config.get("max_consensus_rounds"),
@@ -190,37 +187,43 @@ def _save_txt(result: dict, out_path: Path):
     lines.append("  METRYKI")
     lines.append(f"{'=' * 70}")
 
-    tpt = m["tokens_per_turn"]["overall"]
-    lines.append(f"\nTokeny per wypowiedź:  średnia={tpt['mean']}  std={tpt['std']}  łącznie={tpt['total']}")
+    # tokens_per_turn
+    tp = m["tokens_per_turn"]
+    ov = tp["overall"]
+    lines.append(f"\nTokeny per wypowiedź: średnia={ov['mean']}  mediana={ov['median']}  łącznie={ov['total']}")
+    lines.append("  Per agent:")
+    for agent, stats in tp["per_agent"].items():
+        lines.append(f"    {agent}: średnia={stats['mean']}  total={stats['total']}")
 
-    lines.append("\nTokeny per agent:")
-    for agent, stats in m["tokens_per_turn"]["per_agent"].items():
-        lines.append(f"  {agent}: średnia={stats['mean']}  std={stats['std']}")
-
-    lines.append("\nFlip Rate (zmiana stanowiska):")
-    for agent, fr in m["flip_rate"].items():
-        tof = fr["ToF"] if fr["ToF"] else "—"
-        lines.append(f"  {agent}: NoF={fr['NoF']}  ToF={tof}  rundy={fr['flip_rounds']}")
-
-    lines.append(f"\nEntropia per runda: {m['entropy']['per_round']}  (średnia: {m['entropy']['mean']})")
-
+    # convergence
     conv = m["convergence"]
-    lines.append(f"\nConvergence Round: {conv['convergence_round']}  (metoda: {conv['method']}  osiągnięty: {conv['reached']})")
+    lines.append(f"\nKonsensus: osiągnięty={conv['reached']}  runda={conv['convergence_round']}")
+    lines.append(f"  Frakcje zgody: {conv['agreement_ratios']}")
 
-    auc = m["auc_agreement"]
-    lines.append(f"\nAUC-Agreement: {auc['auc']}  per runda: {auc['per_round']}")
-
-    sd = m["semantic_diversity"]
-    if sd.get("overall") is not None:
-        lines.append(f"\nSemantic Diversity: {sd['overall']}  per runda: {sd['per_round']}")
+    # opinion_shift
+    shift = m["opinion_shift"]
+    if shift.get("mean") is not None:
+        lines.append(f"\nZmiana stanowiska (opinion shift):")
+        for agent, val in shift["per_agent"].items():
+            lines.append(f"  {agent}: {val}")
+        lines.append(f"  Średnia: {shift['mean']}")
     else:
-        lines.append(f"\nSemantic Diversity: niedostępne ({sd.get('note', '')})")
+        lines.append(f"\nZmiana stanowiska: niedostępne ({shift.get('note', '')})")
 
-    rr = m["redundancy_ratio"]
-    if rr.get("mean") is not None:
-        lines.append(f"\nRedundancy Ratio: {rr['mean']}  per runda: {rr['per_round']}")
+    # between_agent_similarity
+    bas = m["between_agent_similarity"]
+    if bas.get("initial") is not None:
+        lines.append(f"\nPodobieństwo między agentami:")
+        lines.append(f"  Runda 1 (initial): {bas['initial']}  Ostatnia (final): {bas['final']}  Delta: {bas['delta']}")
+        lines.append(f"  Per runda: {bas['per_round']}")
     else:
-        lines.append(f"\nRedundancy Ratio: niedostępne ({rr.get('note', '')})")
+        lines.append(f"\nPodobieństwo między agentami: niedostępne ({bas.get('note', '')})")
+
+    # lexical_richness
+    lr = m["lexical_richness"]
+    lines.append(f"\nBogactwo leksykalne (TTR):")
+    for agent, stats in lr["per_agent"].items():
+        lines.append(f"  {agent}: TTR={stats['ttr']}  unikalne={stats['unique_words']}  łącznie={stats['total_words']}")
 
     lines.append("")
     txt_path = out_path.with_suffix(".txt")
