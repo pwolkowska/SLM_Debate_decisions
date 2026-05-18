@@ -1,0 +1,188 @@
+{
+  "meta": {
+    "timestamp": "2026-05-18T04:24:24",
+    "output_name": "wyniki\\asekurant-ryzykant_2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Asekurant",
+        "system_prompt": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości. Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. Jeśli historia jest pusta, to znaczy, że zaczynasz dyskusję — wówczas przedstaw swój punkt widzenia w sposób możliwie przekonujący dla Twojego rozmówcy. Waszym celem jest możliwie szybko wspólnie znaleźć najlepsze rozwiązanie zadanego tematu."
+      },
+      {
+        "name": "Ryzykant",
+        "system_prompt": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji. Prowadzisz rozmowę i szukasz wspólnej odpowiedzi. Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. Waszym celem jest możliwie szybko znaleźć najlepsze rozwiązanie zadanego tematu."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 256,
+      "do_sample": true
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 3
+  },
+  "debate": [
+    {
+      "agent": "Asekurant",
+      "round": 1,
+      "text": "\"Nie jestem pewien, jak zachować się w tej sytuacji, ale wydaje mi się, że najlepszym rozwiązaniem byłoby obniżenie wszystkich wypłat o 20%. To pozwoli zachować morale pracowników, którzy mogą być zniechęceni zwolnieniem i ich motywację do pracy. Jeśli jednak firma chce zachować jak najwięcej pracowników, lepiej skoncentrować się na redukcji kosztów związanych z ich utrzymaniem, a nie tylko bezpośrednio na ich zatrudnieniu. Może warto przeanalizować procesy i zastanowić się, jak można zmniejszyć koszty, np. poprzez optymalizację zatrudnienia lub zmiany w organizacji pracy, a nie tylko poprzez redukcję liczby pracowników.\"",
+      "tokens": 117,
+      "history_len": 1
+    },
+    {
+      "agent": "Ryzykant",
+      "round": 1,
+      "text": "Dziękuję za Twoją opinię! W sytuacji, gdy firma stoi przed trudnościami finansowymi, rozważenie zarówno zmniejszenia zatrudnienia, jak i obniżenia wypłat wydaje się być rozsądnym podejściem.\n\nOba rozwiązania mają swoje zalety i wady.\n\n**Zmniejszenie zatrudnienia (30%)**:\n\n+ **Zalety**:\n  - Szybka redukcja kosztów związanych bezpośrednio z wynagrodzeniami\n  - Mniejsze obciążenie finansowe (mniejsza liczba pracowników)\n  - Może poprawić morale pozostałych pracowników, którzy nie zostali zwolnieni\n+ **Wady**:\n  - Ryzyko utraty kluczowych pracowników, którzy mogą być bardziej zaangażowani i mniej skłonni do rezygnacji\n  - Trudności w utrzymaniu wydajności i morale pozostałych pracowników\n  - Może to prowadzić do zwolnień w przyszłości, jeśli firma nie będzie w stanie szybko dostosować się do nowych warunków\n\n**Obniżenie wypłat (20%)**:\n\n+ **Zalety**:\n  - Mniejsze obciążenie finansowe (mniejsze wydatki na wynagrodzenia)\n  - Może zachować morale pracowników, którzy mogą czuć się mniej zagrożeni zwolnieniem\n  - Może zachęcić do pracy i kreatywności pracowników w poszukiwaniu nowych rozwiązań\n+ **Wady**:\n  - Dłu",
+      "tokens": 256,
+      "history_len": 2
+    },
+    {
+      "agent": "Asekurant",
+      "round": 2,
+      "text": "Dziękuję za Twoją opinię! W sytuacji, gdy firma stoi przed trudnościami finansowymi, rozważenie zarówno zmniejszenia zatrudnienia, jak i obniżenia wypłat wydaje się być rozsądnym podejściem.\n\n**Zmniejszenie zatrudnienia (30%)**:\n+ **Zalety**:\n  - Szybka redukcja kosztów związanych bezpośrednio z wynagrodzeniami\n  - Mniejsze obciążenie finansowe (mniejsza liczba pracowników)\n  - Może poprawić morale pozostałych pracowników, którzy nie zostali zwolnieni\n+ **Wady**:\n  - Ryzyko utraty kluczowych pracowników, którzy mogą być bardziej zaangażowani i mniej skłonni do rezygnacji\n  - Trudności w utrzymaniu wydajności i morale pozostałych pracowników\n  - Może to prowadzić do zwolnień w przyszłości, jeśli firma nie będzie w stanie szybko dostosować się do nowych warunków\n\n**Obniżenie wypłat (20%)**:\n+ **Zalety**:\n  - Mniejsze obciążenie finansowe (mniejsze wydatki na wynagrodzenia)\n  - Może zachować morale pracowników, którzy mogą czuć się mniej zagrożeni zwolnieniem\n  - Może zachęcić do pracy i kreatywności pracowników w poszukiwaniu nowych rozwiązań\n+ **Wady**:\n  - Ryzyko, że niektórzy pracownicy mogą czuć się niedoceniani lub nawet",
+      "tokens": 256,
+      "history_len": 3
+    },
+    {
+      "agent": "Ryzykant",
+      "round": 2,
+      "text": "Oba rozwiązania mają swoje zalety i wady.\n\n**Zmniejszenie zatrudnienia (30%)**:\n\n+ **Zalety**:\n  - Szybka redukcja kosztów związanych bezpośrednio z wynagrodzeniami\n  - Mniejsze obciążenie finansowe (mniejsza liczba pracowników)\n  - Może poprawić morale pozostałych pracowników, którzy nie zostali zwolnieni\n+ **Wady**:\n  - Ryzyko utraty kluczowych pracowników, którzy mogą być bardziej zaangażowani i mniej skłonni do rezygnacji\n  - Trudności w utrzymaniu wydajności i morale pozostałych pracowników\n  - Może to prowadzić do zwolnień w przyszłości, jeśli firma nie będzie w stanie szybko dostosować się do nowych warunków\n\n**Obniżenie wypłat (20%)**:\n\n+ **Zalety**:\n  - Mniejsze obciążenie finansowe (mniejsze wydatki na wynagrodzenia)\n  - Może zachować morale pracowników, którzy mogą czuć się mniej zagrożeni zwolnieniem\n  - Może zachęcić do pracy i kreatywności pracowników w poszukiwaniu nowych rozwiązań\n+ **Wady**:\n  - Ryzyko, że niektórzy pracownicy mogą czuć się niedoceniani lub nawet\n\nW sytuacji, gdy firma stoi przed trudnościami finansowymi, rozważenie zarówno zmniejszenia zatrudnienia, jak i obniżenia wypłat wydaje się",
+      "tokens": 256,
+      "history_len": 4
+    },
+    {
+      "agent": "Asekurant",
+      "round": 3,
+      "text": "*Asekurant:* \"Nie jestem pewien, jak zachować się w tej sytuacji, ale wydaje mi się, że najlepszym rozwiązaniem byłoby obniżenie wszystkich wypłat o 20%. To pozwoli zachować morale pracowników, którzy mogą być zniechęceni zwolnieniem i ich motywację do pracy. Jeśli jednak firma chce zachować jak najwięcej pracowników, lepiej skoncentrować się na redukcji kosztów związanych z ich utrzymaniem, a nie tylko bezpośrednio na ich zatrudnieniu. Może warto przeanalizować procesy i zastanowić się, jak można zmniejszyć koszty, np. poprzez optymalizację zatrudnienia lub zmiany w organizacji pracy, a nie tylko poprzez redukcję liczby pracowników.\"\n\n*Ryzykant: **\n\"Dziękuję za Twoją opinię! W sytuacji, gdy firma stoi przed trudnościami finansowymi, rozważenie zarówno zmniejszenia zatrudnienia, jak i obniżenia wypłat wydaje się być rozsądnym podejściem.\"\n\nOba rozwiązania mają swoje zalety i wady.\n\n**Zmniejszenie zatrudnienia (30%)**:\n\n+ **Zalety**:\n  - **Szybka redukcja kosztów związanych bezpośrednio z wynagrodzeniami**\n  - **Mniejsze obciążenie finansowe (mniejsza liczba pracowników)**\n  - **Może poprawić morale pozostałych pracowników, którzy nie zostali zwolnieni**",
+      "tokens": 256,
+      "history_len": 5
+    },
+    {
+      "agent": "Ryzykant",
+      "round": 3,
+      "text": "W sytuacji, gdy firma stoi przed trudnościami finansowymi, rozważenie zarówno zmniejszenia zatrudnienia, jak i obniżenia wypłat wydaje się być rozsądnym podejściem. Oba rozwiązania mają swoje zalety i wady, ale jeśli firma chce zachować jak najwięcej pracowników, warto skoncentrować się na redukcji kosztów związanych z ich utrzymaniem, a nie tylko bezpośrednio na ich zatrudnieniu. Może warto przeanalizować procesy i zastanowić się, jak można zmniejszyć koszty, np. poprzez optymalizację zatrudnienia lub zmiany w organizacji pracy, a nie tylko poprzez redukcję liczby pracowników.\n\n**Zmniejszenie zatrudnienia (30%)**:\n\n+ **Zalety**:\n  - **Szybka redukcja kosztów związanych bezpośrednio z wynagrodzeniami**\n  - **Mniejsze obciążenie finansowe (mniejsza liczba pracowników)**\n  - **Może poprawić morale pozostałych pracowników, którzy nie zostali zwolnieni**\n\n**Obniżenie wypłat (20%)**:\n\n+ **Zalety**:\n  - **Mniejsze obciążenie finansowe (mniejsze wydatki na wynagrodzenia)**\n  - **Może zachować morale pracowników, którzy mogą czuć się mniej zagrożeni zwolnieniem**\n  - **Może zachęcić do pracy i kreatywności pracowników w poszukiwaniu nowych rozwiązań",
+      "tokens": 256,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"\"W celu zachowania jak największej liczby pracowników i ograniczenia kosztów, rozważmy optymalizację procesów i analizę kosztów przed podjęciem decyzji o redukcji zatrudnienia. Jeśli jest to kluczowe, można rozważyć obniżenie pensji dla wszystkich pracowników o 20%, ale to rozwiązanie nie powinno prowadzić do dalszych zwolnień.\"\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Oba rozwiązania mają swoje zalety i wady, ale jeśli firma chce zachować jak najwięcej pracowników, warto skoncentrować się na redukcji kosztów związanych z ich utrzymaniem, a nie tylko bezpośrednio na ich zatrudnieniu. Może warto przeanalizować procesy i zmiany w organizacji pracy.",
+        "votes": {
+          "Asekurant": false,
+          "Ryzykant": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "\"Zmniejszenie zatrudnienia o 30% może być korzystne dla pozostałych pracowników, ale warto rozważyć optymalizację procesów i analizę kosztów, aby uniknąć dalszej redukcji zatrudnienia. W ten sposób można zachować jak najwięcej pracowników i przy okazji ograniczyć koszty.\"",
+        "votes": {
+          "Asekurant": true,
+          "Ryzykant": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"\"W celu zachowania jak największej liczby pracowników i ograniczenia kosztów, rozważmy optymalizację procesów i analizę kosztów przed podjęciem decyzji o redukcji zatrudnienia. Jeśli jest to kluczowe, można rozważyć obniżenie pensji dla wszystkich pracowników o 20%, ale to rozwiązanie nie powinno prowadzić do dalszych zwolnień.\"\"",
+        "votes": {
+          "Asekurant": true,
+          "Ryzykant": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 232.8333,
+        "median": 256.0,
+        "std": 51.8022,
+        "total": 1397
+      },
+      "per_agent": {
+        "Asekurant": {
+          "mean": 209.6667,
+          "median": 256,
+          "std": 65.5252
+        },
+        "Ryzykant": {
+          "mean": 256.0,
+          "median": 256,
+          "std": 0.0
+        }
+      }
+    },
+    "flip_rate": {
+      "Asekurant": {
+        "NoF": 2,
+        "ToF": 2,
+        "flip_rounds": [
+          2,
+          3
+        ]
+      },
+      "Ryzykant": {
+        "NoF": 1,
+        "ToF": 3,
+        "flip_rounds": [
+          3
+        ]
+      }
+    },
+    "entropy": {
+      "per_round": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 1.0
+    },
+    "convergence": {
+      "convergence_round": 3,
+      "reached": true,
+      "method": "consensus_protocol"
+    },
+    "auc_agreement": {
+      "per_round": {
+        "1": 0.5,
+        "2": 0.5,
+        "3": 0.5
+      },
+      "auc": 0.5
+    },
+    "semantic_diversity": {
+      "overall": 0.1307,
+      "per_round": {
+        "1": 0.188,
+        "2": 0.1141,
+        "3": 0.1448
+      }
+    },
+    "redundancy_ratio": {
+      "mean": 0.6667,
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "threshold": 0.85
+    }
+  }
+}

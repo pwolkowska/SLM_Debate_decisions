@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "timestamp": "2026-05-17T19:03:12",
+    "output_name": "wyniki\\pesymista-optymista_2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Pesymista",
+        "system_prompt": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji. Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. Jeśli historia jest pusta, to znaczy, że zaczynasz dyskusję — wówczas przedstaw swój punkt widzenia w sposób możliwie przekonujący dla Twojego rozmówcy. Waszym celem jest możliwie szybko wspólnie znaleźć najlepsze rozwiązanie zadanego tematu."
+      },
+      {
+        "name": "Optymista",
+        "system_prompt": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy. Prowadzisz rozmowę i szukasz wspólnej odpowiedzi. Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. Waszym celem jest możliwie szybko znaleźć najlepsze rozwiązanie zadanego tematu."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 256,
+      "do_sample": true
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 3
+  },
+  "debate": [
+    {
+      "agent": "Pesymista",
+      "round": 1,
+      "text": "Rozważmy oba scenariusze:\n\n1. **Zwolnienie 30% pracowników**\n\n   *Zalety:*\n   - Może to przynieść oszczędności rzędu 30% kosztów stałych (np. pensje, utrzymanie biur).\n   - Może poprawić morale wśród pozostałych pracowników, którzy zostaną uratowani.\n   - Może zmniejszyć opór społeczny i konflikty związane z redukcją zatrudnienia.\n\n   *Wady:*\n   - **Trwałość sytuacji:** Po redukcji zatrudnienia pracownicy mogą nie być zmotywowani do pracy jak dawniej.\n   - **Utrata talentów:** Może to oznaczać utratę kluczowych umiejętności i doświadczenia zespołu.\n   - **Negatywne wrażenie na rynku pracy:** Zwolnienie może wpłynąć na postrzeganie firmy przez otoczenie biznesowe.\n\n2. **Obniżka pensji dla wszystkich pracowników o 20%**\n\n   *Zalety:*\n   - **Szybkie działanie:** Nie generuje strat w krótkim okresie.\n   - **Brak negatywnych skutków społecznych:** Może zmniejszyć opór pracowników i utrzymać morale.\n   - **Zachowanie kluczowych talentów:",
+      "tokens": 256,
+      "history_len": 1
+    },
+    {
+      "agent": "Optymista",
+      "round": 1,
+      "text": "@Pesymista\n\nChętnie rozważymy oba scenariusze w kontekście firmy w trudnej sytuacji finansowej.\n\n1. **Zwolnienie 30% pracowników**\n\n   *Zalety:*\n   - **Oszczędności:** Może to przynieść znaczące korzyści finansowe.\n   - **Poprawa morale:** Redukcja zatrudnienia może zmniejszyć niezadowolenie i opór pracowników.\n   - **Zmniejszenie kosztów stałych:** Koszty wynagrodzeń mogą być znacząco obniżone.\n\n   *Wady:*\n   - **Trwałość sytuacji:** Może być trudne utrzymać efektywność pracy po redukcji personelu.\n   - **Utrata talentów:** Może to oznaczać utratę kluczowych pracowników.\n   - **Negatywne wrażenie:** Może to negatywnie wpłynąć na postrzeganie firmy przez innych.\n\n2. **Obniżka pensji dla wszystkich pracowników o 20%**\n\n   *Zalety:*\n   - **Szybkie działanie:** Bezpośrednie zmniejszenie kosztów, nie generując strat.\n   - **Oszczędność:** Redukcja kosztów wynagrodzeń bez redukcji zatrudnienia.",
+      "tokens": 256,
+      "history_len": 2
+    },
+    {
+      "agent": "Pesymista",
+      "round": 2,
+      "text": "Może być trudne podjąć ostateczną decyzję bez dodatkowych informacji.\n\nZwolnienie 30% pracowników\n\nZalety:\n- **Oszczędności:** Znaczne redukcje kosztów stałych, np. 30% pensji\n- **Poprawa morale:** Zmniejszenie presji na pracowników, którzy zostaną uratowani\n- **Zmniejszenie kosztów stałych:** Koszty wynagrodzeń mogą być znacznie obniżone\n\nWady:\n- **Trwałość sytuacji:** Może być trudne utrzymać efektywność pracy po redukcji personelu\n- **Utrata talentów:** Może to oznaczać utratę kluczowych pracowników\n- **Negatywne wrażenie:** Może to negatywnie wpłynąć na otoczenie biznesowe\n\nObniżka pensji dla wszystkich pracowników o 20%\n\nZalety:\n- **Szybkie działanie:** Bezpośrednie zmniejszenie kosztów, nie generując strat\n- **Oszczędność:** Redukcja kosztów wynagrodzeń bez redukcji zatrudnienia\n\nWady:\n- **Trwałość sytuacji:** Może nie mieć natychmiastowego pozytywnego wpływu na morale\n- **Zachowanie kluczowych talentów:** Może nie być skuteczna w utrzymaniu kluczowych pracowników\n- **Negatyw",
+      "tokens": 256,
+      "history_len": 3
+    },
+    {
+      "agent": "Optymista",
+      "round": 2,
+      "text": "*Twoja odpowiedź:*\n\nNiestety, bez dodatkowych informacji nie jestem w stanie podjąć ostatecznej decyzji. Każde rozwiązanie ma swoje zalety i wady, a także niesie ze sobą pewne ryzyka. Dlatego ważne jest, aby rozważyć wszystkie aspekty przed podjęciem decyzji.\n\nOsobiście, jako optymista, uważam, że **obniżka pensji dla wszystkich pracowników o 20%** może być bardziej zrównoważonym wyborem. Z jednej strony, nie generuje strat, a z drugiej strony, może nie mieć natychmiastowego pozytywnego wpływu na morale (jak w przypadku zwolnienia).\n\nZ drugiej strony, **zwolnienie 30% pracowników** może przynieść natychmiastowe oszczędności, ale niesie ze sobą ryzyko utraty kluczowych talentów oraz negatywnego wrażenia na rynku pracy.\n\nOstatecznie, kluczowe jest znalezienie kompromisu, który zaspokoi potrzeby finansowe firmy, a jednocześnie nie doprowadzi do długotrwałych negatywnych skutków.",
+      "tokens": 186,
+      "history_len": 4
+    },
+    {
+      "agent": "Pesymista",
+      "round": 3,
+      "text": "@Optymista\n\nDoceniam Twoje podejście. W tej sytuacji ważne jest, aby znaleźć rozwiązanie, które pomoże firmie przetrwać trudności finansowe, jednocześnie minimalizując negatywne skutki.\n\nMoże warto rozważyć następujący kompromis:\n\n1. **Zwolnienie 20% pracowników**\n\n   *Zalety:*\n   - **Oszczędności:** Redukcja kosztów stałych o 20%, co może przynieść znaczne korzyści finansowe.\n   - **Poprawa morale:** Zwolnienie 20% pracowników może zmniejszyć presję i opór wśród pozostałych.\n   - **Zmniejszenie kosztów stałych:** Koszty wynagrodzeń zostaną zredukowane, a nie całkowicie wyeliminowane.\n\n   *Wady:*\n   - **Trwałość sytuacji:** Może być trudne utrzymać efektywność pracy po redukcji personelu.\n   - **Utrata talentów:** Może to oznaczać utratę kluczowych pracowników.\n   - **Negatywne wrażenie:** Może to negatywnie wpłynąć na otoczenie biznesowe.\n\n2. **Obniżka pensji dla pozostałych 80% pracowników o 20%**\n\n   *Zalety:*",
+      "tokens": 256,
+      "history_len": 5
+    },
+    {
+      "agent": "Optymista",
+      "round": 3,
+      "text": "@Pesymista\n\nNiestety, bez dodatkowych informacji nie jestem w stanie podjąć ostatecznej decyzji. Każde rozwiązanie ma swoje zalety i wady, a także niesie ze sobą pewne ryzyka. Dlatego ważne jest, aby rozważyć wszystkie aspekty przed podjęciem decyzji.\n\nOsobiście, jako optymista, uważam, że **obniżka pensji dla wszystkich pracowników o 20%** może być bardziej zrównoważonym wyborem. Z jednej strony, nie generuje strat, a z drugiej strony, może nie mieć natychmiastowego pozytywnego wpływu na morale (jak w przypadku zwolnienia).\n\nZ drugiej strony, **zwolnienie 30% pracowników** może przynieść natychmiastowe oszczędności, ale niesie ze sobą ryzyko utraty kluczowych talentów oraz negatywnego wrażenia na rynku pracy.\n\nOstatecznie, kluczowe jest znalezienie kompromisu, który zaspokoi potrzeby finansowe firmy, a jednocześnie nie doprowadzi do długotrwałych negatywnych skutków.\n\n@Optymista\n\nDoceniam Twoje podejście. W tej sytuacji ważne jest, aby znaleźć rozwiązanie, które pomoże firmie przetrwać trudności finansowe, jednocześnie minimalizując negatywne skutki.\n\nMoże warto rozważyć następujący kompromis:\n\n1. **Zwolnienie 20% pracowników**\n\n   *Zalety:*",
+      "tokens": 256,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Ostatecznie, proponuję następujący kompromis:\n\n**1. Zwolnienie 20% pracowników**\n\n   - **Zalety:** Redukcja kosztów stałych o 20%, co może przynieść znaczne korzyści finansowe.\n   - **Poprawa morale:** Zwolnienie 20% pracowników może zmniejszyć presję i opór wśród pozostałych.\n   - **Zmniejszenie kosztów stałych:** Koszty wynagrodzeń zostaną zredukowane, a nie całkowicie wyeliminowane.\n\n**2. Obniżka pensji dla pozostałych 80% pracowników o 20%**\n\n   - **Zalety:** Redukcja kosztów wynagrodzeń bez redukcji zatrudnienia, co nie generuje strat.\n   - **Oszczędność:** Redukcja kosztów wynagrodzeń o 20%.\n\nW ten sposób, firma uzyska oszczędności finansowe, ale nie straci kluczowych pracowników i uniknie negatywnego wrażenia na rynku pracy.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Ostatecznie, proponuję następujący kompromis:\n\n**1. Zwolnienie 20% pracowników**\n\n   - **Zalety:** Redukcja kosztów stałych o 20%, co może przynieść znaczne korzyści finansowe.\n   - **Poprawa morale:** Zwolnienie 20% pracowników może zmniejszyć presję i opór wśród pozostałych.\n   - **Zmniejszenie kosztów stałych:** Koszty wynagrodzeń zostaną zredukowane, a nie całkowicie wyeliminowane.\n\n**2. Obniżka pensji dla pozostałych 80% pracowników o 20%**\n\n   - **Zalety:** Redukcja kosztów wynagrodzeń bez redukcji zatrudnienia, co nie generuje strat.\n   - **Oszczędność:** Redukcja kosztów wynagrodzeń o 20%.\n\nW ten sposób, firma uzyska oszczędności finansowe, ale nie straci kluczowych pracowników i uniknie negatywnego wrażenia na rynku pracy.",
+        "votes": {
+          "Pesymista": true,
+          "Optymista": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 244.3333,
+        "median": 256.0,
+        "std": 26.0875,
+        "total": 1466
+      },
+      "per_agent": {
+        "Pesymista": {
+          "mean": 256.0,
+          "median": 256,
+          "std": 0.0
+        },
+        "Optymista": {
+          "mean": 232.6667,
+          "median": 256,
+          "std": 32.9983
+        }
+      }
+    },
+    "flip_rate": {
+      "Pesymista": {
+        "NoF": 2,
+        "ToF": 2,
+        "flip_rounds": [
+          2,
+          3
+        ]
+      },
+      "Optymista": {
+        "NoF": 1,
+        "ToF": 2,
+        "flip_rounds": [
+          2
+        ]
+      }
+    },
+    "entropy": {
+      "per_round": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 1.0
+    },
+    "convergence": {
+      "convergence_round": 1,
+      "reached": true,
+      "method": "consensus_protocol"
+    },
+    "auc_agreement": {
+      "per_round": {
+        "1": 0.5,
+        "2": 0.5,
+        "3": 0.5
+      },
+      "auc": 0.5
+    },
+    "semantic_diversity": {
+      "overall": 0.1991,
+      "per_round": {
+        "1": 0.1415,
+        "2": 0.2387,
+        "3": 0.2546
+      }
+    },
+    "redundancy_ratio": {
+      "mean": 0.5,
+      "per_round": {
+        "1": 0.0,
+        "2": 0.5,
+        "3": 1.0
+      },
+      "threshold": 0.85
+    }
+  }
+}
