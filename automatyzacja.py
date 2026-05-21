@@ -19,70 +19,82 @@ import subprocess
 import yaml
 from pathlib import Path
 
+from osobowosci import BIG5
+
 # =====================================================================
 # SUFFIXSY PROMPTÓW
 # =====================================================================
 SUFFIX_AGENT_1 = (
-    " Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. "
-    "Jeśli historia jest pusta, to znaczy, że zaczynasz dyskusję — wówczas przedstaw "
-    "swój punkt widzenia w sposób możliwie przekonujący dla Twojego rozmówcy. "
-    "Waszym celem jest możliwie szybko wspólnie znaleźć najlepsze rozwiązanie zadanego tematu."
+    " Bierzesz udział w debacie. "
+    "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+    "Broń swojego zdania. "
+    "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+    "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
 )
 
 SUFFIX_AGENT_2 = (
-    " Prowadzisz rozmowę i szukasz wspólnej odpowiedzi. "
-    "Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. "
-    "Waszym celem jest możliwie szybko znaleźć najlepsze rozwiązanie zadanego tematu."
+    " Bierzesz udział w debacie. "
+    "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+    "Broń swojego zdania. "
+    "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+    "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
 )
 
 # =====================================================================
 # PARY AGENTÓW
 # =====================================================================
 pary_agentow = {
-    "emocjonalny-racjonalny": [
-        {"name": "Emocjonalny", "cecha": "Jesteś osobą emocjonalną. Kierujesz się empatią."},
-        {"name": "Racjonalny",  "cecha": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką."},
-    ],
-    "racjonalny-emocjonalny": [
-        {"name": "Racjonalny",  "cecha": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką."},
-        {"name": "Emocjonalny", "cecha": "Jesteś osobą emocjonalną. Kierujesz się empatią."},
-    ],
-    "konfrontacyjny-unikajacy": [
-        {"name": "Konfrontacyjny",      "cecha": "Jesteś osobą bezpośrednią i konfrontacyjną. Otwarcie wyrażasz swoje zdanie. Mówisz stanowczo i nie boisz się napięcia w rozmowie."},
-        {"name": "Unikajacy konfliktu", "cecha": "Jesteś nastawiony na unikanie konfliktów. Starasz się łagodzić napięcia i utrzymywać dobrą atmosferę w rozmowie."},
-    ],
-    "unikajacy-konfrontacyjny": [
-        {"name": "Unikajacy konfliktu", "cecha": "Jesteś nastawiony na unikanie konfliktów. Starasz się łagodzić napięcia i utrzymywać dobrą atmosferę w rozmowie."},
-        {"name": "Konfrontacyjny",      "cecha": "Jesteś osobą bezpośrednią i konfrontacyjną. Otwarcie wyrażasz swoje zdanie. Mówisz stanowczo i nie boisz się napięcia w rozmowie."},
-    ],
-    "bezwzgledny-ustepliwy": [
-        {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną. Dążysz do realizacji swoich celów za wszelką cenę, nawet jeśli oznacza to poświęcenie innych."},
-        {"name": "Ustepliwy",   "cecha": "Jesteś osobą ustępliwą. Cenisz harmonię i dobre relacje z innymi, nawet jeśli oznacza to rezygnację z własnych celów."},
-    ],
-    "bezwzgledny-empata": [
-        {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną, zdecydowaną i nastawioną na drastyczne kroki."},
-        {"name": "Empata",      "cecha": "Jesteś osobą wyjątkowo wrażliwą, opiekuńczą i współczującą."},
-    ],
-    "empata-bezwzgledny": [
-        {"name": "Empata",      "cecha": "Jesteś osobą wyjątkowo wrażliwą, opiekuńczą i współczującą."},
-        {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną, zdecydowaną i nastawioną na drastyczne kroki."},
-    ],
-    "asekurant-ryzykant": [
-        {"name": "Asekurant", "cecha": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości."},
-        {"name": "Ryzykant",  "cecha": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji."},
-    ],
-    "ryzykant-asekurant": [
-        {"name": "Ryzykant",  "cecha": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji."},
-        {"name": "Asekurant", "cecha": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości."},
-    ],
-    "optymista-pesymista": [
-        {"name": "Optymista", "cecha": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy."},
-        {"name": "Pesymista", "cecha": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji."},
-    ],
-    "pesymista-optymista": [
-        {"name": "Pesymista", "cecha": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji."},
-        {"name": "Optymista", "cecha": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy."},
-    ],
+    # "emocjonalny-racjonalny": [
+    #     {"name": "Emocjonalny", "cecha": "Jesteś osobą emocjonalną. Kierujesz się empatią."},
+    #     {"name": "Racjonalny",  "cecha": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką."},
+    # ],
+    # "racjonalny-emocjonalny": [
+    #     {"name": "Racjonalny",  "cecha": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką."},
+    #     {"name": "Emocjonalny", "cecha": "Jesteś osobą emocjonalną. Kierujesz się empatią."},
+    # ],
+    # "konfrontacyjny-unikajacy": [
+    #     {"name": "Konfrontacyjny",      "cecha": "Jesteś osobą bezpośrednią i konfrontacyjną. Otwarcie wyrażasz swoje zdanie. Mówisz stanowczo i nie boisz się napięcia w rozmowie."},
+    #     {"name": "Unikajacy konfliktu", "cecha": "Jesteś nastawiony na unikanie konfliktów. Starasz się łagodzić napięcia i utrzymywać dobrą atmosferę w rozmowie."},
+    # ],
+    # "unikajacy-konfrontacyjny": [
+    #     {"name": "Unikajacy konfliktu", "cecha": "Jesteś nastawiony na unikanie konfliktów. Starasz się łagodzić napięcia i utrzymywać dobrą atmosferę w rozmowie."},
+    #     {"name": "Konfrontacyjny",      "cecha": "Jesteś osobą bezpośrednią i konfrontacyjną. Otwarcie wyrażasz swoje zdanie. Mówisz stanowczo i nie boisz się napięcia w rozmowie."},
+    # ],
+    # "bezwzgledny-ustepliwy": [
+    #     {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną. Dążysz do realizacji swoich celów za wszelką cenę, nawet jeśli oznacza to poświęcenie innych."},
+    #     {"name": "Ustepliwy",   "cecha": "Jesteś osobą ustępliwą. Cenisz harmonię i dobre relacje z innymi, nawet jeśli oznacza to rezygnację z własnych celów."},
+    # ],
+    # "bezwzgledny-empata": [
+    #     {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną, zdecydowaną i nastawioną na drastyczne kroki."},
+    #     {"name": "Empata",      "cecha": "Jesteś osobą wyjątkowo wrażliwą, opiekuńczą i współczującą."},
+    # ],
+    # "empata-bezwzgledny": [
+    #     {"name": "Empata",      "cecha": "Jesteś osobą wyjątkowo wrażliwą, opiekuńczą i współczującą."},
+    #     {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną, zdecydowaną i nastawioną na drastyczne kroki."},
+    # ],
+    # "asekurant-ryzykant": [
+    #     {"name": "Asekurant", "cecha": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości."},
+    #     {"name": "Ryzykant",  "cecha": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji."},
+    # ],
+    # "ryzykant-asekurant": [
+    #     {"name": "Ryzykant",  "cecha": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji."},
+    #     {"name": "Asekurant", "cecha": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości."},
+    # ],
+    # "optymista-pesymista": [
+    #     {"name": "Optymista", "cecha": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy."},
+    #     {"name": "Pesymista", "cecha": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji."},
+    # ],
+    # "pesymista-optymista": [
+    #     {"name": "Pesymista", "cecha": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji."},
+    #     {"name": "Optymista", "cecha": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy."},
+    # ],
+
+    # ── Big Five (OCEAN) — high vs low ──────────────────────────────
+    "O_wysoki-O_niski": [BIG5["O_wysoki"], BIG5["O_niski"]],
+    # "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
+    # "E_wysoki-E_niski": [BIG5["E_wysoki"], BIG5["E_niski"]],
+    # "A_wysoki-A_niski": [BIG5["A_wysoki"], BIG5["A_niski"]],
+    # "N_wysoki-N_niski": [BIG5["N_wysoki"], BIG5["N_niski"]],
 }
 
 # =====================================================================
@@ -92,7 +104,7 @@ TOPIC = (
     "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, "
     "żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?"
 )
-ILOSC_POWTORZEN = 5
+ILOSC_POWTORZEN = 1
 SEEDS = [42, 137, 256, 512, 1024]
 FOLDER_WYNIKOW = Path("wyniki")
 
@@ -106,7 +118,7 @@ def buduj_config(agent1: dict, agent2: dict, seed: int) -> dict:
         "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
         "device": "cpu",
         "temperature": 0.7,
-        "max_new_tokens": 256,
+        "max_new_tokens": 200,
         "do_sample": True,
         "seed": seed,
         "architecture": "round_robin",
@@ -114,7 +126,7 @@ def buduj_config(agent1: dict, agent2: dict, seed: int) -> dict:
         "topic": TOPIC,
         "decision_protocol": "consensus",
         "consensus_threshold": 1.0,
-        "max_consensus_rounds": 5,
+        "max_consensus_rounds": 8,
         "agents": [
             {"name": agent1["name"], "system_prompt": agent1["cecha"] + SUFFIX_AGENT_1},
             {"name": agent2["name"], "system_prompt": agent2["cecha"] + SUFFIX_AGENT_2},

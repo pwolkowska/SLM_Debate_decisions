@@ -36,14 +36,14 @@ def _std(values):
     return round((sum((x - m) ** 2 for x in values) / len(values)) ** 0.5, 4)
 
 def _load_embeddings(texts: list):
-    """Zwraca (embeddings_array, numpy_module) lub (None, None) jeśli brak biblioteki."""
+    """Zwraca (embeddings_array, numpy_module) lub (None, None) jeśli brak biblioteki lub połączenia."""
     try:
         from sentence_transformers import SentenceTransformer
         import numpy as np
-        model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+        model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2", local_files_only=True)
         emb = model.encode(texts, normalize_embeddings=True)
         return emb, np
-    except ImportError:
+    except Exception:
         return None, None
 
 

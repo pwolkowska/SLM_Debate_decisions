@@ -45,6 +45,10 @@ def main():
     with open("config.yaml", "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
+    seed = config.get("seed")
+    if seed is not None:
+        torch.manual_seed(seed)
+
     # Ustal ścieżkę wyjściową
     if args.output:
         out_path = Path(args.output)

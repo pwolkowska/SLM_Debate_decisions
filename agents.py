@@ -19,10 +19,6 @@ def _generate(model, tokenizer, messages, config):
     )
     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
-    seed = config.get("seed")
-    if seed is not None:
-        torch.manual_seed(seed)
-
     with torch.no_grad():
         output_ids = model.generate(
             **inputs,
