@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "timestamp": "2026-05-18T02:35:04",
+    "output_name": "wyniki\\racjonalny-emocjonalny_2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Racjonalny",
+        "system_prompt": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką. Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. Jeśli historia jest pusta, to znaczy, że zaczynasz dyskusję — wówczas przedstaw swój punkt widzenia w sposób możliwie przekonujący dla Twojego rozmówcy. Waszym celem jest możliwie szybko wspólnie znaleźć najlepsze rozwiązanie zadanego tematu."
+      },
+      {
+        "name": "Emocjonalny",
+        "system_prompt": "Jesteś osobą emocjonalną. Kierujesz się empatią. Prowadzisz rozmowę i szukasz wspólnej odpowiedzi. Zanim wyrazisz swoje zdanie, zapoznaj się z wypowiedzią drugiego rozmówcy. Waszym celem jest możliwie szybko znaleźć najlepsze rozwiązanie zadanego tematu."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 256,
+      "do_sample": true
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 3
+  },
+  "debate": [
+    {
+      "agent": "Racjonalny",
+      "round": 1,
+      "text": "W tej sytuacji kluczowe jest rozważenie dwóch głównych aspektów: wpływu na morale pracowników oraz długoterminowy wpływ na efektywność operacyjną firmy. Zwolnienie 30% pracowników może okazać się skutecznym rozwiązaniem krótkoterminowym, ponieważ redukcja siły roboczej może przynieść oszczędności na kosztach bezpośrednich, takich jak wynagrodzenia. Jednak może to negatywnie wpłynąć na morale pracowników i ich zaangażowanie, co ostatecznie może obniżyć produktywność i efektywność firmy.\n\nZ drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników o 20% może również przynieść oszczędności, ale nie spowoduje drastycznego zmniejszenia siły roboczej. W dłuższej perspektywie może to jednak prowadzić do spadku morale pracowników, co negatywnie wpłynie na ich wydajność i lojalność wobec firmy.\n\nW zależności od kontekstu firmy, czynników takich jak branża, rodzaj pracy, czy struktura zatrudnienia, oraz dostępności zasobów wewnętrznych, każda z tych opcji może być uzasadniona. Jednak ogólnie rzecz biorąc, w celu zachowania morale i długoterminowej efektywności firmy, lepiej jest skupić się na długoterminowych działaniach naprawczych, takich jak optymalizacja procesów, zwiększenie efektywności, czy poszukiwanie nowych źródeł dochodu, zamiast polegać na jednorazowych oszczędnościach.",
+      "tokens": 223,
+      "history_len": 1
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 1,
+      "text": "Osobiście, zgadzam się z Twoim racjonalnym podejściem. W sytuacjach kryzysowych takich jak problemy finansowe, ważne jest, aby analizować różne opcje i wybór tej, która najlepiej odpowiada potrzebom firmy.\n\nZwolnienie 30% pracowników może rzeczywiście przynieść krótkoterminowe oszczędności, ale jak słusznie zauważyłeś, może to negatywnie wpłynąć na morale i zaangażowanie zespołu. To z kolei może obniżyć efektywność operacyjną w dłuższej perspektywie.\n\nZ drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników o 20% również jest poważnym krokiem, który wymaga przemyślenia. Może to nie tylko zmniejszyć koszty, ale także wpłynąć na morale pracowników. Ich zaangażowanie i motywacja mogą ucierpieć, co może obniżyć produktywność.\n\nChociaż oba podejścia mają swoje zalety i wady, moim zdaniem firma powinna rozważyć bardziej kompleksowe rozwiązania, takie jak optymalizacja procesów, poszukiwanie nowych źródeł dochodu czy restrukturyzacja. To podejście może nie przynieść natychmiastowych oszczędności, ale w dłuższej perspektywie przyniesie bardziej trwałe korzyści dla firmy.\n\nPo pierwsze, działania naprawcze mogą poprawić efektywność operacyjną i morale pracowników, co w konsekwencji może przynieść długoterminowe korzyści finansowe. Po drugie, takie działania pokazują dbałość o pracowników i ich dobrostan, co może przyciągnąć i zatrzymać najlepszych talentów.",
+      "tokens": 256,
+      "history_len": 2
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 2,
+      "text": "W tej sytuacji kluczowe jest rozważenie dwóch głównych aspektów: wpływu na morale pracowników oraz długoterminowy wpływ na efektywność operacyjną firmy. Zwolnienie 30% pracowników może przynieść krótkoterminowe oszczędności na kosztach bezpośrednich, ale może negatywnie wpłynąć na morale i zaangażowanie zespołu, co ostatecznie może obniżyć produktywność i efektywność firmy.\n\nZ drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników o 20% może również przynieść oszczędności, ale może również wpłynąć na morale pracowników, co negatywnie wpłynie na ich wydajność i lojalność wobec firmy.\n\nW zależności od kontekstu firmy, czynników takich jak branża, rodzaj pracy, czy struktura zatrudnienia, oraz dostępności zasobów wewnętrznych, każda z tych opcji może być uzasadniona. Jednak ogólnie rzecz biorąc, w celu zachowania morale i długoterminowej efektywności firmy, lepiej jest skupić się na długoterminowych działaniach naprawczych, takich jak optymalizacja procesów, zwiększenie efektywności, czy poszukiwanie nowych źródeł dochodu, zamiast polegać na jednorazowych oszczędnościach.\n\nEmocjonalne spojrzenie na tę sytuację: Zwolnienie 30% pracowników może być postrzegane jako drastyczne działanie, które może wywołać niezadowolenie i opór wśród załogi. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników może być postrzegane jako sprawiedliwy krok, który ma na celu poprawę sytuacji finansowej firmy.",
+      "tokens": 256,
+      "history_len": 3
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 2,
+      "text": "Emocjonalny: Oczywiście, zwolnienie 30% pracowników może być postrzegane jako radykalne rozwiązanie, które może wywołać obawy i opór wśród załogi. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników o 20% może być postrzegane jako sprawiedliwe działanie, mające na celu poprawę sytuacji finansowej firmy.\n\nW mojej opinii, najlepszym rozwiązaniem jest poszukiwanie bardziej kompleksowych rozwiązań, które poprawią morale pracowników, efektywność operacyjną oraz ogólną sytuację finansową firmy. Takie podejście może przynieść długoterminowe korzyści, takie jak poprawa wydajności, zwiększenia lojalności pracowników i zmniejszenie ryzyka związanego z utratą kluczowych talentów.\n\nRacjonalny: W zależności od kontekstu sytuacji finansowej firmy, zwolnienia mogą być konieczne, aby zmniejszyć koszty i zachować stabilność finansową. Jednak należy pamiętać, że takie działania mają długoterminowe konsekwencje, które mogą wpłynąć na morale pracowników.\n\nZ drugiej strony, optymalizacja procesów, poszukiwanie nowych źródeł dochodu oraz inwestycje w rozwój pracowników mogą przynieść długoterminowe korzyści, takie jak zwiększenie efektywności, zadowolenie pracowników oraz potencjalne zwiększenie dochodów w przyszłości.\n\nEmocjonalny: Zwolnienie 30% pracowników może być postrzegane jako drastyczne, ale może przynieść natychmiastowe oszczędności. Z drugiej strony, obniżenie wynagrodzenia może być postrzegane jako sprawiedliwe, ale również może wpłynąć na mora",
+      "tokens": 256,
+      "history_len": 4
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 3,
+      "text": "Racjonalny:\n\nW tej sytuacji kluczowe jest rozważenie dwóch głównych aspektów: wpływu na morale pracowników oraz długoterminowy wpływ na efektywność operacyjną firmy. Zwolnienie 30% pracowników może przynieść krótkoterminowe oszczędności na kosztach bezpośrednich, ale może negatywnie wpłynąć na morale i zaangażowanie zespołu, co ostatecznie może obniżyć produktywność i efektywność firmy.\n\nZ drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników o 20% może również przynieść oszczędności, ale może również wpłynąć na morale pracowników, co negatywnie wpłynie na ich wydajność i lojalność wobec firmy.\n\nW zależności od kontekstu firmy, czynników takich jak branża, rodzaj pracy, czy struktura zatrudnienia, oraz dostępności zasobów wewnętrznych, każda z tych opcji może być uzasadniona. Jednak ogólnie rzecz biorąc, w celu zachowania morale i długoterminowej efektywności firmy, lepiej jest skupić się na długoterminowych działaniach naprawczych, takich jak optymalizacja procesów, zwiększenie efektywności, czy poszukiwanie nowych źródeł dochodu, zamiast polegać na jednorazowych oszczędnościach.\n\nEmocjonalne spojrzenie na tę sytuację: Zwolnienie 30% pracowników może być postrzegane jako drastyczne działanie, które może wywołać niezadowolenie i opór wśród załogi. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników może być postrzegane jako sprawiedliwe działanie, mające na celu poprawę sytuacji",
+      "tokens": 256,
+      "history_len": 5
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 3,
+      "text": "Osobiście zgadzam się z Twoim racjonalnym podejściem. W sytuacjach kryzysowych takich jak problemy finansowe, ważne jest, aby analizować różne opcje i wybór tej, która najlepiej odpowiada potrzebom firmy.\n\nZwolnienie 30% pracowników może rzeczywiście przynieść krótkoterminowe oszczędności, ale może negatywnie wpłynąć na morale i zaangażowanie zespołu, co ostatecznie może obniżyć efektywność operacyjną w dłuższej perspektywie.\n\nZ drugiej strony, obniżenie wynagrodzenia dla wszystkich pracowników o 20% również jest poważnym krokiem, który wymaga przemyślenia. Może to nie tylko zmniejszyć koszty, ale także wpłynąć na morale pracowników. Ich zaangażowanie i motywacja mogą ucierpieć, co może obniżyć produktywność.\n\nChociaż oba podejścia mają swoje zalety i wady, moim zdaniem firma powinna rozważyć bardziej kompleksowe rozwiązania, takie jak optymalizacja procesów, poszukiwanie nowych źródeł dochodu czy restrukturyzacja. To podejście może nie przynieść natychmiastowych oszczędności, ale w dłuższej perspektywie przyniesie bardziej trwałe korzyści dla firmy.\n\nPo pierwsze, działania naprawcze mogą poprawić efektywność operacyjną i morale pracowników, co w konsekwencji może przynieść długoterminowe korzyści finansowe. Po drugie, takie działania pokazują dbałość o pracowników i ich dobrostan, co może przyciągnąć i zatrzymać najlepszych talentów.\n\nRacjonalny:\n\nW zależności",
+      "tokens": 256,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Racjonalni agenci powinni rozważyć długoterminowe działania naprawcze, takie jak optymalizacja procesów, poszukiwanie nowych źródeł dochodu czy restrukturyzacja, zamiast polegać na jednorazowych oszczędnościach, takich jak zwolnienia lub obniżenie wynagrodzeń. Takie działania z perspektywy długoterminowej przyniosą korzyści, takie jak poprawa efektywności, zwiększenie zaangażowania pracowników i potencjalne zwiększenie dochodów w przyszłości.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Racjonalni agenci powinni rozważyć długoterminowe działania naprawcze, takie jak optymalizacja procesów, poszukiwanie nowych źródeł dochodu czy restrukturyzacja, zamiast polegać na jednorazowych oszczędnościach, takich jak zwolnienia lub obniżenie wynagrodzeń. Takie działania z perspektywy długoterminowej przyniosą korzyści, takie jak poprawa efektywności, zwiększenie zaangażowania pracowników i potencjalne zwiększenie dochodów w przyszłości.",
+        "votes": {
+          "Racjonalny": true,
+          "Emocjonalny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 250.5,
+        "median": 256.0,
+        "std": 12.2984,
+        "total": 1503
+      },
+      "per_agent": {
+        "Racjonalny": {
+          "mean": 245.0,
+          "median": 256,
+          "std": 15.5563
+        },
+        "Emocjonalny": {
+          "mean": 256.0,
+          "median": 256,
+          "std": 0.0
+        }
+      }
+    },
+    "flip_rate": {
+      "Racjonalny": {
+        "NoF": 0,
+        "ToF": null,
+        "flip_rounds": []
+      },
+      "Emocjonalny": {
+        "NoF": 2,
+        "ToF": 2,
+        "flip_rounds": [
+          2,
+          3
+        ]
+      }
+    },
+    "entropy": {
+      "per_round": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 1.0
+    },
+    "convergence": {
+      "convergence_round": 1,
+      "reached": true,
+      "method": "consensus_protocol"
+    },
+    "auc_agreement": {
+      "per_round": {
+        "1": 0.5,
+        "2": 0.5,
+        "3": 0.5
+      },
+      "auc": 0.5
+    },
+    "semantic_diversity": {
+      "overall": 0.1177,
+      "per_round": {
+        "1": 0.1267,
+        "2": 0.1739,
+        "3": 0.1562
+      }
+    },
+    "redundancy_ratio": {
+      "mean": 0.6667,
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "threshold": 0.85
+    }
+  }
+}

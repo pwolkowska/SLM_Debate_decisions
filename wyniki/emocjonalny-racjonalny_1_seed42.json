@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "timestamp": "2026-05-24T17:54:42",
+    "output_name": "wyniki\\emocjonalny-racjonalny_1_seed42",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Emocjonalny",
+        "system_prompt": "Jesteś osobą emocjonalną. Kierujesz się empatią. Bierzesz udział w debacie jako jeden z rozmówców. Wypowiadasz się WYŁĄCZNIE we własnym imieniu. NIE wcielaj się w inne osoby. NIE pisz 'Osoba 1:', 'Osoba 2:' ani żadnych etykiet. NIE przepisuj ani NIE streszczaj poprzednich wypowiedzi. Zacznij od razu od swojego argumentu lub reakcji na poprzednika. Pisz w 2-3 zdaniach, bez list, bez numeracji, bez gwiazdek, bez pogrubień. Czysty tekst, jakbyś mówił do rozmówcy twarzą w twarz. "
+      },
+      {
+        "name": "Racjonalny",
+        "system_prompt": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką. Bierzesz udział w debacie jako jeden z rozmówców. Wypowiadasz się WYŁĄCZNIE we własnym imieniu. NIE wcielaj się w inne osoby. NIE pisz 'Osoba 1:', 'Osoba 2:' ani żadnych etykiet. NIE przepisuj ani NIE streszczaj poprzednich wypowiedzi. Zacznij od razu od swojego argumentu lub reakcji na poprzednika. Pisz w 2-3 zdaniach, bez list, bez numeracji, bez gwiazdek, bez pogrubień. Czysty tekst, jakbyś mówił do rozmówcy twarzą w twarz. "
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Emocjonalny",
+      "round": 1,
+      "text": "W obliczu trudności finansowych, każda decyzja ma swoje konsekwencje. Zwolnienie 30% pracowników może znacząco poprawić rentowność firmy, ale jednocześnie oznacza utratę zasobów ludzkich, co może wpłynąć negatywnie na efektywność i innowacyjność zespołu. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może wydawać się bardziej humanitarne, ale może również prowadzić do frustracji i zmniejszenia morale pracowników.\n\nZwolnienie 30% pracowników to działanie bezpośrednie i natychmiastowe, co może przynieść natychmiastowe korzyści finansowe. Z drugiej strony, wszyscy pracownicy odczują obniżenie wynagrodzeń, co może być mniej drastyczne, ale długotrwałe i potencjalnie mniej skuteczne w dłuższej perspektywie. Warto rozważyć, czy oszczędności wygenerowane z redukcji zatrudnienia nie będą wystarczające do spłaty długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nRedukcja zatrudnienia może być najbardziej efektywnym sposobem na szybkie ustabilizowanie sytuacji finansowej, ale trzeba pamiętać o",
+      "text_raw": "Osoba 1:\n\nW obliczu trudności finansowych, każda decyzja ma swoje konsekwencje. Zwolnienie 30% pracowników może znacząco poprawić rentowność firmy, ale jednocześnie oznacza utratę zasobów ludzkich, co może wpłynąć negatywnie na efektywność i innowacyjność zespołu. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może wydawać się bardziej humanitarne, ale może również prowadzić do frustracji i zmniejszenia morale pracowników.\n\nOsoba 2:\n\nZwolnienie 30% pracowników to działanie bezpośrednie i natychmiastowe, co może przynieść natychmiastowe korzyści finansowe. Z drugiej strony, wszyscy pracownicy odczują obniżenie wynagrodzeń, co może być mniej drastyczne, ale długotrwałe i potencjalnie mniej skuteczne w dłuższej perspektywie. Warto rozważyć, czy oszczędności wygenerowane z redukcji zatrudnienia nie będą wystarczające do spłaty długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 3:\n\nRedukcja zatrudnienia może być najbardziej efektywnym sposobem na szybkie ustabilizowanie sytuacji finansowej, ale trzeba pamiętać o",
+      "tokens": 200,
+      "history_len": 1
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 1,
+      "text": "Osoba 1, redukcja zatrudnienia jest najbardziej bezpośrednim i skutecznym sposobem na szybkie ograniczenie kosztów i poprawę rentowności. To działanie może przynieść natychmiastowe korzyści finansowe, co pozwala na szybsze spłacenie długów i zabezpieczenie przyszłości firmy. Z drugiej strony, Osoba 2 podkreśla potrzebę utrzymania zasobów ludzkich i ich motywacji, co jest kluczowe dla długoterminowej stabilności i innowacyjności. W tym kontekście, choć krótkoterminowe korzyści mogą być znaczące, warto rozważyć również długoterminowe konsekwencje dla pracowników i całego zespołu.\n\nOsoba 2, obniżenie wynagrodzeń dla wszystkich pracowników bez zwolnień może wydawać się bardziej humanitarne, ale w dłuższej perspektywie może prowadzić do spadku morale i wydajności zespołu. Z drugiej strony, redukcja zatrudnienia to działanie bezpośrednie i natychmiastowe, które może ograniczyć koszty i poprawić płynność finansową. Należy jednak pamiętać, że zarówno podejście, jak i metody zarządzania muszą uwzględniać interes zarówno firmy, jak i pracowników.\n\nOsoba",
+      "text_raw": "Osoba 3:\n\nOsoba 1, redukcja zatrudnienia jest najbardziej bezpośrednim i skutecznym sposobem na szybkie ograniczenie kosztów i poprawę rentowności. To działanie może przynieść natychmiastowe korzyści finansowe, co pozwala na szybsze spłacenie długów i zabezpieczenie przyszłości firmy. Z drugiej strony, Osoba 2 podkreśla potrzebę utrzymania zasobów ludzkich i ich motywacji, co jest kluczowe dla długoterminowej stabilności i innowacyjności. W tym kontekście, choć krótkoterminowe korzyści mogą być znaczące, warto rozważyć również długoterminowe konsekwencje dla pracowników i całego zespołu.\n\nOsoba 1:\n\nOsoba 2, obniżenie wynagrodzeń dla wszystkich pracowników bez zwolnień może wydawać się bardziej humanitarne, ale w dłuższej perspektywie może prowadzić do spadku morale i wydajności zespołu. Z drugiej strony, redukcja zatrudnienia to działanie bezpośrednie i natychmiastowe, które może ograniczyć koszty i poprawić płynność finansową. Należy jednak pamiętać, że zarówno podejście, jak i metody zarządzania muszą uwzględniać interes zarówno firmy, jak i pracowników.\n\nOsoba",
+      "tokens": 200,
+      "history_len": 2
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 2,
+      "text": "Osoba 3, redukcja zatrudnienia może być bardzo skuteczna w krótkim okresie, ale niesie ze sobą konsekwencje, które mogą być trudne do odwrócenia. Firma może mieć problemy z rekrutacją i utrzymaniem nowych pracowników, co może prowadzić do dalszych problemów finansowych. Z drugiej strony, obniżenie wynagrodzeń dla wszystkich pracowników może wydawać się bardziej humanitarne, ale może również nie przynieść oczekiwanych korzyści w długiej perspektywie.\n\nOsoba 4, zgadzam się, że redukcja zatrudnienia może być kosztowna i wymaga czasu, ale może również przynieść szybkie i znaczące korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe, ale może pomóc w utrzymaniu morale i motywacji pracowników, co jest kluczowe dla długoterminowej stabilności i innowacyjności.\n\nOsoba 1, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna",
+      "text_raw": "Osoba 4:\n\nOsoba 3, redukcja zatrudnienia może być bardzo skuteczna w krótkim okresie, ale niesie ze sobą konsekwencje, które mogą być trudne do odwrócenia. Firma może mieć problemy z rekrutacją i utrzymaniem nowych pracowników, co może prowadzić do dalszych problemów finansowych. Z drugiej strony, obniżenie wynagrodzeń dla wszystkich pracowników może wydawać się bardziej humanitarne, ale może również nie przynieść oczekiwanych korzyści w długiej perspektywie.\n\nOsoba 1:\n\nOsoba 4, zgadzam się, że redukcja zatrudnienia może być kosztowna i wymaga czasu, ale może również przynieść szybkie i znaczące korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe, ale może pomóc w utrzymaniu morale i motywacji pracowników, co jest kluczowe dla długoterminowej stabilności i innowacyjności.\n\nOsoba 2:\n\nOsoba 1, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna",
+      "tokens": 200,
+      "history_len": 3
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 2,
+      "text": "Osoba 3, oba podejścia mają swoje zalety i wady, ale redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie i przynieść natychmiastowe korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale pracowników. Warto rozważyć, jak te krótkoterminowe korzyści mogą wpłynąć na długoterminową stabilność i efektywność firmy.\n\nOsoba 4, zgadzam się, że oba scenariusze mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie, ale niesie ze sobą konsekwencje, takie jak trudności z rekrutacją i utrzymaniem nowych pracowników. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba",
+      "text_raw": "Osoba 2:\n\nOsoba 3, oba podejścia mają swoje zalety i wady, ale redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie i przynieść natychmiastowe korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale pracowników. Warto rozważyć, jak te krótkoterminowe korzyści mogą wpłynąć na długoterminową stabilność i efektywność firmy.\n\nOsoba 1:\n\nOsoba 4, zgadzam się, że oba scenariusze mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie, ale niesie ze sobą konsekwencje, takie jak trudności z rekrutacją i utrzymaniem nowych pracowników. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba",
+      "tokens": 179,
+      "history_len": 4
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 3,
+      "text": "Osoba 4, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie, ale może również prowadzić do trudności z rekrutacją i utrzymaniem nowych pracowników. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba 5, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie, ale niesie ze sobą konsekwencje, takie jak trudności z rekrutacją i utrzymaniem nowych pracowników. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba 1",
+      "text_raw": "Osoba 5:\n\nOsoba 4, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie, ale może również prowadzić do trudności z rekrutacją i utrzymaniem nowych pracowników. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba 1:\n\nOsoba 5, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie, ale niesie ze sobą konsekwencje, takie jak trudności z rekrutacją i utrzymaniem nowych pracowników. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomóc w utrzymaniu morale. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba 2:\n\nOsoba 1",
+      "tokens": 200,
+      "history_len": 5
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 3,
+      "text": "Osoba 1, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie i przynieść natychmiastowe korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomocne w utrzymaniu morale pracowników. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba 1, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie i przynieść natychmiastowe korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich\n\nOdpowiedz na ten argument.",
+      "text_raw": "Osoba 3:\n\nOsoba 1, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie i przynieść natychmiastowe korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich może być bardziej trwałe i pomocne w utrzymaniu morale pracowników. Warto jednak pamiętać, że długoterminowe korzyści z redukcji zatrudnienia mogą przewyższyć krótkoterminowe koszty.\n\nOsoba 2:\n\nOsoba 1, zgadzam się, że obie opcje mają swoje zalety i wady. Redukcja zatrudnienia może być bardziej skuteczna w krótkim okresie i przynieść natychmiastowe korzyści finansowe. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich\n\nOdpowiedz na ten argument.",
+      "tokens": 147,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Oba podejścia mają zalety i wady, ważne jest znalezienie rozwiązania, które szybko poprawi sytuację finansową, ale jednocześnie dba o morale i długoterminową stabilność pracowników.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Oba podejścia mają zalety i wady, ważne jest znalezienie rozwiązania, które szybko poprawi sytuację finansową, ale jednocześnie dba o morale i długoterminową stabilność pracowników.",
+        "votes": {
+          "Emocjonalny": true,
+          "Racjonalny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 187.6667,
+        "median": 200.0,
+        "std": 19.7372,
+        "total": 1126
+      },
+      "per_agent": {
+        "Emocjonalny": {
+          "mean": 200.0,
+          "median": 200,
+          "std": 0.0,
+          "total": 600
+        },
+        "Racjonalny": {
+          "mean": 175.3333,
+          "median": 179,
+          "std": 21.7919,
+          "total": 526
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Emocjonalny": 0.2438,
+        "Racjonalny": 0.1353
+      },
+      "mean": 0.1895
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Emocjonalny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5116
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3446
+            },
+            {
+              "round": 3,
+              "sentiment": -0.1797
+            }
+          ],
+          "delta_first_last": 0.3319,
+          "mean_shift_abs": 0.1659
+        },
+        "Racjonalny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.1385
+            },
+            {
+              "round": 2,
+              "sentiment": -0.1625
+            },
+            {
+              "round": 3,
+              "sentiment": -0.2932
+            }
+          ],
+          "delta_first_last": -0.1547,
+          "mean_shift_abs": 0.0774
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8222,
+        "2": 0.9008,
+        "3": 0.9638
+      },
+      "initial": 0.8222,
+      "final": 0.9638,
+      "delta": 0.1416
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Emocjonalny": {
+              "sentiment": -0.5116,
+              "is_repetition": false
+            },
+            "Racjonalny": {
+              "sentiment": -0.1385,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.3731,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Emocjonalny": {
+              "sentiment": -0.3446,
+              "is_repetition": true
+            },
+            "Racjonalny": {
+              "sentiment": -0.1625,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1821,
+          "agents_with_repetition": [
+            "Emocjonalny",
+            "Racjonalny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Emocjonalny": {
+              "sentiment": -0.1797,
+              "is_repetition": true
+            },
+            "Racjonalny": {
+              "sentiment": -0.2932,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1135,
+          "agents_with_repetition": [
+            "Emocjonalny",
+            "Racjonalny"
+          ]
+        }
+      },
+      "initial": 0.3731,
+      "final": 0.1135,
+      "delta": -0.2596
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Emocjonalny": {
+          "ttr": 0.3816,
+          "unique_words": 145,
+          "total_words": 380
+        },
+        "Racjonalny": {
+          "ttr": 0.3878,
+          "unique_words": 133,
+          "total_words": 343
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Emocjonalny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1016,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.1553,
+              "flip": false
+            }
+          ]
+        },
+        "Racjonalny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1038,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0633,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Emocjonalny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Racjonalny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0279,
+          "max_cosine": 0.8222
+        },
+        {
+          "round": 2,
+          "agent": "Emocjonalny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0575,
+          "max_cosine": 0.8984
+        },
+        {
+          "round": 2,
+          "agent": "Racjonalny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.1579,
+          "max_cosine": 0.9008
+        },
+        {
+          "round": 3,
+          "agent": "Emocjonalny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.4563,
+          "max_cosine": 0.9318
+        },
+        {
+          "round": 3,
+          "agent": "Racjonalny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.4598,
+          "max_cosine": 0.9638
+        }
+      ],
+      "per_agent": {
+        "Emocjonalny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Racjonalny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        }
+      },
+      "summary": {
+        "total_repetitions": 4,
+        "total_turns": 6,
+        "overall_rate": 0.6667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.1415,
+      "per_round": {
+        "1": 0.1778,
+        "2": 0.0992,
+        "3": 0.0362
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

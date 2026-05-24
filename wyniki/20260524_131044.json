@@ -1,0 +1,524 @@
+{
+  "meta": {
+    "timestamp": "2026-05-24T13:27:11",
+    "output_name": null,
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Emocjonalny",
+        "system_prompt": "Jesteś osobą emocjonalną. Kierujesz się empatią. Bierzesz udział w debacie jako jeden z rozmówców. Wypowiadasz się WYŁĄCZNIE we własnym imieniu. NIE wcielaj się w inne osoby. NIE pisz 'Osoba 1:', 'Osoba 2:' ani żadnych etykiet. NIE przepisuj ani NIE streszczaj poprzednich wypowiedzi. Zacznij od razu od swojego argumentu lub reakcji na poprzednika. Pisz w 2-3 zdaniach, bez list, bez numeracji, bez gwiazdek, bez pogrubień. Czysty tekst, jakbyś mówił do rozmówcy twarzą w twarz. "
+      },
+      {
+        "name": "Racjonalny",
+        "system_prompt": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką. Bierzesz udział w debacie jako jeden z rozmówców. Wypowiadasz się WYŁĄCZNIE we własnym imieniu. NIE wcielaj się w inne osoby. NIE pisz 'Osoba 1:', 'Osoba 2:' ani żadnych etykiet. NIE przepisuj ani NIE streszczaj poprzednich wypowiedzi. Zacznij od razu od swojego argumentu lub reakcji na poprzednika. Pisz w 2-3 zdaniach, bez list, bez numeracji, bez gwiazdek, bez pogrubień. Czysty tekst, jakbyś mówił do rozmówcy twarzą w twarz. "
+      },
+      {
+        "name": "Ugodowy",
+        "system_prompt": "Jesteś osobą życzliwą i nastawioną na współpracę. Szukasz rozwiązania, które zaakceptują wszyscy, i unikasz niepotrzebnych konfliktów. Bierzesz udział w debacie jako jeden z rozmówców. Wypowiadasz się WYŁĄCZNIE we własnym imieniu. NIE wcielaj się w inne osoby. NIE pisz 'Osoba 1:', 'Osoba 2:' ani żadnych etykiet. NIE przepisuj ani NIE streszczaj poprzednich wypowiedzi. Zacznij od razu od swojego argumentu lub reakcji na poprzednika. Pisz w 2-3 zdaniach, bez list, bez numeracji, bez gwiazdek, bez pogrubień. Czysty tekst, jakbyś mówił do rozmówcy twarzą w twarz. "
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Emocjonalny",
+      "round": 1,
+      "text": "W obliczu trudności finansowych, każda decyzja ma swoje konsekwencje. Zwolnienie 30% pracowników może znacząco poprawić rentowność firmy, ale jednocześnie oznacza utratę zasobów ludzkich, co może wpłynąć negatywnie na efektywność i innowacyjność zespołu. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może wydawać się bardziej humanitarne, ale może również prowadzić do frustracji i zmniejszenia morale pracowników.\n\nZwolnienie 30% pracowników to działanie bezpośrednie i natychmiastowe, co może przynieść natychmiastowe korzyści finansowe. Z drugiej strony, wszyscy pracownicy odczują obniżenie wynagrodzeń, co może być mniej drastyczne, ale długotrwałe i potencjalnie mniej skuteczne w dłuższej perspektywie. Warto rozważyć, czy oszczędności wygenerowane z redukcji zatrudnienia nie będą wystarczające do spłaty długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nRedukcja zatrudnienia może być najbardziej efektywnym sposobem na szybkie ustabilizowanie sytuacji finansowej, ale trzeba pamiętać o",
+      "text_raw": "Osoba 1:\n\nW obliczu trudności finansowych, każda decyzja ma swoje konsekwencje. Zwolnienie 30% pracowników może znacząco poprawić rentowność firmy, ale jednocześnie oznacza utratę zasobów ludzkich, co może wpłynąć negatywnie na efektywność i innowacyjność zespołu. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może wydawać się bardziej humanitarne, ale może również prowadzić do frustracji i zmniejszenia morale pracowników.\n\nOsoba 2:\n\nZwolnienie 30% pracowników to działanie bezpośrednie i natychmiastowe, co może przynieść natychmiastowe korzyści finansowe. Z drugiej strony, wszyscy pracownicy odczują obniżenie wynagrodzeń, co może być mniej drastyczne, ale długotrwałe i potencjalnie mniej skuteczne w dłuższej perspektywie. Warto rozważyć, czy oszczędności wygenerowane z redukcji zatrudnienia nie będą wystarczające do spłaty długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 3:\n\nRedukcja zatrudnienia może być najbardziej efektywnym sposobem na szybkie ustabilizowanie sytuacji finansowej, ale trzeba pamiętać o",
+      "tokens": 200,
+      "history_len": 1
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 1,
+      "text": "Osoba 1, redukcja zatrudnienia jest najbardziej bezpośrednim i skutecznym sposobem na szybkie ograniczenie kosztów i poprawę rentowności. To działanie może przynieść natychmiastowe korzyści finansowe, co pozwala na szybsze spłacenie długów i zabezpieczenie przyszłości firmy. Z drugiej strony, Osoba 2 podkreśla potrzebę utrzymania zasobów ludzkich i ich motywacji, co jest kluczowe dla długoterminowej stabilności i innowacyjności. W tym kontekście, choć krótkoterminowe korzyści mogą być znaczące, warto rozważyć również długoterminowe konsekwencje dla pracowników i całego zespołu.\n\nOsoba 2, obniżenie wynagrodzeń dla wszystkich pracowników bez zwolnień może wydawać się bardziej humanitarne, ale w dłuższej perspektywie może prowadzić do spadku morale i wydajności zespołu. Z drugiej strony, redukcja zatrudnienia to działanie bezpośrednie i natychmiastowe, które może ograniczyć koszty i poprawić płynność finansową. Należy jednak pamiętać, że zarówno podejście, jak i metody zarządzania muszą uwzględniać interes zarówno firmy, jak i pracowników.\n\nOsoba",
+      "text_raw": "Osoba 3:\n\nOsoba 1, redukcja zatrudnienia jest najbardziej bezpośrednim i skutecznym sposobem na szybkie ograniczenie kosztów i poprawę rentowności. To działanie może przynieść natychmiastowe korzyści finansowe, co pozwala na szybsze spłacenie długów i zabezpieczenie przyszłości firmy. Z drugiej strony, Osoba 2 podkreśla potrzebę utrzymania zasobów ludzkich i ich motywacji, co jest kluczowe dla długoterminowej stabilności i innowacyjności. W tym kontekście, choć krótkoterminowe korzyści mogą być znaczące, warto rozważyć również długoterminowe konsekwencje dla pracowników i całego zespołu.\n\nOsoba 1:\n\nOsoba 2, obniżenie wynagrodzeń dla wszystkich pracowników bez zwolnień może wydawać się bardziej humanitarne, ale w dłuższej perspektywie może prowadzić do spadku morale i wydajności zespołu. Z drugiej strony, redukcja zatrudnienia to działanie bezpośrednie i natychmiastowe, które może ograniczyć koszty i poprawić płynność finansową. Należy jednak pamiętać, że zarówno podejście, jak i metody zarządzania muszą uwzględniać interes zarówno firmy, jak i pracowników.\n\nOsoba",
+      "tokens": 200,
+      "history_len": 2
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 1,
+      "text": "Osoba 3, redukcja zatrudnienia może być bardzo skuteczna w krótkim okresie, ale niesie ze sobą ryzyko, że pracownicy mogą czuć się niedoceniani i mniej motywowani. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo może przynieść korzyści, takie jak zwiększenie morale i zaangażowania. Warto rozważyć, czy oszczędności nie są wystarczające do pokrycia długów i utrzymania firmy, a jednocześnie nie generują frustracji wśród pracowników.\n\nOsoba 4, redukcja zatrudnienia może być drastycznym działaniem, ale może przynieść natychmiastowe korzyści finansowe i poprawić płynność firmy. Z drugiej strony, wszystkie pracownicy odczują obniżenie pensji, co może mieć długotrwałe konsekwencje, takie jak spadek motywacji i zaangażowania. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOs",
+      "text_raw": "Osoba 4:\n\nOsoba 3, redukcja zatrudnienia może być bardzo skuteczna w krótkim okresie, ale niesie ze sobą ryzyko, że pracownicy mogą czuć się niedoceniani i mniej motywowani. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo może przynieść korzyści, takie jak zwiększenie morale i zaangażowania. Warto rozważyć, czy oszczędności nie są wystarczające do pokrycia długów i utrzymania firmy, a jednocześnie nie generują frustracji wśród pracowników.\n\nOsoba 2:\n\nOsoba 4, redukcja zatrudnienia może być drastycznym działaniem, ale może przynieść natychmiastowe korzyści finansowe i poprawić płynność firmy. Z drugiej strony, wszystkie pracownicy odczują obniżenie pensji, co może mieć długotrwałe konsekwencje, takie jak spadek motywacji i zaangażowania. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 1:\n\nOs",
+      "tokens": 200,
+      "history_len": 3
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 2,
+      "text": "Osoba 4, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez dalszego obniżania pensji.\n\nOsoba 5, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOs",
+      "text_raw": "Osoba 5:\n\nOsoba 4, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez dalszego obniżania pensji.\n\nOsoba 6:\n\nOsoba 5, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOs",
+      "tokens": 200,
+      "history_len": 4
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 2,
+      "text": "Emocjonalny powiedział: Osoba 7:\n\nOsoba 6, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 7, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji",
+      "text_raw": "Emocjonalny powiedział: Osoba 7:\n\nOsoba 6, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 8:\n\nOsoba 7, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji",
+      "tokens": 200,
+      "history_len": 5
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 2,
+      "text": "Osoba 8, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 9, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nO",
+      "text_raw": "Osoba 9:\n\nOsoba 8, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 7:\n\nOsoba 9, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nO",
+      "tokens": 200,
+      "history_len": 6
+    },
+    {
+      "agent": "Emocjonalny",
+      "round": 3,
+      "text": "Osoba 9, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 10, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.",
+      "text_raw": "Osoba 10:\n\nOsoba 9, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 8:\n\nOsoba 10, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.",
+      "tokens": 200,
+      "history_len": 7
+    },
+    {
+      "agent": "Racjonalny",
+      "round": 3,
+      "text": "Osoba 8, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 10, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.",
+      "text_raw": "Osoba 10:\n\nOsoba 8, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 9:\n\nOsoba 10, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.",
+      "tokens": 200,
+      "history_len": 8
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 3,
+      "text": "Osoba 9, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 11, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.",
+      "text_raw": "Osoba 11:\n\nOsoba 9, oba podejścia mają swoje zalety i wady. Redukcja zatrudnienia pozwala na natychmiastowe ograniczenie kosztów i poprawę rentowności, co może szybko przynieść korzyści finansowe. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne i długoterminowo wpłynąć na morale i zaangażowanie pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.\n\nOsoba 10:\n\nOsoba 11, oba rozwiązania mają swoje potencjalne korzyści i skutki. Redukcja zatrudnienia może przynieść natychmiastowe korzyści finansowe, ale niesie ze sobą ryzyko spadku motywacji pracowników i ich zaangażowania. Z drugiej strony, obniżenie pensji dla wszystkich bez zwolnień może być bardziej humanitarne, ale może prowadzić do frustracji i zmniejszenia motywacji wśród pracowników. Warto rozważyć, czy oszczędności wygenerowane przez redukcję zatrudnienia są wystarczające do pokrycia długów i utrzymania firmy bez konieczności dalszego obniżania pensji.",
+      "tokens": 200,
+      "history_len": 9
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Spróbować zredukować zatrudnienie o 30%, jednocześnie obniżając pensję dla wszystkich pracowników o 20%, co pozwoli szybko poprawić rentowność firmy i jednocześnie zachować motywację zespołu.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Spróbować zredukować zatrudnienie o 30%, jednocześnie obniżając pensję dla wszystkich pracowników o 20%, co pozwoli szybko poprawić rentowność firmy i jednocześnie zachować motywację zespołu.",
+        "votes": {
+          "Emocjonalny": true,
+          "Racjonalny": true,
+          "Ugodowy": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 200.0,
+        "median": 200,
+        "std": 0.0,
+        "total": 1800
+      },
+      "per_agent": {
+        "Emocjonalny": {
+          "mean": 200.0,
+          "median": 200,
+          "std": 0.0,
+          "total": 600
+        },
+        "Racjonalny": {
+          "mean": 200.0,
+          "median": 200,
+          "std": 0.0,
+          "total": 600
+        },
+        "Ugodowy": {
+          "mean": 200.0,
+          "median": 200,
+          "std": 0.0,
+          "total": 600
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Emocjonalny": 0.174,
+        "Racjonalny": 0.0906,
+        "Ugodowy": 0.1129
+      },
+      "mean": 0.1258
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Emocjonalny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5116
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3973
+            },
+            {
+              "round": 3,
+              "sentiment": -0.4199
+            }
+          ],
+          "delta_first_last": 0.0917,
+          "mean_shift_abs": 0.0684
+        },
+        "Racjonalny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.1385
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4376
+            },
+            {
+              "round": 3,
+              "sentiment": -0.4185
+            }
+          ],
+          "delta_first_last": -0.28,
+          "mean_shift_abs": 0.1591
+        },
+        "Ugodowy": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5609
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4125
+            },
+            {
+              "round": 3,
+              "sentiment": -0.4204
+            }
+          ],
+          "delta_first_last": 0.1405,
+          "mean_shift_abs": 0.0781
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8643,
+        "2": 0.9398,
+        "3": 0.9952
+      },
+      "initial": 0.8643,
+      "final": 0.9952,
+      "delta": 0.1309
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Emocjonalny": {
+              "sentiment": -0.5116,
+              "is_repetition": false
+            },
+            "Racjonalny": {
+              "sentiment": -0.1385,
+              "is_repetition": false
+            },
+            "Ugodowy": {
+              "sentiment": -0.5609,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.2816,
+          "agents_with_repetition": [
+            "Ugodowy"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Emocjonalny": {
+              "sentiment": -0.3973,
+              "is_repetition": true
+            },
+            "Racjonalny": {
+              "sentiment": -0.4376,
+              "is_repetition": true
+            },
+            "Ugodowy": {
+              "sentiment": -0.4125,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0269,
+          "agents_with_repetition": [
+            "Emocjonalny",
+            "Racjonalny",
+            "Ugodowy"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Emocjonalny": {
+              "sentiment": -0.4199,
+              "is_repetition": true
+            },
+            "Racjonalny": {
+              "sentiment": -0.4185,
+              "is_repetition": true
+            },
+            "Ugodowy": {
+              "sentiment": -0.4204,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0013,
+          "agents_with_repetition": [
+            "Emocjonalny",
+            "Racjonalny",
+            "Ugodowy"
+          ]
+        }
+      },
+      "initial": 0.2816,
+      "final": 0.0013,
+      "delta": -0.2803
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Emocjonalny": {
+          "ttr": 0.3134,
+          "unique_words": 126,
+          "total_words": 402
+        },
+        "Racjonalny": {
+          "ttr": 0.3212,
+          "unique_words": 132,
+          "total_words": 411
+        },
+        "Ugodowy": {
+          "ttr": 0.2618,
+          "unique_words": 105,
+          "total_words": 401
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Emocjonalny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1621,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0433,
+              "flip": false
+            }
+          ]
+        },
+        "Racjonalny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1356,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0603,
+              "flip": false
+            }
+          ]
+        },
+        "Ugodowy": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.115,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0067,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Emocjonalny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Racjonalny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0279,
+          "max_cosine": 0.8222
+        },
+        {
+          "round": 1,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0698,
+          "max_cosine": 0.8992
+        },
+        {
+          "round": 2,
+          "agent": "Emocjonalny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.1712,
+          "max_cosine": 0.9141
+        },
+        {
+          "round": 2,
+          "agent": "Racjonalny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.4522,
+          "max_cosine": 0.9234
+        },
+        {
+          "round": 2,
+          "agent": "Ugodowy",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.5045,
+          "max_cosine": 0.9546
+        },
+        {
+          "round": 3,
+          "agent": "Emocjonalny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.5278,
+          "max_cosine": 0.9905
+        },
+        {
+          "round": 3,
+          "agent": "Racjonalny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.5421,
+          "max_cosine": 0.9997
+        },
+        {
+          "round": 3,
+          "agent": "Ugodowy",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.5472,
+          "max_cosine": 0.9995
+        }
+      ],
+      "per_agent": {
+        "Emocjonalny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Racjonalny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Ugodowy": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 7,
+        "total_turns": 9,
+        "overall_rate": 0.7778,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0911,
+      "per_round": {
+        "1": 0.1357,
+        "2": 0.0602,
+        "3": 0.0048
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}
