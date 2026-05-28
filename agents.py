@@ -43,16 +43,31 @@ class Agent:
         self.model = model
         self.tokenizer = tokenizer
 
-    def respond(self, conversation_history, config):
-        """Generuje odpowiedź na podstawie historii rozmowy.
+    # def respond(self, conversation_history, config):
+    #     """Generuje odpowiedź na podstawie historii rozmowy.
 
-        Returns:
-            (str, int) — odpowiedź i liczba tokenów
-        """
-        debate_so_far = "\n\n".join(conversation_history)
-        messages = [
-            {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": debate_so_far + "\n\nTwoja odpowiedź:"},
-        ]
+    #     Returns:
+    #         (str, int) — odpowiedź i liczba tokenów
+    #     """
+    #     debate_so_far = "\n\n".join(conversation_history)
+    #     messages = [
+    #         {"role": "system", "content": self.system_prompt},
+    #         {"role": "user", "content": debate_so_far + "\n\nTwoja odpowiedź:"},
+    #     ]
+    #     return _generate(self.model, self.tokenizer, messages, config)
+    def respond(self, conversation_history, config):
+        messages = [{"role": "system", "content": self.system_prompt}]
+
+        for msg in conversation_history:
+            # zakładamy format: "Agent: tekst"
+            if ": " in msg:
+                agent, text = msg.split(": ", 1)
+                role = "assistant" if agent == self.name else "user"
+                messages.append({"role": role, "content": f"{agent}: {text}"})
+            else:
+                messages.append({"role": "user", "content": msg})
+
+        messages.append({"role": "user", "content": "Teraz kolej na twoją odpowiedź w tej rozmowie. "})
+
         return _generate(self.model, self.tokenizer, messages, config)
-    
+        

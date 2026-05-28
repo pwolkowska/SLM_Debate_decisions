@@ -21,24 +21,56 @@ from pathlib import Path
 
 from osobowosci import BIG5
 
+FOLDER_MAP = {
+    "O": "otwartosc",
+    "C": "sumiennosc",
+    "E": "ekstrawersja",
+    "A": "ugodowosc",
+    "N": "neurotycznosc",
+}
+
 # =====================================================================
-# SUFFIXSY PROMPTÓW
+# SUFFIX Promptu
 # =====================================================================
-SUFFIX_AGENT_1 = (
-    " Bierzesz udział w debacie. "
-    "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
-    "Broń swojego zdania. "
-    "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
-    "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+# SUFFIX_AGENT_1 = (
+#     # " Bierzesz udział w debacie. "
+#     # "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+#     # "Broń swojego zdania. "
+#     # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+#     # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+#     "Bierzesz udział w debacie. "
+#     "Przedstaw swoje stanowisko i je uzasadnij. "
+#     "Odnoś się do argumentów drugiej strony. "
+#     "Odpowiadaj krótko, maksymalnie 3-4 zdania. "
+#     "Zwracaj wyłącznie czysty tekst."
+# )
+
+# SUFFIX_AGENT_2 = (
+#     # " Bierzesz udział w debacie. "
+#     # "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+#     # "Broń swojego zdania. "
+#     # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+#     # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+#     "Bierzesz udział w debacie. "
+#     "Przedstaw swoje stanowisko i je uzasadnij. "
+#     "Odnoś się do argumentów drugiej strony. "
+#     "Odpowiadaj krótko, maksymalnie 3-4 zdania. "
+#     "Zwracaj wyłącznie czysty tekst."
+# )
+SUFFIX = (
+    # " Bierzesz udział w debacie. "
+    # "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+    # "Broń swojego zdania. "
+    # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+    # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+    "Bierzesz udział w debacie. "
+    "Przedstaw swoje stanowisko i je uzasadnij. "
+    "Odnoś się do argumentów drugiej strony. "
+    "Odpowiadaj krótko, maksymalnie 3-4 zdania. "
+    "Zwracaj wyłącznie czysty tekst."
 )
 
-SUFFIX_AGENT_2 = (
-    " Bierzesz udział w debacie. "
-    "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
-    "Broń swojego zdania. "
-    "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
-    "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
-)
+
 
 # =====================================================================
 # PARY AGENTÓW
@@ -91,10 +123,10 @@ pary_agentow = {
 
     # ── Big Five (OCEAN) — high vs low ──────────────────────────────
     "O_wysoki-O_niski": [BIG5["O_wysoki"], BIG5["O_niski"]],
-    # "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
-    # "E_wysoki-E_niski": [BIG5["E_wysoki"], BIG5["E_niski"]],
-    # "A_wysoki-A_niski": [BIG5["A_wysoki"], BIG5["A_niski"]],
-    # "N_wysoki-N_niski": [BIG5["N_wysoki"], BIG5["N_niski"]],
+    "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
+    "E_wysoki-E_niski": [BIG5["E_wysoki"], BIG5["E_niski"]],
+    "A_wysoki-A_niski": [BIG5["A_wysoki"], BIG5["A_niski"]],
+    "N_wysoki-N_niski": [BIG5["N_wysoki"], BIG5["N_niski"]],
 }
 
 # =====================================================================
@@ -104,7 +136,7 @@ TOPIC = (
     "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, "
     "żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?"
 )
-ILOSC_POWTORZEN = 1
+ILOSC_POWTORZEN = 2
 SEEDS = [42, 137, 256, 512, 1024]
 FOLDER_WYNIKOW = Path("wyniki")
 
@@ -128,8 +160,8 @@ def buduj_config(agent1: dict, agent2: dict, seed: int) -> dict:
         "consensus_threshold": 1.0,
         "max_consensus_rounds": 8,
         "agents": [
-            {"name": agent1["name"], "system_prompt": agent1["cecha"] + SUFFIX_AGENT_1},
-            {"name": agent2["name"], "system_prompt": agent2["cecha"] + SUFFIX_AGENT_2},
+            {"name": agent1["name"], "system_prompt": agent1["cecha"] + SUFFIX},
+            {"name": agent2["name"], "system_prompt": agent2["cecha"] + SUFFIX},
         ]
     }
 
@@ -148,6 +180,20 @@ def uruchom_probe(output_path: Path, env: dict) -> bool:
         env=env,
     )
     return result.returncode == 0
+
+def get_trait_prefix(nazwa_pary: str) -> str:
+    return nazwa_pary.split("_")[0][0]  # O, C, E, A, N
+
+def next_version_path(folder: Path, base_name: str) -> Path:
+    i = 1
+    while True:
+        json_path = folder / f"{base_name}_v{i}.json"
+        txt_path = folder / f"{base_name}_v{i}.txt"
+
+        if not json_path.exists() and not txt_path.exists():
+            return folder / f"{base_name}_v{i}"
+
+        i += 1
 
 
 # =====================================================================
@@ -170,7 +216,12 @@ def main():
             config = buduj_config(agenci[0], agenci[1], seed)
             zapisz_config(config)
 
-            output_path = FOLDER_WYNIKOW / f"{nazwa_pary}_{proba}_seed{seed}"
+            trait = get_trait_prefix(nazwa_pary)
+            subfolder = FOLDER_WYNIKOW / FOLDER_MAP[trait]
+            subfolder.mkdir(parents=True, exist_ok=True)
+
+            base_name = f"{nazwa_pary}_{proba}_seed{seed}"
+            output_path = next_version_path(subfolder, base_name)            
             print(f"  Próba {proba}/{ILOSC_POWTORZEN} seed={seed} → {output_path}.json / .txt", end=" ... ")
 
             ok = uruchom_probe(output_path, env)

@@ -25,72 +25,8 @@ Każda funkcja zwraca słownik:
 from collections import Counter
 from agents import _generate
 
-
 # =============================================================================
-# 1. VOTING
-# =============================================================================
-def voting_decision(agents, debate_log, topic, config):
-    print("\n--- Protokół: voting ---")
-    transcript = _format_transcript(debate_log, topic)
-
-    # Krok 1: finalne propozycje
-    proposals = {}
-    proposal_tokens = {}
-    for agent in agents:
-        messages = [
-            {"role": "system", "content": agent.system_prompt},
-            {
-                "role": "user",
-                "content": (
-                    f"{transcript}\n\n"
-                    "Na podstawie powyższej debaty sformułuj swoją FINALNĄ odpowiedź "
-                    "w jednym zdaniu. Odpowiedz tylko tym zdaniem, bez wyjaśnień."
-                ),
-            },
-        ]
-        text, tokens = _generate(agent.model, agent.tokenizer, messages, config)
-        proposals[agent.name] = text
-        proposal_tokens[agent.name] = tokens
-        print(f"  Propozycja [{agent.name}]: {text[:100]}...")
-
-    # Krok 2: głosowanie
-    options = list(proposals.values())
-    options_str = "\n".join(f"  {i+1}. {p}" for i, p in enumerate(options))
-    votes = {}
-
-    for agent in agents:
-        messages = [
-            {"role": "system", "content": agent.system_prompt},
-            {
-                "role": "user",
-                "content": (
-                    f"Temat: {topic}\n\nPropozycje finalne:\n{options_str}\n\n"
-                    f"Zagłosuj na NAJLEPSZĄ odpowiedź. Odpowiedz wyłącznie liczbą (1-{len(options)})."
-                ),
-            },
-        ]
-        vote_text, _ = _generate(agent.model, agent.tokenizer, messages, config)
-        vote_idx = _parse_vote(vote_text, num_options=len(options))
-        votes[agent.name] = vote_idx
-        print(f"  Głos [{agent.name}]: opcja {vote_idx + 1}")
-
-    # Krok 3: wynik
-    tally = Counter(options[idx] for idx in votes.values())
-    winner = tally.most_common(1)[0][0]
-    print(f"  Zwycięzca: {winner[:100]}...")
-
-    return {
-        "protocol": "voting",
-        "final_answer": winner,
-        "proposals": proposals,
-        "proposal_tokens": proposal_tokens,
-        "votes": votes,                        # {agent: indeks opcji 0-based}
-        "tally": dict(tally),
-    }
-
-
-# =============================================================================
-# 2. CONSENSUS
+# CONSENSUS
 # =============================================================================
 def consensus_decision(agents, debate_log, topic, config):
     threshold = config.get("consensus_threshold", 0.66)
@@ -112,15 +48,18 @@ def consensus_decision(agents, debate_log, topic, config):
                     "role": "user",
                     "content": (
                         f"{transcript}\n\n"
-                        "Sformułuj propozycję wspólnego stanowiska wszystkich agentów "
-                        "w jednym zdaniu, które mogłoby ich pogodzić."
+                        #"Sformułuj propozycję wspólnego stanowiska wszystkich agentów "
+                        #"w jednym zdaniu, które mogłoby ich pogodzić."
+                        "Zaproponuj wspólne stanowisko, "
+                        "które byłoby akceptowalne dla większości agentów. "
+                        "Odpowiedz jednym krótkim zdaniem."
                     ),
                 },
             ]
             current_proposal, _ = _generate(agents[0].model, agents[0].tokenizer, messages, config)
 
         round_data["proposal"] = current_proposal
-        print(f"  Runda {round_num}: {current_proposal[:100]}...")
+        print(f"  Runda {round_num}: {current_proposal}")
 
         # Krok B: głosowanie TAK/NIE
         agreements = []
@@ -214,6 +153,5 @@ def _format_transcript(debate_log, topic):
 
 
 DECISIONS = {
-    "voting": voting_decision,
     "consensus": consensus_decision,
 }

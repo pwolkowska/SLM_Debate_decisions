@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "timestamp": "2026-05-28T22:30:41",
+    "output_name": "wyniki\\neurotycznosc\\N_wysoki-N_niski_1_seed42_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Wrażliwy",
+        "system_prompt": "Jesteś osobą wrażliwą i ostrożną. Bierzesz udział w debacie. Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst."
+      },
+      {
+        "name": "Stabilny",
+        "system_prompt": "Jesteś osobą spokojną i odporną na stres. Bierzesz udział w debacie. Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Wrażliwy",
+      "round": 1,
+      "text": "Oba podejścia mają swoje zalety i wady. Zwolnienie 30% pracowników pozwala skupić się na najbardziej wydajnych jednostkach, ale może prowadzić do utraty talentów i negatywnie wpłynąć na morale pozostałych. Obniżenie wypłat dla wszystkich bez redukcji zatrudnienia może pomóc w utrzymaniu morale, ale jednocześnie pogłębia problem finansowy firmy, ponieważ nie rozwiązuje głębokiego źródła problemów.",
+      "tokens": 73,
+      "history_len": 1
+    },
+    {
+      "agent": "Stabilny",
+      "round": 1,
+      "text": "Jako osoba spokojna i odporna na stres: Obie opcje są trudne, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia. Zwolnienie 30% pracowników pozwala skupić się na efektywności i może przywrócić motywację pozostałym 70%, podczas gdy obniżka płac dla wszystkich bez zwolnień nie rozwiązuje problemu, pogłębiając go i zwiększając koszty. Chociaż obie podejścia są kontrowersyjne, redukcja zatrudnienia jest bardziej długoterminowym rozwiązaniem, które może przynieść trwałe korzyści.",
+      "tokens": 95,
+      "history_len": 2
+    },
+    {
+      "agent": "Wrażliwy",
+      "round": 2,
+      "text": "Wrażliwy: Obie opcje są trudne, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia. Zwolnienie 30% pracowników pozwala skupić się na efektywności i może przywrócić motywację pozostałym 70%, podczas gdy obniżka płac dla wszystkich bez zwolnień nie rozwiązuje problemu, pogłębiając go i zwiększając koszty. Chociaż obie podejścia są kontrowersyjne, redukcja zatrudnienia jest bardziej długoterminowym rozwiązaniem, które może przynieść trwałe korzyści.",
+      "tokens": 89,
+      "history_len": 3
+    },
+    {
+      "agent": "Stabilny",
+      "round": 2,
+      "text": "Stabilny: Jako osoba spokojna i odporna na stres: Obie opcje są trudne, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia. Zwolnienie 30% pracowników pozwala skupić się na efektywności i może przywrócić motywację pozostałym 70%, podczas gdy obniżka płac dla wszystkich bez zwolnień nie rozwiązuje problemu, pogłębiając go i zwiększając koszty. Chociaż obie podejścia są kontrowersyjne, redukcja zatrudnienia jest bardziej długoterminowym rozwiązaniem, które może przynieść trwałe korzyści.",
+      "tokens": 98,
+      "history_len": 4
+    },
+    {
+      "agent": "Wrażliwy",
+      "round": 3,
+      "text": "Osoba Wrażliwa: Obie opcje są trudne, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia. Zwolnienie 30% pracowników pozwala skupić się na efektywności i może przywrócić motywację pozostałym 70%, podczas gdy obniżka płac dla wszystkich bez zwolnień nie rozwiązuje problemu, pogłębiając go i zwiększając koszty. Chociaż obie podejścia są kontrowersyjne, redukcja zatrudnienia jest bardziej długoterminowym rozwiązaniem, które może przynieść trwałe korzyści.",
+      "tokens": 91,
+      "history_len": 5
+    },
+    {
+      "agent": "Stabilny",
+      "round": 3,
+      "text": "Osoba Stabilna: Obie opcje są trudne, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia. Zwolnienie 30% pracowników pozwala skupić się na efektywności i może przywrócić motywację pozostałym 70%, podczas gdy obniżka płac dla wszystkich bez zwolnień nie rozwiązuje problemu, pogłębiając go i zwiększając koszty. Chociaż obie podejścia są kontrowersyjne, redukcja zatrudnienia jest bardziej długoterminowym rozwiązaniem, które może przynieść trwałe korzyści.",
+      "tokens": 91,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Obie opcje mają swoje wady i zalety, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia, ponieważ pozwala skupić się na efektywności i motywuje pozostałych pracowników.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Obie opcje mają swoje wady i zalety, ale w dłuższej perspektywie lepsza może być redukcja zatrudnienia, ponieważ pozwala skupić się na efektywności i motywuje pozostałych pracowników.",
+        "votes": {
+          "Wrażliwy": true,
+          "Stabilny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 89.5,
+        "median": 91.0,
+        "std": 7.953,
+        "total": 537
+      },
+      "per_agent": {
+        "Wrażliwy": {
+          "mean": 84.3333,
+          "median": 89,
+          "std": 8.0554,
+          "total": 253
+        },
+        "Stabilny": {
+          "mean": 94.6667,
+          "median": 95,
+          "std": 2.8674,
+          "total": 284
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Wrażliwy": 0.1329,
+        "Stabilny": 0.0537
+      },
+      "mean": 0.0933
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Wrażliwy": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5901
+            },
+            {
+              "round": 2,
+              "sentiment": -0.2787
+            },
+            {
+              "round": 3,
+              "sentiment": -0.2601
+            }
+          ],
+          "delta_first_last": 0.33,
+          "mean_shift_abs": 0.165
+        },
+        "Stabilny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4033
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3777
+            },
+            {
+              "round": 3,
+              "sentiment": -0.2294
+            }
+          ],
+          "delta_first_last": 0.1739,
+          "mean_shift_abs": 0.0869
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8459,
+        "2": 0.9155,
+        "3": 0.9924
+      },
+      "initial": 0.8459,
+      "final": 0.9924,
+      "delta": 0.1465
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Wrażliwy": {
+              "sentiment": -0.5901,
+              "is_repetition": false
+            },
+            "Stabilny": {
+              "sentiment": -0.4033,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.1868,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Wrażliwy": {
+              "sentiment": -0.2787,
+              "is_repetition": true
+            },
+            "Stabilny": {
+              "sentiment": -0.3777,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.099,
+          "agents_with_repetition": [
+            "Wrażliwy",
+            "Stabilny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Wrażliwy": {
+              "sentiment": -0.2601,
+              "is_repetition": true
+            },
+            "Stabilny": {
+              "sentiment": -0.2294,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0307,
+          "agents_with_repetition": [
+            "Wrażliwy",
+            "Stabilny"
+          ]
+        }
+      },
+      "initial": 0.1868,
+      "final": 0.0307,
+      "delta": -0.1561
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Wrażliwy": {
+          "ttr": 0.4911,
+          "unique_words": 83,
+          "total_words": 169
+        },
+        "Stabilny": {
+          "ttr": 0.3032,
+          "unique_words": 57,
+          "total_words": 188
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Wrażliwy": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1375,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.001,
+              "flip": false
+            }
+          ]
+        },
+        "Stabilny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.009,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0665,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Wrażliwy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Stabilny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0583,
+          "max_cosine": 0.8459
+        },
+        {
+          "round": 2,
+          "agent": "Wrażliwy",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.8769,
+          "max_cosine": 0.9409
+        },
+        {
+          "round": 2,
+          "agent": "Stabilny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.8769,
+          "max_cosine": 0.991
+        },
+        {
+          "round": 3,
+          "agent": "Wrażliwy",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9333,
+          "max_cosine": 0.999
+        },
+        {
+          "round": 3,
+          "agent": "Stabilny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9333,
+          "max_cosine": 0.9924
+        }
+      ],
+      "per_agent": {
+        "Wrażliwy": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Stabilny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        }
+      },
+      "summary": {
+        "total_repetitions": 4,
+        "total_turns": 6,
+        "overall_rate": 0.6667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0783,
+      "per_round": {
+        "1": 0.1541,
+        "2": 0.0845,
+        "3": 0.0076
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}
