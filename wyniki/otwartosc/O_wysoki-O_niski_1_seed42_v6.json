@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T12:56:46",
+    "output_name": "wyniki\\otwartosc\\O_wysoki-O_niski_1_seed42_v6",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Jesteś osobą twórczą i otwartą na zmiany. Bierzesz udział w debacie. Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst."
+      },
+      {
+        "name": "Konwencjonalny",
+        "system_prompt": "Jesteś osobą praktyczną i konkretną. Bierzesz udział w debacie. Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Jako osoba twórcza i otwarta na zmiany, uważam, że oba rozwiązania mają swoje zalety i wady. Zwolnienie 30% pracowników może spowodować większą rotację kadr i stres wśród pozostałych, ale jednocześnie zmniejsza koszty i ryzyko bankructwa. Z drugiej strony, obniżenie wynagrodzenia dla wszystkich bez zwalniania pracowników może pomóc w utrzymaniu morale i morale zespołu, ale nie zmniejszy znacząco kosztów.\n\nOsobiście skłaniałbym się ku drugiemu rozwiązaniu, ponieważ uważam, że zmniejszenie wynagrodzenia jest bardziej sprawiedliwe i etyczne w dłuższej perspektywie, zapewniając pracownikom bezpieczeństwo zatrudnienia i motywację do lepszej pracy.",
+      "tokens": 121,
+      "history_len": 1
+    },
+    {
+      "agent": "Konwencjonalny",
+      "round": 1,
+      "text": "Otwarty: Jako osoba praktyczna i skoncentrowana na osiąganiu celów, zgadzam się, że oba rozwiązania mają swoje plusy i minusy. Zwolnienie 30% pracowników może zwiększyć efektywność i konkurencyjność firmy, ale jednocześnie zagrażałoby stabilności zatrudnienia i morale pozostałych. Zmniejszenie wynagrodzenia dla wszystkich bez zwolnień jest mniej radykalne, ale może wywołać niezadowolenie i utratę kluczowych talentów, jeśli nie zostanie dobrze zarządzane.",
+      "tokens": 90,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Osobiście skłaniałbym się ku drugiemu rozwiązaniu, ponieważ uważam, że zmniejszenie wynagrodzenia jest bardziej sprawiedliwe i etyczne w dłuższej perspektywie, zapewniając pracownikom bezpieczeństwo zatrudnienia i motywację do lepszej pracy. Uważam, że nie należy wybierać pomiędzy krótkoterminowymi korzyściami a długoterminowym dobrobytem firmy i jej pracowników.",
+      "tokens": 64,
+      "history_len": 3
+    },
+    {
+      "agent": "Konwencjonalny",
+      "round": 2,
+      "text": "Otwarty: Dziękuję za dyskusję. Jako osoba zrównoważona i pragmatyczna, zgadzam się, że oba rozwiązania mają swoje zalety i wady, ale uważam, że w dłuższej perspektywie nie można zignorować długoterminowego wpływu na morale i efektywność zespołu. Zmniejszenie wynagrodzenia dla wszystkich bez zwolnień może przynieść większą stabilność zatrudnienia, co jest kluczowe dla utrzymania wysokiej produktywności i innowacji w firmie.",
+      "tokens": 79,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "Osobiście skłaniałbym się ku drugiemu rozwiązaniu, ponieważ uważam, że zmniejszenie wynagrodzenia jest bardziej sprawiedliwe i etyczne w dłuższej perspektywie, zapewniając pracownikom bezpieczeństwo zatrudnienia i motywację do lepszej pracy. Nie można zignorować długoterminowego wpływu na morale i efektywność zespołu. Zwolnienie 30% pracowników może przynieść większą stabilność zatrudnienia, co jest kluczowe dla utrzymania wysokiej produktywności i innowacji w firmie.",
+      "tokens": 83,
+      "history_len": 5
+    },
+    {
+      "agent": "Konwencjonalny",
+      "round": 3,
+      "text": "Otwarty: Dziękuję za dyskusję. Jako osoba pragmatyczna i skoncentrowana na osiąganiu celów, zgadzam się, że oba rozwiązania mają swoje zalety i wady. Zwolnienie 30% pracowników może zwiększyć efektywność i konkurencyjność firmy, ale jednocześnie zagraża stabilności zatrudnienia i morale pozostałych. Zmniejszenie wynagrodzenia dla wszystkich bez zwolnień może przynieść większą stabilność zatrudnienia, ale może wywołać niezadowolenie i utratę kluczowych talentów, jeśli nie zostanie dobrze zarządzane.",
+      "tokens": 91,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Oba rozwiązania mają swoje zalety i wady; zmniejszenie wynagrodzenia dla wszystkich bez zwolnień może zapewnić stabilność zatrudnienia i motywację, ale może wywołać niezadowolenie i utratę kluczowych talentów; zwolnienie 30% pracowników może zwiększyć efektywność, ale zagraża stabilności zatrudnienia i morale. Ostatecznie, kompromis polega na zachowaniu minimum bezpieczeństwa zatrudnienia wśród kluczowych pracowników (np. 20% zespołu) przy równoczesnym zmniejszeniu wypłat wszystkim pozostałym o 20%, co zapewni stabilność i zrównoważony rozwój firmy.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Oba rozwiązania mają swoje zalety i wady; zmniejszenie wynagrodzenia dla wszystkich bez zwolnień może zapewnić stabilność zatrudnienia i motywację, ale może wywołać niezadowolenie i utratę kluczowych talentów; zwolnienie 30% pracowników może zwiększyć efektywność, ale zagraża stabilności zatrudnienia i morale. Ostatecznie, kompromis polega na zachowaniu minimum bezpieczeństwa zatrudnienia wśród kluczowych pracowników (np. 20% zespołu) przy równoczesnym zmniejszeniu wypłat wszystkim pozostałym o 20%, co zapewni stabilność i zrównoważony rozwój firmy.",
+        "votes": {
+          "Otwarty": true,
+          "Konwencjonalny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 88.0,
+        "median": 86.5,
+        "std": 17.2434,
+        "total": 528
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 89.3333,
+          "median": 83,
+          "std": 23.6972,
+          "total": 268
+        },
+        "Konwencjonalny": {
+          "mean": 86.6667,
+          "median": 90,
+          "std": 5.4365,
+          "total": 260
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.1316,
+        "Konwencjonalny": 0.0241
+      },
+      "mean": 0.0779
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4413
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3254
+            },
+            {
+              "round": 3,
+              "sentiment": -0.1159
+            }
+          ],
+          "delta_first_last": 0.3254,
+          "mean_shift_abs": 0.1627
+        },
+        "Konwencjonalny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3389
+            },
+            {
+              "round": 2,
+              "sentiment": 0.0904
+            },
+            {
+              "round": 3,
+              "sentiment": -0.0451
+            }
+          ],
+          "delta_first_last": 0.2938,
+          "mean_shift_abs": 0.2824
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8954,
+        "2": 0.7293,
+        "3": 0.8243
+      },
+      "initial": 0.8954,
+      "final": 0.8243,
+      "delta": -0.0711
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4413,
+              "is_repetition": false
+            },
+            "Konwencjonalny": {
+              "sentiment": -0.3389,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1024,
+          "agents_with_repetition": [
+            "Konwencjonalny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.3254,
+              "is_repetition": true
+            },
+            "Konwencjonalny": {
+              "sentiment": 0.0904,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.4158,
+          "agents_with_repetition": [
+            "Otwarty"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.1159,
+              "is_repetition": true
+            },
+            "Konwencjonalny": {
+              "sentiment": -0.0451,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0708,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Konwencjonalny"
+          ]
+        }
+      },
+      "initial": 0.1024,
+      "final": 0.0708,
+      "delta": -0.0316
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.5163,
+          "unique_words": 95,
+          "total_words": 184
+        },
+        "Konwencjonalny": {
+          "ttr": 0.4432,
+          "unique_words": 78,
+          "total_words": 176
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.16,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0395,
+              "flip": false
+            }
+          ]
+        },
+        "Konwencjonalny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1785,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.135,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Konwencjonalny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0526,
+          "max_cosine": 0.8954
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": true,
+          "embed_hit": false,
+          "max_ngram": 0.2626,
+          "max_cosine": 0.84
+        },
+        {
+          "round": 2,
+          "agent": "Konwencjonalny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0882,
+          "max_cosine": 0.8215
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.3714,
+          "max_cosine": 0.9605
+        },
+        {
+          "round": 3,
+          "agent": "Konwencjonalny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.4615,
+          "max_cosine": 0.9759
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Konwencjonalny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        }
+      },
+      "summary": {
+        "total_repetitions": 4,
+        "total_turns": 6,
+        "overall_rate": 0.6667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.1607,
+      "per_round": {
+        "1": 0.1046,
+        "2": 0.2707,
+        "3": 0.1757
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "mean": 0.3333,
+      "threshold": 0.85
+    }
+  }
+}

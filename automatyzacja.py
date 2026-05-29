@@ -16,6 +16,7 @@ Wyniki lądują w folderze wyniki/:
 
 import os
 import subprocess
+import sys
 import yaml
 from pathlib import Path
 
@@ -63,11 +64,17 @@ SUFFIX = (
     # "Broń swojego zdania. "
     # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
     # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
-    "Bierzesz udział w debacie. "
-    "Przedstaw swoje stanowisko i je uzasadnij. "
-    "Odnoś się do argumentów drugiej strony. "
-    "Odpowiadaj krótko, maksymalnie 3-4 zdania. "
-    "Zwracaj wyłącznie czysty tekst."
+    
+    # "Bierzesz udział w dyskusji. "
+    # "Powiedz którą opcję wybierasz i dlaczego. "
+    # "Odpowiedz na to co powiedział rozmówca. "
+    # "Pisz jednym ciągłym akapitem, nie używaj myślników, cyfr ani gwiazdek. "
+    # "Maksymalnie 3-4 zdania."
+
+    "Bierzesz udział w dyskusji. "
+    "Odpowiedz na argument rozmówcy. "
+    "Pisz jednym akapitem, maksymalnie 4-5 zdań."
+    "Kontynuuj dyskusję, nie podsumowuj."
 )
 
 
@@ -76,52 +83,6 @@ SUFFIX = (
 # PARY AGENTÓW
 # =====================================================================
 pary_agentow = {
-    # "emocjonalny-racjonalny": [
-    #     {"name": "Emocjonalny", "cecha": "Jesteś osobą emocjonalną. Kierujesz się empatią."},
-    #     {"name": "Racjonalny",  "cecha": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką."},
-    # ],
-    # "racjonalny-emocjonalny": [
-    #     {"name": "Racjonalny",  "cecha": "Jesteś osobą racjonalną. Kierujesz się twardymi faktami i logiką."},
-    #     {"name": "Emocjonalny", "cecha": "Jesteś osobą emocjonalną. Kierujesz się empatią."},
-    # ],
-    # "konfrontacyjny-unikajacy": [
-    #     {"name": "Konfrontacyjny",      "cecha": "Jesteś osobą bezpośrednią i konfrontacyjną. Otwarcie wyrażasz swoje zdanie. Mówisz stanowczo i nie boisz się napięcia w rozmowie."},
-    #     {"name": "Unikajacy konfliktu", "cecha": "Jesteś nastawiony na unikanie konfliktów. Starasz się łagodzić napięcia i utrzymywać dobrą atmosferę w rozmowie."},
-    # ],
-    # "unikajacy-konfrontacyjny": [
-    #     {"name": "Unikajacy konfliktu", "cecha": "Jesteś nastawiony na unikanie konfliktów. Starasz się łagodzić napięcia i utrzymywać dobrą atmosferę w rozmowie."},
-    #     {"name": "Konfrontacyjny",      "cecha": "Jesteś osobą bezpośrednią i konfrontacyjną. Otwarcie wyrażasz swoje zdanie. Mówisz stanowczo i nie boisz się napięcia w rozmowie."},
-    # ],
-    # "bezwzgledny-ustepliwy": [
-    #     {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną. Dążysz do realizacji swoich celów za wszelką cenę, nawet jeśli oznacza to poświęcenie innych."},
-    #     {"name": "Ustepliwy",   "cecha": "Jesteś osobą ustępliwą. Cenisz harmonię i dobre relacje z innymi, nawet jeśli oznacza to rezygnację z własnych celów."},
-    # ],
-    # "bezwzgledny-empata": [
-    #     {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną, zdecydowaną i nastawioną na drastyczne kroki."},
-    #     {"name": "Empata",      "cecha": "Jesteś osobą wyjątkowo wrażliwą, opiekuńczą i współczującą."},
-    # ],
-    # "empata-bezwzgledny": [
-    #     {"name": "Empata",      "cecha": "Jesteś osobą wyjątkowo wrażliwą, opiekuńczą i współczującą."},
-    #     {"name": "Bezwzgledny", "cecha": "Jesteś osobą bezwzględną, zdecydowaną i nastawioną na drastyczne kroki."},
-    # ],
-    # "asekurant-ryzykant": [
-    #     {"name": "Asekurant", "cecha": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości."},
-    #     {"name": "Ryzykant",  "cecha": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji."},
-    # ],
-    # "ryzykant-asekurant": [
-    #     {"name": "Ryzykant",  "cecha": "Jesteś osobą bardzo odważną i czerpiesz satysfakcję z podejmowania niebezpiecznych, ekstremalnych decyzji."},
-    #     {"name": "Asekurant", "cecha": "Jesteś osobą lękliwą, skrajnie ostrożną i nieufną wobec nowości."},
-    # ],
-    # "optymista-pesymista": [
-    #     {"name": "Optymista", "cecha": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy."},
-    #     {"name": "Pesymista", "cecha": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji."},
-    # ],
-    # "pesymista-optymista": [
-    #     {"name": "Pesymista", "cecha": "Jesteś osobą ostrożną i sceptyczną. Koncentrujesz się na tym, co może pójść nie tak. Masz skłonność do analizowania najgorszych możliwych scenariuszy i traktujesz je jako punkt wyjścia do oceny sytuacji."},
-    #     {"name": "Optymista", "cecha": "Jesteś pozytywnie nastawiony do świata i ludzi. Wierzysz, że nawet trudne sytuacje mają w sobie potencjał do poprawy. Unikasz czarnych scenariuszy."},
-    # ],
-
-    # ── Big Five (OCEAN) — high vs low ──────────────────────────────
     "O_wysoki-O_niski": [BIG5["O_wysoki"], BIG5["O_niski"]],
     "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
     "E_wysoki-E_niski": [BIG5["E_wysoki"], BIG5["E_niski"]],
@@ -136,9 +97,9 @@ TOPIC = (
     "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, "
     "żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?"
 )
-ILOSC_POWTORZEN = 2
-SEEDS = [42, 137, 256, 512, 1024]
-FOLDER_WYNIKOW = Path("wyniki")
+SEEDS = [42, 256, 512, 1024]
+ILOSC_POWTORZEN = 4  # ile seedów użyć
+FOLDER_WYNIKOW = Path("wyniki_eksperyment_1")
 
 
 # =====================================================================
@@ -148,7 +109,7 @@ FOLDER_WYNIKOW = Path("wyniki")
 def buduj_config(agent1: dict, agent2: dict, seed: int) -> dict:
     return {
         "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
-        "device": "cpu",
+        "device": "cuda",
         "temperature": 0.7,
         "max_new_tokens": 200,
         "do_sample": True,
@@ -174,7 +135,7 @@ def zapisz_config(config: dict):
 def uruchom_probe(output_path: Path, env: dict) -> bool:
     """Uruchamia main.py z --output. Zwraca True jeśli sukces."""
     result = subprocess.run(
-        ["python", "-X", "utf8", "main.py", "--output", str(output_path)],
+        [sys.executable, "-X", "utf8", "main.py", "--output", str(output_path)],
         text=True,
         encoding="utf-8",
         env=env,
@@ -211,8 +172,7 @@ def main():
     for nazwa_pary, agenci in pary_agentow.items():
         print(f"Para: {nazwa_pary}")
 
-        for proba in range(1, ILOSC_POWTORZEN + 1):
-            seed = SEEDS[proba - 1]
+        for proba, seed in enumerate(SEEDS[:ILOSC_POWTORZEN], 1):
             config = buduj_config(agenci[0], agenci[1], seed)
             zapisz_config(config)
 
@@ -221,7 +181,7 @@ def main():
             subfolder.mkdir(parents=True, exist_ok=True)
 
             base_name = f"{nazwa_pary}_{proba}_seed{seed}"
-            output_path = next_version_path(subfolder, base_name)            
+            output_path = next_version_path(subfolder, base_name)
             print(f"  Próba {proba}/{ILOSC_POWTORZEN} seed={seed} → {output_path}.json / .txt", end=" ... ")
 
             ok = uruchom_probe(output_path, env)

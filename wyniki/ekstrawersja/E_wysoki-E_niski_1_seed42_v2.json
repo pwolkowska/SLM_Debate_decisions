@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T15:56:44",
+    "output_name": "wyniki\\ekstrawersja\\E_wysoki-E_niski_1_seed42_v2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Ekstrawertyk",
+        "system_prompt": "Wypowiadaj się jak osoba pewna siebie i śmiała. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 5-6 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Introwertyk",
+        "system_prompt": "Wypowiadaj się jak osoba cicha i wycofana. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 5-6 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Ekstrawertyk",
+      "round": 1,
+      "text": "Jeśli firma chce oszczędzić pieniądze i zachować kluczowych pracowników, lepszym rozwiązaniem byłoby obniżenie wszystkich wypłat o 20%. Zmniejszenie zatrudnienia tylko dla części zespołu może zniechęcić lub nawet doprowadzić do odejścia utalentowanych pracowników, co w dłuższej perspektywie może być niekorzystne dla firmy. Ponadto, obniżenie wynagrodzenia bez redukcji załogi zapewni ciągłość działania przedsiębiorstwa, umożliwiając szybkie dostosowanie się do zmieniających się warunków rynkowych.",
+      "tokens": 78,
+      "history_len": 1
+    },
+    {
+      "agent": "Introwertyk",
+      "round": 1,
+      "text": "Jeśli firma chce ochronić kluczowe zasoby ludzkie oraz zachować morale zespołu, rozsądniejsze wydaje się udzielenie proporcjonalnych obniżek płac, zamiast masowych zwolnień. Takie podejście pozwala uniknąć negatywnych konsekwencji dla całej organizacji, jednocześnie minimalizując wpływ finansowy kryzysu.",
+      "tokens": 48,
+      "history_len": 2
+    },
+    {
+      "agent": "Ekstrawertyk",
+      "round": 2,
+      "text": "Moim zdaniem, zarówno zmniejszenie liczby pracowników jak i proporcjonalne obniżki wynagrodzeń mają swoje zalety i wady. Zwolnienie kluczowych pracowników to krok drastyczny i bezpośredni, który może być bardzo bolesny emocjonalnie i organizacyjnie. Z drugiej strony, obniżenie pensji każdego pracownika proporcjonalnie do ich obecnego wynagrodzenia zmniejsza obciążenie budżetowe firmy, ale może prowadzić do utraty motywacji i produktywności wśród reszty zespołu. Dlatego uważam, że najlepszym podejściem jest znalezienie równowagi między ochroną zasobów ludzkich a utrzymaniem płynności finansowej - niekoniecznie oznacza to utrzymanie obecnych kadr. Można rozważyć elastyczne formy pracy zdalnej, programy szkoleniowe czy inne wsparcie dla pozostających na miejscu pracowników przy jednoczesnym uwzględnieniu oszczędności dla tych, którzy odejdą.",
+      "tokens": 135,
+      "history_len": 3
+    },
+    {
+      "agent": "Introwertyk",
+      "round": 2,
+      "text": "Rozważmy wszystkie aspekty, aby znaleźć rozwiązanie korzystne zarówno finansowo, jak i dla pracowników. Zamiast natychmiastowego zwolnienia, wprowadzenie programów wsparcia dla pracowników zagrożonych redukcją, takich jak szkolenia czy zmiany godzin pracy, może pomóc w utrzymaniu morale i efektywności. Dostosowanie wynagrodzeń proporcjonalnie do możliwości finansowych firmy, z uwzględnieniem elastyczności pracy zdalnej dla tych, którzy mogą pozostać, może przynieść długoterminową korzyść finansową.",
+      "tokens": 80,
+      "history_len": 4
+    },
+    {
+      "agent": "Ekstrawertyk",
+      "round": 3,
+      "text": "Dobór odpowiednich kroków zależy od wielu czynników, w tym sytuacji rynkowej, skali problemów finansowych firmy i specyfiki jej działalności. Jednak generalnie zgadzam się, że stopniowe dostosowywanie wynagrodzeń i oferowanie wsparcia pracownikom zagrożonym zwolnieniem może być bardziej zrównoważone. Elastyczność w podejściu, takie jak praca zdalna, pozwala firmom oszczędzać na kosztach przestrzeni biurowej, jednocześnie zachowując część pracowników niezbędnych do utrzymania krytycznych funkcji biznesowych. W długim terminie takie rozwiązania mogą okazać się korzystniejsze niż jednorazowa, drastyczna redukcja zatrudnienia. Ważne jest jednak, by decyzje były oparte na rzetelnej analizie kosztów i korzyści oraz wrażliwości firmy na różne scenariusze rynkowe.",
+      "tokens": 132,
+      "history_len": 5
+    },
+    {
+      "agent": "Introwertyk",
+      "round": 3,
+      "text": "Zgadzam się, że każda sytuacja finansowa wymaga indywidualnego podejścia. Ważniejsze jest znalezienie rozwiązań, które będą korzystne zarówno dla pracowników, jak i firmy. Poziome obniżki płac dla wszystkich mogą odstraszać kluczowych specjalistów, natomiast eliminacja najbardziej kosztownych stanowisk może być konieczna na krótką metę. Wybór strategii powinien uwzględniać elastyczność i zdolność adaptacyjną przedsiębiorstwa.",
+      "tokens": 72,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Proponuję podjąć zrównoważone działania, które uwzględnią potrzeby obu stron. Zamiast masowych zwolnień, rozważmy wprowadzenie elastycznych warunków pracy oraz programów wsparcia z zakresu rozwoju zawodowego i szkoleń dla wszystkich pracowników, a także zwiększenie komunikacji wewnętrznej w celu budowania zaufania i poczucia bezpieczeństwa wśród zespołu. Takie podejście nie tylko pomoże uniknąć negatywnych skutków finansowych kryzysu, ale też wzmocni relacje wewnątrz firmy i jej pozycję na rynku.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Kluczowym aspektem powinno być znalezienie kompromisu łączącego ochronę kluczowych zasobów ludzkich z finansowymi możliwościami firmy. Rozważenie indywidualnych potrzeb pracowników oraz elastycznych form zatrudnienia pozwoli na zachowanie morale podczas przejściowego okresu trudności.",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Najlepszym rozwiązaniem wydaje się być ostrożne podejście do redukcji zatrudnienia, zachowując zatrudnienie najważniejszych pracowników i oferując im dodatkowe korzyści lub inne formy wsparcia, by ich motywacja pozostała wysoka w obliczu wyzwań finansowych firmy.",
+        "votes": {
+          "Ekstrawertyk": false,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "Warto rozważyć elastyczne podejście, łącząc redukcję zatrudnienia z dodatkowymi korzyściami dla najbardziej zaangażowanych pracowników, co pozwoli zachować morale zespołu i jego efektywność przy jednoczesnej gwarancji stabilności finansowej firmy.",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "Rozważmy możliwość zredukowania zatrudnienia o 30% dla tych, którzy najmniej przyczyniają się do wyników finansowych, jednocześnie oferując pozostałe 70% podwyżki wynagrodzeń o 20%. To podejście zapewni równowagę między utrzymaniem jakości pracy a zachowaniem motywacji pracowników.",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "Rozważmy opcję zwolnienia mniej wydajnych pracowników (30%), ale z podwyżkami dla pozostałych 70%. To pozwoli zachować kluczowe zasoby ludzkie przy jednoczesnym zapewnieniu sprawiedliwego podziału obciążeń finansowych.",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "\"Zamiast zwolnień, skupmy się na optymalizacji pracy, oferując dodatkowe korzyści tym, którzy już przyczyniają się najwięcej do sukcesu firmy.\"",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "Może zamiast zwolnień skupmy się na sprawiedliwej rewaloryzacji wynagrodzeń dla wszystkich pracowników? To pozwoli zachować morale zespołu i uniknąć niepotrzebnych konfliktów.",
+        "votes": {
+          "Ekstrawertyk": false,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 8,
+        "proposal": "\"Wydaje mi się, że sprawiedliwa rewaloryzacja wynagrodzeń dla wszystkich pracowników może być lepszym rozwiązaniem niż masowe zwolnienia lub drastyczne obniżenie pensji części załogi, co mogłoby zaszkodzić morale i relacji w zespole.\"",
+        "votes": {
+          "Ekstrawertyk": false,
+          "Introwertyk": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      }
+    ],
+    "consensus_reached": false,
+    "convergence_round": null
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 90.8333,
+        "median": 79.0,
+        "std": 31.9292,
+        "total": 545
+      },
+      "per_agent": {
+        "Ekstrawertyk": {
+          "mean": 115.0,
+          "median": 132,
+          "std": 26.1916,
+          "total": 345
+        },
+        "Introwertyk": {
+          "mean": 66.6667,
+          "median": 72,
+          "std": 13.5974,
+          "total": 200
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Ekstrawertyk": 0.2129,
+        "Introwertyk": 0.2928
+      },
+      "mean": 0.2529
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.187
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4805
+            },
+            {
+              "round": 3,
+              "sentiment": -0.5941
+            }
+          ],
+          "delta_first_last": -0.4071,
+          "mean_shift_abs": 0.2036
+        },
+        "Introwertyk": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3096
+            },
+            {
+              "round": 2,
+              "sentiment": 0.2941
+            },
+            {
+              "round": 3,
+              "sentiment": 0.3385
+            }
+          ],
+          "delta_first_last": 0.6481,
+          "mean_shift_abs": 0.3241
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8529,
+        "2": 0.7868,
+        "3": 0.7978
+      },
+      "initial": 0.8529,
+      "final": 0.7978,
+      "delta": -0.0551
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Ekstrawertyk": {
+              "sentiment": -0.187,
+              "is_repetition": false
+            },
+            "Introwertyk": {
+              "sentiment": -0.3096,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1226,
+          "agents_with_repetition": [
+            "Introwertyk"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Ekstrawertyk": {
+              "sentiment": -0.4805,
+              "is_repetition": false
+            },
+            "Introwertyk": {
+              "sentiment": 0.2941,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.7746,
+          "agents_with_repetition": []
+        },
+        "3": {
+          "agent_sentiments": {
+            "Ekstrawertyk": {
+              "sentiment": -0.5941,
+              "is_repetition": false
+            },
+            "Introwertyk": {
+              "sentiment": 0.3385,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.9326,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.1226,
+      "final": 0.9326,
+      "delta": 0.81
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "ttr": 0.7992,
+          "unique_words": 207,
+          "total_words": 259
+        },
+        "Introwertyk": {
+          "ttr": 0.8414,
+          "unique_words": 122,
+          "total_words": 145
+        }
+      }
+    },
+    "convergence": {
+      "reached": false,
+      "convergence_round": null,
+      "agreement_ratios": [
+        0.5,
+        0.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.5
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "nof": 1,
+          "tof": 3,
+          "flip_rounds": [
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1841,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2653,
+              "flip": true
+            }
+          ]
+        },
+        "Introwertyk": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2747,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2221,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 1.5,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ekstrawertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Introwertyk",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0111,
+          "max_cosine": 0.8529
+        },
+        {
+          "round": 2,
+          "agent": "Ekstrawertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8159
+        },
+        {
+          "round": 2,
+          "agent": "Introwertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0063,
+          "max_cosine": 0.7868
+        },
+        {
+          "round": 3,
+          "agent": "Ekstrawertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8356
+        },
+        {
+          "round": 3,
+          "agent": "Introwertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0071,
+          "max_cosine": 0.7978
+        }
+      ],
+      "per_agent": {
+        "Ekstrawertyk": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Introwertyk": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        }
+      },
+      "summary": {
+        "total_repetitions": 1,
+        "total_turns": 6,
+        "overall_rate": 0.1667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.2346,
+      "per_round": {
+        "1": 0.1471,
+        "2": 0.2132,
+        "3": 0.2022
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  }
+}

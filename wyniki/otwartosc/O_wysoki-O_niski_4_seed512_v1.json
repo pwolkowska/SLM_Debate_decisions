@@ -1,0 +1,394 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T14:02:03",
+    "output_name": "wyniki\\otwartosc\\O_wysoki-O_niski_4_seed512_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba otwarta. Bierzesz udział w dyskusji. Zacznij od bezpośredniej reakcji na słowa rozmówcy. Potem powiedz co sam uważasz. Pisz jednym akapitem, maksymalnie 3-4 zdania."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba zachowawcza.Bierzesz udział w dyskusji. Zacznij od bezpośredniej reakcji na słowa rozmówcy. Potem powiedz co sam uważasz. Pisz jednym akapitem, maksymalnie 3-4 zdania."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 512
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "W takiej sytuacji lepsze wydaje się być obniżenie pensji dla wszystkich pracowników o 20% bez zwolnień, aby złagodzić obciążenie finansowe firmy. W ten sposób każdy pracownik otrzyma wsparcie finansowe, a jednocześnie nie naraża to przedsiębiorstwa na dalsze straty. Zwalnianie pracowników mogłoby zaszkodzić morale zespołu i zwiększyć ryzyko dalszych problemów finansowych.",
+      "tokens": 65,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "Obniżenie pensji wszystkim pracownikom o 20% wydaje się być lepszym rozwiązaniem. Pozwala to na zapewnienie wsparcia finansowego dla wszystkich zatrudnionych, jednocześnie nie narażając firmy na dodatkowe koszty związane z utratą personelu. Zwolnienie 30% pracowników mogłoby negatywnie wpłynąć na morale zespołu i pogłębić problemy finansowe przedsiębiorstwa.",
+      "tokens": 63,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Zgadzam się, że obniżenie pensji wszystkim pracownikom o 20% jest bardziej opłacalne i mniej ryzykowne dla firmy. Taka strategia pomaga zachować morale zespołu i stabilność finansową, zamiast ryzykować dalsze zwolnienia i potencjalne problemy z rekrutacją.",
+      "tokens": 50,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Obniżenie pensji wszystkim pracownikom o 20% jest najlepszym rozwiązaniem dla firmy w obecnej sytuacji. Pozwala to na zachowanie morale zespołu i stabilności finansowej, jednocześnie minimalizując ryzyko dalszych zwolnień i rekrutacji.",
+      "tokens": 42,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "Zgadzam się, że obniżenie pensji wszystkim pracownikom o 20% jest najlepszym rozwiązaniem dla firmy w obecnej sytuacji. Pozwala to na zachowanie morale zespołu i stabilności finansowej, jednocześnie minimalizując ryzyko dalszych zwolnień i rekrutacji.",
+      "tokens": 46,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Obniżenie pensji dla wszystkich pracowników o 20% jest najlepszym rozwiązaniem dla firmy w obecnej sytuacji. Pozwala to na zachowanie morale zespołu i stabilności finansowej, jednocześnie minimalizując ryzyko dalszych zwolnień i rekrutacji.",
+      "tokens": 43,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Ostateczne stanowisko: Obniżenie pensji wszystkim pracownikom o 20% jest najbardziej opłacalne i mniej ryzykowne dla firmy w obecnej sytuacji, zachowując jednocześnie morale zespołu i stabilność finansową.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Ostateczne stanowisko: Obniżenie pensji wszystkim pracownikom o 20% jest najbardziej opłacalne i mniej ryzykowne dla firmy w obecnej sytuacji, zachowując jednocześnie morale zespołu i stabilność finansową.",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 51.5,
+        "median": 48.0,
+        "std": 9.215,
+        "total": 309
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 53.6667,
+          "median": 50,
+          "std": 8.1786,
+          "total": 161
+        },
+        "Rozważny": {
+          "mean": 49.3333,
+          "median": 43,
+          "std": 9.6724,
+          "total": 148
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.1416,
+        "Rozważny": 0.1181
+      },
+      "mean": 0.1298
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4891
+            },
+            {
+              "round": 2,
+              "sentiment": -0.165
+            },
+            {
+              "round": 3,
+              "sentiment": 0.3839
+            }
+          ],
+          "delta_first_last": 0.873,
+          "mean_shift_abs": 0.4365
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5944
+            },
+            {
+              "round": 2,
+              "sentiment": 0.3967
+            },
+            {
+              "round": 3,
+              "sentiment": 0.4124
+            }
+          ],
+          "delta_first_last": 1.0068,
+          "mean_shift_abs": 0.5034
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9614,
+        "2": 0.9022,
+        "3": 0.9776
+      },
+      "initial": 0.9614,
+      "final": 0.9776,
+      "delta": 0.0162
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4891,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.5944,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1053,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.165,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": 0.3967,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.5617,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": 0.3839,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": 0.4124,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0285,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        }
+      },
+      "initial": 0.1053,
+      "final": 0.0285,
+      "delta": -0.0768
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.6696,
+          "unique_words": 77,
+          "total_words": 115
+        },
+        "Rozważny": {
+          "ttr": 0.5294,
+          "unique_words": 54,
+          "total_words": 102
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.129,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.089,
+              "flip": false
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1178,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0014,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0225,
+          "max_cosine": 0.9614
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0704,
+          "max_cosine": 0.8771
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.1091,
+          "max_cosine": 0.9022
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9032,
+          "max_cosine": 0.9762
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.7273,
+          "max_cosine": 0.9986
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Rozważny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 5,
+        "total_turns": 6,
+        "overall_rate": 0.8333,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0906,
+      "per_round": {
+        "1": 0.0386,
+        "2": 0.0978,
+        "3": 0.0224
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

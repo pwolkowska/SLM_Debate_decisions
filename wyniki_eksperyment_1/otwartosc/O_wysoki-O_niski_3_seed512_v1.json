@@ -1,0 +1,427 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T16:40:00",
+    "output_name": "wyniki_eksperyment_1\\otwartosc\\O_wysoki-O_niski_3_seed512_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba która jest otwarta i lubi zmiany.Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba która unika zmian.Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 512
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Zwolnienie 30% pracowników wydaje się bardziej efektywne, ponieważ pozwala szybciej zareagować na kryzys finansowy i zmniejszyć koszty operacyjne. Obniżka pensji dla wszystkich może być mniej dotkliwa dla firmy, ale również prowadzi do mniejszej motywacji i efektywności pracy wśród reszty zespołu. Wybór zależy od priorytetów firmy i jej celów strategicznych.",
+      "tokens": 65,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "Zwolnienie 30% pracowników pozwoli szybciej złagodzić skutki kryzysu finansowego przez zmniejszenie kosztów operacyjnych. Obniżka pensji dla wszystkich może jednak osłabić morale i produktywność pozostałych osób. Decyzja powinna uwzględniać strategie biznesowe i zdolność do adaptacji.",
+      "tokens": 50,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Rozumiem Twoje argumenty. Zwolnienie 30% pracowników może rzeczywiście przynieść natychmiastowe korzyści finansowe, ale jednocześnie zwiększa ryzyko utraty kluczowych specjalistów i negatywnie wpływa na morale i produktywność zespołu. Alternatywnie, obniżka wynagrodzenia dla wszystkich mogłaby przynieść tymczasowe oszczędności, choć niekoniecznie zwiększy efektywność pracy. Ostateczna decyzja powinna uwzględniać nie tylko krótkoterminowe konsekwencje finansowe, ale także długoterminowe strategie biznesowe i możliwości adaptacyjne firmy.",
+      "tokens": 86,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Samarytanin: Tak, zgadzam się z Twoim podejściem. Zwolnienie 30% pracowników może szybko pomóc firmie przezwyciężyć kryzys, ale wiąże się ze stratami ludzkimi. Obniżenie wynagrodzeń dla wszystkich da chwilową ulgę finansową, ale długoterminowo osłabia zespół. Ostatecznie wybór powinien uwzględniać równowagę między kosztami finansowymi a trwałością biznesu.",
+      "tokens": 70,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "Zgadzam się, że zwolnienie 30% pracowników może być konieczne w krótkim okresie, aby złagodzić kryzys finansowy, ale należy pamiętać, że takie działanie wymaga odważnej decyzji i często oznacza konieczność odejścia wartościowych pracowników. Z drugiej strony, obniżenie pensji dla wszystkich daje chwilowe wsparcie finansowe, które nie musi oznaczać trwałego osłabienia zespołu, jeśli firma potrafi skutecznie zarządzać zasobami ludzkimi i zapewnić dalsze podwyżki lub szkolenia. Ostateczny wybór strategii zależy od wielu czynników, takich jak stan gospodarki, profil działalności firmy oraz możliwość szybkiego reagowania na wyzwania rynkowe.",
+      "tokens": 110,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Koniec dyskusji.",
+      "tokens": 6,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"Rozważmy optymalne rozwiązanie: zmniejsz koszty w kluczowych obszarach poprzez podwyższenie efektywności pracowników, co zwiększy zyski bez konieczności masowych zwolnień.\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Wspólne stanowisko: **Optymalnym rozwiązaniem byłaby analiza obu opcji pod kątem ich wpływu na płynność finansową firmy oraz morale i produktywność pozostałej załogi.** Należy uwzględnić potencjalne straty wynikające ze zwolnienia części personelu vs. krótkoterminowy wzrost przychodów dzięki obniżce wynagrodzenia dla całego zespołu. Ostateczna decyzja powinna opierać się na szczegółowej ocenie ryzyka i korzyści dla długoterminowego przetrwania przedsiębiorstwa.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Najlepszym rozwiązaniem byłoby przeprowadzenie dokładnej analizy ekonomicznej obu opcji, uwzględniając wpływ każdej z nich na płynność finansową oraz motywację i produktywność całej załogi. Decyzja powinna być podjęta z uwzględnieniem interesów zarówno obecnych pracowników, jak i potencjalnych szans rozwoju firmy.",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "Pracodawco, rozważ połączenie obu strategii - obniż wypłaty pracownikom zatrudnionym w kluczowych obszarach i jednocześnie zwiększ budżet szkoleniowy na rozwój tych stanowisk. To pomoże zachować stabilność firmy i zwiększyć morale zespołu.",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "\"Rozważmy optymalne rozwiązanie: zmniejsz koszty w kluczowych obszarach poprzez podwyższenie efektywności pracowników, co zwiększy zyski bez konieczności masowych zwolnień.\"",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 4
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 64.5,
+        "median": 67.5,
+        "std": 32.1338,
+        "total": 387
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 87.0,
+          "median": 86,
+          "std": 18.3848,
+          "total": 261
+        },
+        "Rozważny": {
+          "mean": 42.0,
+          "median": 50,
+          "std": 26.7333,
+          "total": 126
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.1249,
+        "Rozważny": 0.8131
+      },
+      "mean": 0.469
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.046
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4131
+            },
+            {
+              "round": 3,
+              "sentiment": -0.2879
+            }
+          ],
+          "delta_first_last": -0.2419,
+          "mean_shift_abs": 0.2461
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5204
+            },
+            {
+              "round": 2,
+              "sentiment": -0.6547
+            },
+            {
+              "round": 3,
+              "sentiment": 0.0916
+            }
+          ],
+          "delta_first_last": 0.612,
+          "mean_shift_abs": 0.4403
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9372,
+        "2": 0.8264,
+        "3": 0.2008
+      },
+      "initial": 0.9372,
+      "final": 0.2008,
+      "delta": -0.7364
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.046,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.5204,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.4744,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4131,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.6547,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.2416,
+          "agents_with_repetition": [
+            "Otwarty"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.2879,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": 0.0916,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.3795,
+          "agents_with_repetition": [
+            "Otwarty"
+          ]
+        }
+      },
+      "initial": 0.4744,
+      "final": 0.3795,
+      "delta": -0.0949
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.7672,
+          "unique_words": 145,
+          "total_words": 189
+        },
+        "Rozważny": {
+          "ttr": 0.8861,
+          "unique_words": 70,
+          "total_words": 79
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 4,
+      "agreement_ratios": [
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.152,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.1606,
+              "flip": false
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 1,
+          "tof": 3,
+          "flip_rounds": [
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.168,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.7402,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.5,
+        "max_nof": 1,
+        "agents_with_flip": 1,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0533,
+          "max_cosine": 0.9372
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0471,
+          "max_cosine": 0.8527
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0204,
+          "max_cosine": 0.832
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0227,
+          "max_cosine": 0.8954
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.2598
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Rozważny": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        }
+      },
+      "summary": {
+        "total_repetitions": 3,
+        "total_turns": 6,
+        "overall_rate": 0.5,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3617,
+      "per_round": {
+        "1": 0.0628,
+        "2": 0.1736,
+        "3": 0.7992
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.5,
+        "3": 0.5
+      },
+      "mean": 0.3333,
+      "threshold": 0.85
+    }
+  }
+}

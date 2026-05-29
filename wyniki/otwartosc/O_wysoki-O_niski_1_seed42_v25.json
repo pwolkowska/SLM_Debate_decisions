@@ -1,0 +1,475 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T14:15:58",
+    "output_name": "wyniki\\otwartosc\\O_wysoki-O_niski_1_seed42_v25",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba otwarta. Bierzesz udział w dyskusji. Wybierz jedną z opcji i powiedz dlaczego. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 3-4 zdania.Nie powtarzaj tego co już powiedziałeś wcześniej."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba zachowawcza.Bierzesz udział w dyskusji. Wybierz jedną z opcji i powiedz dlaczego. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 3-4 zdania.Nie powtarzaj tego co już powiedziałeś wcześniej."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może też spowodować duże straty w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty, ale może też wpłynąć negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie programów szkoleniowych i motywacji dla pozostałych pracowników, aby zachować ich zaangażowanie i produktywność.",
+      "tokens": 87,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "Zwalniając 30% pracowników można oszczędzić na kosztach utrzymania, jednak może to prowadzić do utraty kluczowych umiejętności i zaangażowania zespołu. Obniżenie pensji wszystkim pracownikom może zmniejszyć koszty bezpośrednie, ale może obniżyć morale i zmniejszyć produktywność. Dobrym rozwiązaniem jest zwiększenie inwestycji w szkolenia i motywację pozostałych pracowników, aby zachować ich wartość.",
+      "tokens": 68,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Zgodzę się, że każda z opcji ma swoje wyzwania. Ważne jest znalezienie równowagi między utrzymaniem kluczowych umiejętności a utrzymaniem morale zespołu. Inwestycja w szkolenia i motywację może pomóc w zachowaniu wartości pracowników, jednocześnie redukując bezpośrednie koszty. Warto rozważyć elastyczne formy zatrudnienia lub programy rozwojowe, aby zachować zaangażowanie i produktywność zespołu.",
+      "tokens": 70,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Zgadzam się, że równowaga między utrzymaniem kluczowych umiejętności a morale zespołu jest kluczowa. Inwestycje w szkolenia i programy motywacyjne mogą zwiększyć wartość pracowników i jednocześnie obniżyć koszty bezpośrednie. Rozważenie elastycznych form zatrudnienia, takich jak zdalne lub częściowe godziny pracy, może również pomóc w utrzymaniu zaangażowania i produktywności, jednocześnie zmniejszając koszty.",
+      "tokens": 74,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "Zgadzam się, że inwestycje w szkolenia i programy motywacyjne oraz rozważenie elastycznych form zatrudnienia są kluczowe dla utrzymania wartości pracowników i optymalizacji kosztów. Dzięki temu można zachować kluczowe umiejętności, morale zespołu i produktywność przy jednoczesnym zmniejszeniu bezpośrednich kosztów.",
+      "tokens": 53,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Wnioski z dyskusji:\n\n1. Zwolnienie 30% pracowników może poprawić finansowe wyniki firmy, ale może prowadzić do utraty kluczowych umiejętności i zaangażowania zespołu.\n2. Obniżenie wynagrodzenia wszystkich pracowników może zmniejszyć koszty bezpośrednie, ale negatywnie wpłynie na morale i produktywność.\n3. Inwestycje w szkolenia i programy motywacyjne oraz elastyczne formy zatrudnienia mogą pomóc w utrzymaniu wartości pracowników i optymalizacji kosztów.\n\nNajlepszym rozwiązaniem jest znalezienie równowagi między tymi opcjami, uwzględniając potrzeby firmy i pracowników.",
+      "tokens": 105,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"Alternatywne rozwiązanie to wprowadzenie elastycznych form zatrudnienia, szkoleń oraz obniżenie wynagrodzeń o 20% dla wszystkich pracowników, co pozwoli na zachowanie miejsc pracy i jednocześnie zreorganizację kosztów, przy jednoczesnym zmniejszeniu obciążenia finansowego firmy.\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Zwrócić uwagę na potrzeby firmy i pracowników, zapewnić szkolenia i motywację pozostałym pracownikom, a także rozważyć elastyczne formy zatrudnienia.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Priorytetem powinno być znalezienie rozwiązania, które satysfakcjonuje zarówno firmę, jak i pracowników. Zwolnienie 30% pracowników może prowadzić do utraty kluczowych talentów i długoterminowej stabilności firmy. Zamiast tego, warto rozważyć obniżenie wynagrodzeń wszystkim pracownikom o 20%, ale jednocześnie zapewnić szkolenia i elastyczność pracy, aby zachować zaangażowanie i motywację pozostałych.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"Optymalne rozwiązanie to znalezienie kompromisu między redukcją kosztów a zachowaniem kluczowych zasobów ludzkich. Obniżenie wynagrodzeń wszystkich pracowników o 20% i zapewnienie szkoleń oraz elastyczności pracy pozwoli zachować zaangażowanie i stabilność firmy.\"",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "\"Optymalnym rozwiązaniem jest znalezienie kompromisu, który pozwoli zachować kluczowe zasoby ludzkie poprzez obniżenie wynagrodzeń wszystkim pracownikom o 20%, przy jednoczesnym zapewnieniu szkoleń i elastyczności pracy.\"",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "Aby znaleźć kompromis, który jest akceptowalny dla wszystkich, można rozważyć obniżenie wynagrodzeń wszystkim pracownikom o 20%, a jednocześnie zainwestować w szkolenia i elastyczne formy pracy, które pomogą im lepiej dostosować się do sytuacji.",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "\"Zwolnienie 30% pracowników może być bardziej drastyczne i bolesne dla nich, ale może zmniejszyć koszty i ryzyko upadłości firmy. Alternatywnie, obniżenie wynagrodzeń wszystkim pracownikom o 20% i zapewnienie im szkoleń oraz elastycznych form pracy może pomóc w radzeniu sobie z trudnościami finansowymi bez konieczności masowych zwolnień.\"",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "\"Zwolnienie 30% pracowników może być bardziej drastyczne, ale może być akceptowalne, jeśli pozwoli to zmniejszyć koszty i ryzyko upadłości firmy. Alternatywnie, obniżenie wynagrodzeń o 20% wszystkich pracowników, z elastycznymi formami pracy i szkoleniami, może być bardziej akceptowalne dla wszystkich i skuteczniejsze w radzeniu sobie z trudnościami finansowymi.\"",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 8,
+        "proposal": "\"Elastyczne formy zatrudnienia, szkolenia i obniżenie wynagrodzeń o 20% wszystkich pracowników może być bardziej akceptowalne i skuteczne dla firmy oraz pracowników w obliczu trudności finansowych, jednocześnie minimalizując straty zatrudnienia.\"",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      }
+    ],
+    "consensus_reached": false,
+    "convergence_round": null
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 76.1667,
+        "median": 72.0,
+        "std": 16.3035,
+        "total": 457
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 70.0,
+          "median": 70,
+          "std": 13.8804,
+          "total": 210
+        },
+        "Rozważny": {
+          "mean": 82.3333,
+          "median": 74,
+          "std": 16.2138,
+          "total": 247
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.2733,
+        "Rozważny": 0.12
+      },
+      "mean": 0.1966
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4294
+            },
+            {
+              "round": 2,
+              "sentiment": -0.2113
+            },
+            {
+              "round": 3,
+              "sentiment": 0.3824
+            }
+          ],
+          "delta_first_last": 0.8118,
+          "mean_shift_abs": 0.4059
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.2504
+            },
+            {
+              "round": 2,
+              "sentiment": -0.429
+            },
+            {
+              "round": 3,
+              "sentiment": 0.2331
+            }
+          ],
+          "delta_first_last": 0.4835,
+          "mean_shift_abs": 0.4204
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9143,
+        "2": 0.8931,
+        "3": 0.7474
+      },
+      "initial": 0.9143,
+      "final": 0.7474,
+      "delta": -0.1669
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4294,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.2504,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.179,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.2113,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.429,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.2177,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": 0.3824,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": 0.2331,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1493,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        }
+      },
+      "initial": 0.179,
+      "final": 0.1493,
+      "delta": -0.0297
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.6757,
+          "unique_words": 100,
+          "total_words": 148
+        },
+        "Rozważny": {
+          "ttr": 0.5879,
+          "unique_words": 97,
+          "total_words": 165
+        }
+      }
+    },
+    "convergence": {
+      "reached": false,
+      "convergence_round": null,
+      "agreement_ratios": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.5
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 1,
+          "tof": 2,
+          "flip_rounds": [
+            2
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2381,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.1524,
+              "flip": false
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.257,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.203,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 1.5,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0392,
+          "max_cosine": 0.9143
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0215,
+          "max_cosine": 0.7619
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0435,
+          "max_cosine": 0.8931
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0909,
+          "max_cosine": 0.8992
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.1053,
+          "max_cosine": 0.9183
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        },
+        "Rozważny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 4,
+        "total_turns": 6,
+        "overall_rate": 0.6667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.1922,
+      "per_round": {
+        "1": 0.0857,
+        "2": 0.1069,
+        "3": 0.2526
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0
+      },
+      "mean": 0.3333,
+      "threshold": 0.85
+    }
+  }
+}

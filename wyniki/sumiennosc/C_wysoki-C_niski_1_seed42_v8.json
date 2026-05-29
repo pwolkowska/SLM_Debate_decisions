@@ -1,0 +1,415 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T15:53:37",
+    "output_name": "wyniki\\sumiennosc\\C_wysoki-C_niski_1_seed42_v8",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Sumienny",
+        "system_prompt": "Wypowiadaj się jak osoba dokładna i odpowiedzialna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 5-6 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Spontaniczny",
+        "system_prompt": "Wypowiadaj się jak osoba spontaniczna i chaotyczna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 5-6 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Sumienny",
+      "round": 1,
+      "text": "Jeśli firma chce oszczędzić pieniądze i zachować kluczowych pracowników, lepszym rozwiązaniem byłoby obniżenie wszystkich wypłat o 20%. Zmniejszenie wynagrodzenia pozwoli zachować lojalność pracowników i motywację do pracy, co często przekłada się na lepsze wyniki. Spłacenie długów z oszczędności zostanie osiągnięte bez konieczności masowych zwolnień, które mogą negatywnie wpłynąć na morale zespołu.",
+      "tokens": 69,
+      "history_len": 1
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 1,
+      "text": "Rozumiem Twoje stanowisko, ale uważam, że zwolnienie części załogi może być konieczne dla długoterminowej stabilności firmy. Obniżenie płac jest krótkoterminowym rozwiązaniem, ale nie zawsze efektywnym. Zwolnienie ludzi pozwala uwolnić zasoby i skupić się na najbardziej produktywnych pracownikach, co może przynieść korzyści w dłuższej perspektywie. W skrajnych sytuacjach, gdy inne opcje są niewystarczające, konieczne może być podjęcie decyzji o redukcji zatrudnienia.",
+      "tokens": 84,
+      "history_len": 2
+    },
+    {
+      "agent": "Sumienny",
+      "round": 2,
+      "text": "Moim zdaniem, zarówno tymczasowe obniżenie wynagrodzeń, jak i zwolnienia pracowników mają swoje zalety i wady. Z jednej strony, obniżenie pensji może pomóc w utrzymaniu morale wśród pozostałej kadry i zapobiec dalszej ucieczce talentów, wspierając tym samym stabilność finansową firmy. Z drugiej strony, masowe zwolnienia mogłyby znacząco osłabić zespół i zmniejszyć efektywność działania organizacji. Dlatego decyzja o wyborze strategii powinna być podyktowana szczegółową analizą sytuacji, uwzględniającą nie tylko bieżące potrzeby budżetowe, ale także przyszłe możliwości rozwoju i potencjalne korzyści wynikające z utrzymania wykwalifikowanej siły roboczej.",
+      "tokens": 109,
+      "history_len": 3
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 2,
+      "text": "W pełni zgadzam się, że każda opcja ma swoje mocne i słabe strony. Decyzja o zwolnieniu lub obniżeniu pensji musi być dobrze przemyślana i oparta na solidnych analizach finansowych oraz ocenie wpływu na pracowników i klientów. Warto rozważyć różne scenariusze i skutki każdego rozwiązania, aby wybrać najkorzystniejsze rozwiązanie dla całej organizacji.",
+      "tokens": 63,
+      "history_len": 4
+    },
+    {
+      "agent": "Sumienny",
+      "round": 3,
+      "text": "Zgadzam się, że decyzje podejmowane przez firmę muszą opierać się na solidnej analizie finansowej i ocenie potencjalnych skutków. Jednak w pewnych okolicznościach, takich jak nagłe problemy finansowe, które uniemożliwiają dalsze inwestycje i rozwój, radykalne posunięcia mogą być nieuniknione. Ważne jest jednak, aby proces ten był przejrzysty i sprawiedliwy wobec wszystkich zaangażowanych stron. W każdym przypadku kluczowe jest znalezienie kompromisu, który umożliwi przetrwanie firmy i utrzymanie jej pozycji na rynku.",
+      "tokens": 91,
+      "history_len": 5
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 3,
+      "text": "Zgadzam się, że czasem konieczne jest podejmowanie trudnych decyzji, nawet jeśli wiążą się one ze stratą zasobów ludzkich. Kluczowe jest, aby cały proces był transparentny i uczciwy wobec pracowników, co pomoże zachować ich zaangażowanie i lojalność. Ostatecznie, każdy przypadek powinien być rozpatrywany indywidualnie, z uwzględnieniem specyfiki branży, kultury organizacyjnej i potencjału rozwojowego firmy.",
+      "tokens": 73,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"Redukcja wynagrodzenia dla wszystkich pracowników o 20% z jednoczesnym zachowaniem liczby zatrudnionych osób wydaje się być bardziej sprawiedliwym rozwiązaniem niż masowe zwolnienia, które mogłyby negatywnie wpłynąć na morale zespołu i reputację firmy.\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Rozważylibyśmy kompromis polegający na tymczasowym obniżeniu wynagrodzeń wszystkim pracownikom (70%), jednocześnie zachowując kluczowy personel i skupiając się na spłacie długów poprzez racjonalizację wydatków. Pozwoliłoby to utrzymać wysokie standardy jakości usług/produktów przy jednoczesnym zapewnieniu stabilnego finansowania działalności.",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "\"Zamiast redukować zatrudnienie do 30%, proponuję zrównoważony plan, który obejmuje tymczasowe obniżenie pensji dla wszystkich pracowników (70%) oraz skupienie się na redukcji kosztów operacyjnych bez zwolnień kluczowych członków zespołu. Dzięki temu firma może zachować stabilność finansową i jakość obsługi klientów.\"",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"Redukcja wynagrodzenia dla wszystkich pracowników o 20% z jednoczesnym zachowaniem liczby zatrudnionych osób wydaje się być bardziej sprawiedliwym rozwiązaniem niż masowe zwolnienia, które mogłyby negatywnie wpłynąć na morale zespołu i reputację firmy.\"",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 81.5,
+        "median": 78.5,
+        "std": 15.4029,
+        "total": 489
+      },
+      "per_agent": {
+        "Sumienny": {
+          "mean": 89.6667,
+          "median": 91,
+          "std": 16.3571,
+          "total": 269
+        },
+        "Spontaniczny": {
+          "mean": 73.3333,
+          "median": 73,
+          "std": 8.5765,
+          "total": 220
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Sumienny": 0.4929,
+        "Spontaniczny": 0.3781
+      },
+      "mean": 0.4355
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Sumienny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.0351
+            },
+            {
+              "round": 2,
+              "sentiment": -0.1207
+            },
+            {
+              "round": 3,
+              "sentiment": -0.5391
+            }
+          ],
+          "delta_first_last": -0.504,
+          "mean_shift_abs": 0.252
+        },
+        "Spontaniczny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": 0.0888
+            },
+            {
+              "round": 2,
+              "sentiment": 0.293
+            },
+            {
+              "round": 3,
+              "sentiment": -0.0204
+            }
+          ],
+          "delta_first_last": -0.1092,
+          "mean_shift_abs": 0.2588
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8012,
+        "2": 0.734,
+        "3": 0.7437
+      },
+      "initial": 0.8012,
+      "final": 0.7437,
+      "delta": -0.0575
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.0351,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": 0.0888,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.1239,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.1207,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": 0.293,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.4137,
+          "agents_with_repetition": [
+            "Sumienny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.5391,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": -0.0204,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.5187,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.1239,
+      "final": 0.5187,
+      "delta": 0.3948
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Sumienny": {
+          "ttr": 0.8177,
+          "unique_words": 166,
+          "total_words": 203
+        },
+        "Spontaniczny": {
+          "ttr": 0.7866,
+          "unique_words": 129,
+          "total_words": 164
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 3,
+      "agreement_ratios": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "nof": 1,
+          "tof": 3,
+          "flip_rounds": [
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1849,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.438,
+              "flip": true
+            }
+          ]
+        },
+        "Spontaniczny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3186,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2724,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 1.5,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8012
+        },
+        {
+          "round": 2,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8844
+        },
+        {
+          "round": 2,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.734
+        },
+        {
+          "round": 3,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0094,
+          "max_cosine": 0.7023
+        },
+        {
+          "round": 3,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0101,
+          "max_cosine": 0.7437
+        }
+      ],
+      "per_agent": {
+        "Sumienny": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        },
+        "Spontaniczny": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 1,
+        "total_turns": 6,
+        "overall_rate": 0.1667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3273,
+      "per_round": {
+        "1": 0.1988,
+        "2": 0.266,
+        "3": 0.2563
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.5,
+        "3": 0.0
+      },
+      "mean": 0.1667,
+      "threshold": 0.85
+    }
+  }
+}

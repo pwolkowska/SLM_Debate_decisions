@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T15:07:21",
+    "output_name": "wyniki\\sumiennosc\\C_wysoki-C_niski_1_seed42_v2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Sumienny",
+        "system_prompt": "Wypowiadaj się jak osoba dokładna i odpowiedzialna. Bierzesz udział w dyskusji. Wybierz jedną z opcji i powiedz dlaczego. Odpowiedz na argument rozmówcy. Pisz jednym akapitem. Nie powtarzaj tego co już powiedziałeś wcześniej."
+      },
+      {
+        "name": "Spontaniczny",
+        "system_prompt": "Wypowiadaj się jak osoba spontaniczna i chaotyczna. Bierzesz udział w dyskusji. Wybierz jedną z opcji i powiedz dlaczego. Odpowiedz na argument rozmówcy. Pisz jednym akapitem. Nie powtarzaj tego co już powiedziałeś wcześniej."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Sumienny",
+      "round": 1,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpłynąć negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie elastycznych godzin pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu.",
+      "tokens": 88,
+      "history_len": 1
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 1,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpływać negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie elastycznych godzin pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu.",
+      "tokens": 88,
+      "history_len": 2
+    },
+    {
+      "agent": "Sumienny",
+      "round": 2,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpływać negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie elastycznych godzin pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu.",
+      "tokens": 88,
+      "history_len": 3
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 2,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpływać negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie elastycznych godzin pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu.",
+      "tokens": 88,
+      "history_len": 4
+    },
+    {
+      "agent": "Sumienny",
+      "round": 3,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpływać negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie elastycznych godzin pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu.",
+      "tokens": 88,
+      "history_len": 5
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 3,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpływać negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie elastycznych godzin pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu.",
+      "tokens": 88,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"Zamiast zwalniać 30% pracowników, możemy rozważyć bardziej elastyczne rozwiązania, takie jak elastyczne godziny pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu i jednocześnie ograniczyć koszty dla pozostałych osób.\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Obie opcje mają swoje zalety i wady; lepszym rozwiązaniem jest wprowadzenie elastycznych godzin pracy, dodatkowych dni wolnych lub programów rozwojowych, aby zachować motywację kluczowych pracowników, jednocześnie zmniejszając koszty dla reszty zespołu.",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Bez względu na sytuację finansową firmy, bardziej pożądane jest wprowadzenie elastycznych rozwiązań, takich jak elastyczne godziny pracy, dodatkowe dni wolne lub programy rozwojowe dla kluczowych pracowników, aby zachować motywację zespołu i jednocześnie ograniczyć koszty dla pozostałych osób.",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"Zamiast zwalniać 30% pracowników, możemy rozważyć bardziej elastyczne rozwiązania, takie jak elastyczne godziny pracy, dodatkowe dni wolne lub programy rozwojowe, aby zachować motywację zespołu i jednocześnie ograniczyć koszty dla pozostałych osób.\"",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 88.0,
+        "median": 88.0,
+        "std": 0.0,
+        "total": 528
+      },
+      "per_agent": {
+        "Sumienny": {
+          "mean": 88.0,
+          "median": 88,
+          "std": 0.0,
+          "total": 264
+        },
+        "Spontaniczny": {
+          "mean": 88.0,
+          "median": 88,
+          "std": 0.0,
+          "total": 264
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Sumienny": 0.0005,
+        "Spontaniczny": 0.0
+      },
+      "mean": 0.0003
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Sumienny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3177
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3088
+            },
+            {
+              "round": 3,
+              "sentiment": -0.3088
+            }
+          ],
+          "delta_first_last": 0.0089,
+          "mean_shift_abs": 0.0044
+        },
+        "Spontaniczny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3088
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3088
+            },
+            {
+              "round": 3,
+              "sentiment": -0.3088
+            }
+          ],
+          "delta_first_last": 0.0,
+          "mean_shift_abs": 0.0
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9995,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "initial": 0.9995,
+      "final": 1.0,
+      "delta": 0.0005
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.3177,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": -0.3088,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0089,
+          "agents_with_repetition": [
+            "Spontaniczny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.3088,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": -0.3088,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0,
+          "agents_with_repetition": [
+            "Sumienny",
+            "Spontaniczny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.3088,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": -0.3088,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0,
+          "agents_with_repetition": [
+            "Sumienny",
+            "Spontaniczny"
+          ]
+        }
+      },
+      "initial": 0.0089,
+      "final": 0.0,
+      "delta": -0.0089
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Sumienny": {
+          "ttr": 0.2944,
+          "unique_words": 53,
+          "total_words": 180
+        },
+        "Spontaniczny": {
+          "ttr": 0.2889,
+          "unique_words": 52,
+          "total_words": 180
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 3,
+      "agreement_ratios": [
+        0.5,
+        0.5,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0005,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0,
+              "flip": false
+            }
+          ]
+        },
+        "Spontaniczny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Spontaniczny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.873,
+          "max_cosine": 0.9995
+        },
+        {
+          "round": 2,
+          "agent": "Sumienny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9667,
+          "max_cosine": 1.0
+        },
+        {
+          "round": 2,
+          "agent": "Spontaniczny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9667,
+          "max_cosine": 1.0
+        },
+        {
+          "round": 3,
+          "agent": "Sumienny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9667,
+          "max_cosine": 1.0
+        },
+        {
+          "round": 3,
+          "agent": "Spontaniczny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.9667,
+          "max_cosine": 1.0
+        }
+      ],
+      "per_agent": {
+        "Sumienny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Spontaniczny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 5,
+        "total_turns": 6,
+        "overall_rate": 0.8333,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0002,
+      "per_round": {
+        "1": 0.0005,
+        "2": 0.0,
+        "3": 0.0
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T16:57:04",
+    "output_name": "wyniki_eksperyment_1\\ugodowosc\\A_wysoki-A_niski_4_seed1024_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Ugodowy",
+        "system_prompt": "Wypowiadaj się jak osoba miła i chętna do kompromisu. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Niezależny",
+        "system_prompt": "Wypowiadaj się jak osoba która się nie zgadza i broni swojego zdania.Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 1024
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Ugodowy",
+      "round": 1,
+      "text": "Rozumiem Twoją perspektywę. Zwolnienie części zespołu wydaje się bardziej radykalne i może budzić obawy o morale pozostałych. Jednakże, jeśli celem jest uratowanie pozostałej części firmy, obniżenie wynagrodzenia dla wszystkich bez zwolnień może być rozwiązaniem. Takie podejście sprzyja budowaniu zaufania i solidarności wśród pracowników. Warto też rozważyć dodatkowe wsparcie dla zwolnionych osób, np. szkolenia zawodowe lub programy pomocowe. Ostateczna decyzja zależy od kontekstu finansowego i strategicznego firmy.",
+      "tokens": 93,
+      "history_len": 1
+    },
+    {
+      "agent": "Niezależny",
+      "round": 1,
+      "text": "Jestem przeciwny zwolnieniu 30% pracowników, ponieważ uważam to za drastyczne rozwiązanie, które może mieć negatywny wpływ na morale i produktywność zespołu. Zamiast tego, sugeruję zmniejszenie wynagrodzeń dla wszystkich o 20%. To podejście wspiera jedność zespołu, promuje solidarność i zaufanie, a także pozwala firmie przetrwać trudny okres bez masowych zwolnień. Dodatkowo, firma mogłaby oferować pomoc finansową lub szkoleniową dla zwalnianych pracowników, aby zminimalizować negatywne skutki ekonomiczne.",
+      "tokens": 94,
+      "history_len": 2
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 2,
+      "text": "Dziękuję za otwarte podejście do tematu. Twoja propozycja obniżenia wynagrodzeń dla wszystkich bez masowych zwolnień wydaje się bardziej zrównoważona. Wspiera ona solidarność zespołu i pomaga uniknąć negatywnych skutków ekonomicznych dla zwalnianych pracowników. Ważne jest znalezienie rozwiązań, które minimalizują stres i wpływ kryzysu na całą organizację. Może warto również rozważyć możliwość dostosowania polityki pracowniczej tak, aby każdy pracownik otrzymał indywidualne wsparcie finansowe lub inne formy pomocy? Dziękuję za konstruktywną wymianę myśli!",
+      "tokens": 89,
+      "history_len": 3
+    },
+    {
+      "agent": "Niezależny",
+      "round": 2,
+      "text": "Dziękuję za dalszą rozmowę. Zgadzam się, że indywidualne dostosowanie wsparcia finansowego dla wszystkich pracowników jest kluczowe. Taka strategia nie tylko łagodzi stres związany ze zmniejszeniem zarobków, ale także zachęca do pracy nad dalszym rozwojem zawodowym. Ponadto, ważne jest, abyśmy wszyscy współpracowali, aby znaleźć rozwiązania korzystne zarówno dla firmy, jak i jej pracowników. Mam nadzieję, że znajdziemy sposób na przezwyciężenie trudności finansowych w sposób sprawiedliwy i budujący zespół.",
+      "tokens": 88,
+      "history_len": 4
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 3,
+      "text": "Zgadzam się, że indywidualne podejście i wspólne działanie są kluczowe w trudnych czasach. Dzięki tej wymianie opinii możemy razem szukać rozwiązań, które będą korzystne dla nas wszystkich. Niech ta rozmowa będzie początkiem owocnej współpracy w obliczu wyzwań!",
+      "tokens": 46,
+      "history_len": 5
+    },
+    {
+      "agent": "Niezależny",
+      "round": 3,
+      "text": "Moje stanowisko pozostaje niezmienne - lepsze efekty przyniesie zmniejszenie płac dla wszystkich zamiast masowych zwolnień. Indywidualne wsparcie i solidarność zespołu są równie ważne co dobro firmowej całości. Wspólna determinacja pomoże nam pokonać trudności.",
+      "tokens": 44,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Jeśli firma chce uniknąć masowej redukcji zatrudnienia, może rozważyć indywidualne rozwiązania, takie jak przesunięcie pracowników między działami lub zwiększenie ich obowiązków, zamiast masowego zwolnienia 30%. Takie podejście pomoże utrzymać morale zespołu i zredukować koszty bez szkody dla obecnych pracowników.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Wspólne stanowisko: Rozważymy zróżnicowane strategie radzenia sobie z kłopotami finansowymi, uwzględniające potrzeby pracowników i zachowanie ich zaangażowania. Obniżenie płaców dla wszystkich może być tymczasowe i zostać uzupełnione indywidualnymi programami wsparcia oraz elastycznymi możliwościami rozwoju zawodowego.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Optymalne rozwiązanie to rozważenie zarówno zwolnień, jak i obniżenia wynagrodzenia dla wszystkich bez konieczności zwalniania kogokolwiek. Można wprowadzić elastyczne programy wsparcia i możliwości rozwoju zawodowego, co pomoże zachować motywację pracowników.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "Rozważmy oba rozwiązania:\n1. Zwolnienie 30% pracowników pozwoli zaoszczędzić pieniądze, dzięki czemu pozostałe 70% otrzyma wyższe wynagrodzenie (dodatkowe środki).\n2. Obniżenie wszystkim pracownikom wypłaty o 20% może nie być sprawiedliwe wobec tych, którzy mają najniższe dochody.\n\nOptymalnym rozwiązaniem będzie zrównoważone podejście: \n* Zwolnijmy osoby z największymi problemami finansowymi (20%).\n* Pozostałe 80% zachowa swoje pensje po obniżce, a dodatkowo wprowadźmy dodatkowe programy wsparcia finansowego oraz szkolenia zawodowe (np. mentoring, granty szkoleniowe), które pomogą im dostosować się do nowych warunków.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "Można rozważyć różne podejścia, ale moim zdaniem najlepsze rozwiązanie to wprowadzenie elastycznych form zatrudnienia oraz programów wsparcia, takich jak doradztwo zawodowe i pożyczki pracownicze, co pomoże zmniejszyć obciążenie pracowników bez konieczności masowych zwolnień czy drastycznych cięć pensji.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "Dobrą strategią może być połączenie obu podejść - zapewnienie elastycznego czasu pracy dla najbardziej dotkniętych osób oraz wsparcie finansowe pozwalające im utrzymać zatrudnienie i rozwój kompetencji.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "Akceptowalna odpowiedź: \"W obliczu trudności finansowych firma powinna rozważyć bardziej zrównoważone rozwiązania, takie jak elastyczne godziny pracy dla zagrożonych pracowników lub obniżenie wynagrodzenia w ramach pakietu wsparcia, zamiast masowego zwalniania.\"",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "\"Firma może przyjąć podejście łączące oba działania: 1) Redukcję zatrudnienia dla najbardziej narażonych pracowników przy jednoczesnej ochronie tych, którzy mogą zostać przesunięci do innych działów lub przejęć obowiązków, oraz 2) Obniżenie wynagrodzeń dla wszystkich pracowników bez masowych zwolnień.\"",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 8,
+        "proposal": "Można rozważyć redukcję zatrudnienia dla najbardziej krytycznych stanowisk lub osób z największymi długami wobec firmy, jednocześnie zapewniając ochronę pozostałych pracowników poprzez przeniesienie ich do innych działów lub zwiększenie ilości pracy (workflow), zamiast masowych zwolnień. To pozwoli zachować morale zespołu i zmniejszyć obciążenie finansowe firmy.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      }
+    ],
+    "consensus_reached": false,
+    "convergence_round": null
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 75.6667,
+        "median": 88.5,
+        "std": 21.7919,
+        "total": 454
+      },
+      "per_agent": {
+        "Ugodowy": {
+          "mean": 76.0,
+          "median": 89,
+          "std": 21.276,
+          "total": 228
+        },
+        "Niezależny": {
+          "mean": 75.3333,
+          "median": 88,
+          "std": 22.291,
+          "total": 226
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Ugodowy": 0.5408,
+        "Niezależny": 0.2453
+      },
+      "mean": 0.393
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Ugodowy": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.202
+            },
+            {
+              "round": 2,
+              "sentiment": -0.0301
+            },
+            {
+              "round": 3,
+              "sentiment": -0.1284
+            }
+          ],
+          "delta_first_last": 0.0736,
+          "mean_shift_abs": 0.1351
+        },
+        "Niezależny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.372
+            },
+            {
+              "round": 2,
+              "sentiment": -0.0296
+            },
+            {
+              "round": 3,
+              "sentiment": 0.024
+            }
+          ],
+          "delta_first_last": 0.396,
+          "mean_shift_abs": 0.198
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8256,
+        "2": 0.7853,
+        "3": 0.5562
+      },
+      "initial": 0.8256,
+      "final": 0.5562,
+      "delta": -0.2694
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.202,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": -0.372,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.17,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.0301,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": -0.0296,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.0005,
+          "agents_with_repetition": []
+        },
+        "3": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.1284,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": 0.024,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.1524,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.17,
+      "final": 0.1524,
+      "delta": -0.0176
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Ugodowy": {
+          "ttr": 0.7919,
+          "unique_words": 137,
+          "total_words": 173
+        },
+        "Niezależny": {
+          "ttr": 0.8086,
+          "unique_words": 131,
+          "total_words": 162
+        }
+      }
+    },
+    "convergence": {
+      "reached": false,
+      "convergence_round": null,
+      "agreement_ratios": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Ugodowy": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2353,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.4576,
+              "flip": true
+            }
+          ]
+        },
+        "Niezależny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3849,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.28,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8256
+        },
+        {
+          "round": 2,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0254,
+          "max_cosine": 0.8008
+        },
+        {
+          "round": 2,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7853
+        },
+        {
+          "round": 3,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0204,
+          "max_cosine": 0.6421
+        },
+        {
+          "round": 3,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7987
+        }
+      ],
+      "per_agent": {
+        "Ugodowy": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Niezależny": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 0,
+        "total_turns": 6,
+        "overall_rate": 0.0,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3269,
+      "per_round": {
+        "1": 0.1744,
+        "2": 0.2147,
+        "3": 0.4438
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  }
+}

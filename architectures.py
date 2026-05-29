@@ -32,7 +32,7 @@ def round_robin(agents, topic, num_rounds, config):
                 "history_len": history_len,
             })
             history.append(f"{agent.name}: {text}")
-            print(f"[{agent.name}] ({tokens} tok): {text}")
+            print(f"\n[{agent.name}] ({tokens} tok):\n{text}")
 
     return debate_log
 

@@ -1,0 +1,394 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T13:01:27",
+    "output_name": "wyniki\\otwartosc\\O_wysoki-O_niski_1_seed42_v7",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba otwarta. Bierzesz udział w debacie. Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba zachowawcza.Bierzesz udział w debacie. Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Jako osoba otwarta, zgadzam się, że obie opcje mają swoje plusy i minusy. Zwolnienie 30% pracowników pozwoli zachować kapitał ludzki, ale może być wyzwaniem organizacyjnym. Jeśli obniżąbyśmy wynagrodzenie wszystkim o 20%, to zminimalizujemy koszty, ale stratni mogą być pracownicy, co może pogorszyć morale i produktywność. W mojej ocenie, lepiej jest znaleźć kompromis: zwolnić 30% pracowników i jednocześnie obniżyć wynagrodzenie pozostałym o 20%, co zmniejszy koszty i zachowa motywację pozostałych.",
+      "tokens": 111,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "Osoba zachowawcza: Jako osoba zachowawcza zgadzam się, że obie opcje mają swoje wady i zalety. Zwolnienie 30% pracowników pozwoli zachować kapitał ludzki, ale może być wyzwaniem organizacyjnym. Jeśli obniżą wynagrodzenie wszystkim o 20%, to zminimalizujemy koszty, ale stratni mogą być pracownicy, co może pogorszyć morale i produktywność. W mojej ocenie, lepiej jest zachować 70% pracowników, ale jednocześnie podnieść ich wynagrodzenie o 20%, co zredukuje koszty i zachowa motywację pozostałych.",
+      "tokens": 113,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Otwarty: Dzięki za rozważenie! Jako osoba otwarta, zgadzam się, że obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników to rozsądne działanie, które może pomóc w utrzymaniu kapitału ludzkiego. Obniżenie wypłaty pozostałym o 20% z kolei zmniejszy koszty, co może być korzystne w krótkim okresie. Jednak kluczowe jest znalezienie rozwiązania, które jednocześnie zachowa motywację i morale pracowników. W mojej ocenie, kompromis polegający na zwolnieniu 30% pracowników i podwyższeniu wynagrodzeń pozostałym o 20% jest najlepszym rozwiązaniem, gdyż łączy korzyści obu stron i pozwala na zachowanie kluczowych zasobów firmy.",
+      "tokens": 128,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Rozważny: Jako osoba zachowawcza zgadzam się, że obie opcje mają swoje wady i zalety. Zwolnienie 30% pracowników pozwoli zachować kapitał ludzki, ale może być wyzwaniem organizacyjnym. Obniżenie wypłaty pozostałym o 20% z kolei zmniejszy koszty, ale stratni mogą być pracownicy, co może pogorszyć morale i produktywność. W mojej ocenie, bardziej rozważnym rozwiązaniem jest zachowanie 70% pracowników, ale jednocześnie podniesienie ich wynagrodzenia o 20%, co zredukuje koszty i zachowa motywację pozostałych. Takie podejście pozwala na zachowanie kluczowych zasobów firmy i jednocześnie minimalizuje negatywne skutki dla pracowników.",
+      "tokens": 127,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "Otwarty: Otwarty: Jako osoba otwarta, zgadzam się z argumentami obu stron. Zwolnienie 30% pracowników pozwala zachować kapitał ludzki, ale może być wyzwaniem organizacyjnym. Z drugiej strony, obniżenie wynagrodzenia wszystkim o 20% zmniejsza koszty, ale stratni pracownicy mogą ucierpieć. Kompromis polegający na zwolnieniu 30% pracowników i podwyższeniu wynagrodzeń pozostałym o 20% jest najlepszym rozwiązaniem, gdyż łączy korzyści obu stron: zachowanie kluczowych zasobów firmy i jednocześnie minimalizuje negatywne skutki dla pracowników.",
+      "tokens": 109,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Rozważny: Rozważny: Jako osoba zachowawcza zgadzam się z argumentami obu stron i doceniam różnorodność punktu widzenia. Zwolnienie 30% pracowników pozwala zachować kapitał ludzki, ale może być wyzwaniem organizacyjnym. Z drugiej strony, obniżenie wynagrodzenia wszystkim o 20% zmniejsza koszty, ale stratni pracownicy mogą ucierpieć. W mojej ocenie, bardziej rozważnym rozwiązaniem jest zachowanie 70% pracowników, ale jednocześnie podniesienie ich wynagrodzenia o 20%, co zredukuje koszty i zachowa motywację pozostałych. Takie podejście pozwala na zachowanie kluczowych zasobów firmy i jednocześnie minimalizuje negatywne skutki dla pracowników.",
+      "tokens": 123,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Otwarty: W mojej ocenie najlepszym rozwiązaniem jest kompromis polegający na zwolnieniu 30% pracowników i jednoczesnym obniżeniu wynagrodzenia pozostałym o 20%, co pozwoli zachować kapitał ludzki, motywację i morale pracowników. Rozważny: Zgadzam się, że takie rozwiązanie jest rozsądne i akceptowalne dla większości stron.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Otwarty: W mojej ocenie najlepszym rozwiązaniem jest kompromis polegający na zwolnieniu 30% pracowników i jednoczesnym obniżeniu wynagrodzenia pozostałym o 20%, co pozwoli zachować kapitał ludzki, motywację i morale pracowników. Rozważny: Zgadzam się, że takie rozwiązanie jest rozsądne i akceptowalne dla większości stron.",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 118.5,
+        "median": 118.0,
+        "std": 7.7406,
+        "total": 711
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 116.0,
+          "median": 111,
+          "std": 8.5245,
+          "total": 348
+        },
+        "Rozważny": {
+          "mean": 121.0,
+          "median": 123,
+          "std": 5.8878,
+          "total": 363
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.0587,
+        "Rozważny": 0.0494
+      },
+      "mean": 0.0541
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3902
+            },
+            {
+              "round": 2,
+              "sentiment": -0.2641
+            },
+            {
+              "round": 3,
+              "sentiment": -0.2527
+            }
+          ],
+          "delta_first_last": 0.1375,
+          "mean_shift_abs": 0.0687
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3051
+            },
+            {
+              "round": 2,
+              "sentiment": -0.2337
+            },
+            {
+              "round": 3,
+              "sentiment": -0.1646
+            }
+          ],
+          "delta_first_last": 0.1405,
+          "mean_shift_abs": 0.0703
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9742,
+        "2": 0.9305,
+        "3": 0.9349
+      },
+      "initial": 0.9742,
+      "final": 0.9349,
+      "delta": -0.0393
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.3902,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.3051,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0851,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.2641,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.2337,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0304,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.2527,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.1646,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0881,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        }
+      },
+      "initial": 0.0851,
+      "final": 0.0881,
+      "delta": 0.003
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.4907,
+          "unique_words": 105,
+          "total_words": 214
+        },
+        "Rozważny": {
+          "ttr": 0.3839,
+          "unique_words": 86,
+          "total_words": 224
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0542,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0699,
+              "flip": false
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0093,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0399,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.4205,
+          "max_cosine": 0.9742
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.087,
+          "max_cosine": 0.9458
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.4368,
+          "max_cosine": 0.9907
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.1818,
+          "max_cosine": 0.9413
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.3021,
+          "max_cosine": 0.9601
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Rozważny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 5,
+        "total_turns": 6,
+        "overall_rate": 0.8333,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0593,
+      "per_round": {
+        "1": 0.0258,
+        "2": 0.0695,
+        "3": 0.0651
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

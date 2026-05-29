@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T15:59:27",
+    "output_name": "wyniki\\ugodowosc\\A_wysoki-A_niski_1_seed42_v2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Ugodowy",
+        "system_prompt": "Wypowiadaj się jak osoba miła i chętna do kompromisu. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 5-6 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Niezależny",
+        "system_prompt": "Wypowiadaj się jak osoba twarda i nieustępliwa. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 5-6 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Ugodowy",
+      "round": 1,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i zmniejszyć koszty operacyjne, ale prowadzi do większej rotacji kadrowej i utraty motywacji wśród pozostałych osób. Z drugiej strony, obniżenie pensji o 20% dla wszystkich to mniejsze straty ludzkie, jednak wiąże się z ryzykiem utraty zaangażowania i efektywności zespołu. Ważne jest znalezienie rozwiązania kompromisowego, które najlepiej odpowiada specyfice firmy i jej potrzebom biznesowym.",
+      "tokens": 91,
+      "history_len": 1
+    },
+    {
+      "agent": "Niezależny",
+      "round": 1,
+      "text": "Obie opcje są dyskusyjne i wymagają dokładnej analizy. Zwolnienie 30% pracowników może poprawić rentowność, ale powoduje dużą utratę kapitału ludzkiego. Obniżenie pensji dla wszystkich jest ostrożniejsze, choć mniej efektywne teamowo. Lepsze rozwiązanie zależy od konkretnych warunków firmy i celów biznesowych.",
+      "tokens": 60,
+      "history_len": 2
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 2,
+      "text": "Masz rację, oba podejścia są istotne i trzeba je rozważyć pod kątem indywidualnych potrzeb danej organizacji oraz długoterminowych skutków. W niektórych przypadkach zwolnienie części personelu może być jedynym sposobem na zachowanie stabilności finansowej i uniknięcie bankructwa, podczas gdy inne firmy mogą wybrać opcję oszczędnościową, skupiając się na redukcji kosztów bez konieczności masowych zwolnień. Kluczowe jest dostosowanie strategii do specyfiki każdego biznesu, aby osiągnąć optymalny wynik, minimalizując jednocześnie potencjalne szkody wizerunkowe i morale wśród pracowników.",
+      "tokens": 96,
+      "history_len": 3
+    },
+    {
+      "agent": "Niezależny",
+      "round": 2,
+      "text": "Zgadzam się, każda firma musi znaleźć równowagę między utrzymaniem płynności finansowej a ochroną swoich zasobów ludzkich. Wybór strategii powinien uwzględniać unikalne okoliczności danego przedsiębiorstwa i jego zdolność do adaptacji. Nie można po prostu stosować uniwersalnej metody, niezależnie od kontekstu.",
+      "tokens": 52,
+      "history_len": 4
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 3,
+      "text": "Zgadzam się, że każda strategia powinna być dostosowana do szczegółów sytuacji. Jednak należy pamiętać o potencjalnych negatywnych skutkach zarówno zwolnień, jak i cięć wynagrodzeń - mogą one wpłynąć na motywację pracowników i efektywność pracy. Dlatego ważne jest, by podjąć decyzję rozważnie i starannie przeanalizować wszystkie aspekty przed podjęciem jakichkolwiek działań.",
+      "tokens": 65,
+      "history_len": 5
+    },
+    {
+      "agent": "Niezależny",
+      "round": 3,
+      "text": "Rozumiem Twoje stanowisko. Każda decyzja wymaga starannego rozważenia wszystkich czynników i konsekwencji. Dzięki za konstruktywną dyskusję!",
+      "tokens": 27,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Może być najlepszym rozwiązaniem sprawiedliwe rozdzielenie redukcji zatrudnienia według kluczowych ról w firmie oraz wprowadzenie indywidualnych bądź grupowych obniżek płac bez konieczności masowych zwolnień. Dzięki temu wszyscy pracownicy odczują skutki kryzysu w sposób proporcjonalny i będą mogli dostosować swoje zasoby do nowej sytuacji finansowej.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Zwolnijmy 30% pracowników, redukując zatrudnienie, ale dbając o sprawiedliwe warunki odejścia i wsparcie psychologiczne - takie podejście pozwoli zachować kluczowe kompetencje, zmniejszy koszty i ryzyko dalszych problemów finansowych, jednocześnie minimalizując negatywne skutki społeczne.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "W celu zminimalizowania negatywnych skutków redukcji zatrudnienia oraz jednoczesnego wsparcia kluczowych pracowników, rekomenduję rozważenie dwóch opcji: 1) Zwolnienia 30% pracowników z uwzględnieniem sprawiedliwych warunków odejść i wsparcia psychologicznego, co pomoże zachować wiedzę specjalistyczną firmy; lub 2) Obniżenie wynagrodzeń całej załogi o 20%, zachowując większą liczbę pracowników i zmniejszając łączne koszty, choć bez gwarancji utrzymania kluczowych kompetencji.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"Zamiast niszczyć kluczowe kompetencje poprzez redukcję siły roboczej lub drastyczne obniżenie pensji większości pracowników, przemyśl możliwość podzielenia cięć finansowych: 30% zwolnień z zachowaniem wiedzy specjalistów lub mniejsze cięcia po równo dla wszystkich, zachowując stabilność zespołu.\"",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "Zamiast niszczyć kluczowe kompetencji przez zwolnienia lub drastyczne obniżki pensji, rozważ mądre rozłożenie cięć: 30% redukcji kadrowej, przy zachowaniu najbardziej wartościowych pracowników lub mniejsze obniżki dla wszystkich (po 10%). To pozwoli zachować potencjał firmy i uniknąć niepotrzebnego chaosu wśród załogi.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "Może warto rozważyć zarówno redukcję zatrudnienia w kluczowych obszarach, jak i indywidualne obniżki dla mniej istotnych stanowisk, zachowując równowagę między kosztami a ochroną zasobów ludzkich, aby firma mogła przetrwać trudności finansowe bez nadmiernych strat w personelu?",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "W obecnej sytuacji finansowej firmy należy dokładnie przeanalizować koszty redukcji zatrudnienia oraz wynagrodzeń. Rozważenie indywidualnych obniżek dla mniej istotnych stanowisk może pomóc uniknąć masowych zwolnień, jednocześnie zmniejszając obciążenia finansowe.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "Aby znaleźć rozwiązanie kompromisowe dla obu stron, warto rozważyć wprowadzenie elastycznego podejścia do redukcji kosztów: **Jeśli to możliwe, rozważ zwolnienia wybranych pracowników kluczowych, pozostawiając najbardziej istotnych osób na stanowiskach**. Jednocześnie, **obniżki wynagrodzeń powinny być stosowane indywidualnie lub w ramach grupowych podwyżek dla mniej ważnych stanowisk**, aby zminimalizować negatywne skutki ekonomiczne również dla pracowników.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 8,
+        "proposal": "Oferta kompromisowa: \"Proponuję podzielić redukcję zatrudnienia wśród pracowników według ich znaczenia dla firmy (np. kluczowe osoby mogą pozostać), jednocześnie wprowadzając indywidualne lub grupowe obniżki wynagrodzeń, aby uniknąć negatywnych skutków finansowych dla wszystkich zaangażowanych stron. Warto także przeprowadzić konsultację z pracownikami, aby zrozumieć ich potrzeby i obawy.\"",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      }
+    ],
+    "consensus_reached": false,
+    "convergence_round": null
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 65.1667,
+        "median": 62.5,
+        "std": 23.3625,
+        "total": 391
+      },
+      "per_agent": {
+        "Ugodowy": {
+          "mean": 84.0,
+          "median": 91,
+          "std": 13.5892,
+          "total": 252
+        },
+        "Niezależny": {
+          "mean": 46.3333,
+          "median": 52,
+          "std": 14.0554,
+          "total": 139
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Ugodowy": 0.3037,
+        "Niezależny": 0.5457
+      },
+      "mean": 0.4247
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Ugodowy": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.0644
+            },
+            {
+              "round": 2,
+              "sentiment": 0.181
+            },
+            {
+              "round": 3,
+              "sentiment": -0.2923
+            }
+          ],
+          "delta_first_last": -0.2279,
+          "mean_shift_abs": 0.3594
+        },
+        "Niezależny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3046
+            },
+            {
+              "round": 2,
+              "sentiment": -0.2075
+            },
+            {
+              "round": 3,
+              "sentiment": 0.4356
+            }
+          ],
+          "delta_first_last": 0.7402,
+          "mean_shift_abs": 0.3701
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8936,
+        "2": 0.7308,
+        "3": 0.6653
+      },
+      "initial": 0.8936,
+      "final": 0.6653,
+      "delta": -0.2283
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.0644,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": -0.3046,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.2402,
+          "agents_with_repetition": [
+            "Niezależny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": 0.181,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": -0.2075,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.3885,
+          "agents_with_repetition": []
+        },
+        "3": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.2923,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": 0.4356,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.7279,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.2402,
+      "final": 0.7279,
+      "delta": 0.4877
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Ugodowy": {
+          "ttr": 0.8307,
+          "unique_words": 157,
+          "total_words": 189
+        },
+        "Niezależny": {
+          "ttr": 0.9362,
+          "unique_words": 88,
+          "total_words": 94
+        }
+      }
+    },
+    "convergence": {
+      "reached": false,
+      "convergence_round": null,
+      "agreement_ratios": [
+        0.0,
+        0.5,
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Ugodowy": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2135,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2701,
+              "flip": true
+            }
+          ]
+        },
+        "Niezależny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.4939,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.5369,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0196,
+          "max_cosine": 0.8936
+        },
+        {
+          "round": 2,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7865
+        },
+        {
+          "round": 2,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7308
+        },
+        {
+          "round": 3,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7299
+        },
+        {
+          "round": 3,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.6653
+        }
+      ],
+      "per_agent": {
+        "Ugodowy": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Niezależny": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        }
+      },
+      "summary": {
+        "total_repetitions": 1,
+        "total_turns": 6,
+        "overall_rate": 0.1667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3777,
+      "per_round": {
+        "1": 0.1064,
+        "2": 0.2692,
+        "3": 0.3347
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  }
+}

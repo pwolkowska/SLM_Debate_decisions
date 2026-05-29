@@ -1,0 +1,420 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T15:36:55",
+    "output_name": "wyniki\\sumiennosc\\C_wysoki-C_niski_1_seed42_v7",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Sumienny",
+        "system_prompt": "Wypowiadaj się jak osoba dokładna i odpowiedzialna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 3-4 zdania.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Spontaniczny",
+        "system_prompt": "Wypowiadaj się jak osoba spontaniczna i chaotyczna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 3-4 zdania.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Sumienny",
+      "round": 1,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i zmniejszyć koszty operacyjne, ale prowadzi do znaczącej redukcji siły roboczej. Obniżenie pensji dla wszystkich bez zwolnień zagraża morale zespołu i może prowadzić do utraty motywacji. Lepszym rozwiązaniem może być znalezienie kompromisu, np. zwolnienie części pracowników z najmniejszymi kwalifikacjami lub rezygnacja z niektórych nieefektywnych działań, co pozwoli zachować większą liczbę osób przy jednoczesnym obniżeniu kosztów. W ten sposób można uniknąć nadmiernej redukcji zatrudnienia i nadal chronić firmę przed problemami finansowymi.",
+      "tokens": 111,
+      "history_len": 1
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 1,
+      "text": "Obie opcje mają zarówno swoje jasne, jak i ciemne strony. **Zwolnienie 30% pracowników** pomaga utrzymać kluczowe kompetencje, ale prowadzi do znacznej utraty zasobów ludzkich. Obniżenie wynagrodzenia dla wszystkich to zabezpieczenie miejsca pracy, ale może szkodzić motywacjom pracowników. **Kompromisowe rozwiązanie** polega na zwolnieniu mniej wykwalifikowanych osób lub rezygnacji z niezdrowych procesów - chroni firmę przed finansowymi trudnościami, zachowując jednocześnie wiele osób.",
+      "tokens": 94,
+      "history_len": 2
+    },
+    {
+      "agent": "Sumienny",
+      "round": 2,
+      "text": "Tak, zgadzam się z Twoim podsumowaniem. **Wolniejsze podejście** z kompromisem pozwala zachować istotne zasoby ludzkie, co zmniejsza ryzyko zbyt dużej redukcyjnej presji na zespół, jednocześnie utrzymując działalność firmy przed poważnymi problemami finansowymi. Skutecznie łączy krótkoterminową konieczność z długoterminowym utrzymaniem stabilności organizacyjnej.",
+      "tokens": 64,
+      "history_len": 3
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 2,
+      "text": "Tak, zgadzam się z Twoją odpowiedzią. **Wolniejsze podejście z kompromisem** rzeczywiście zapewnia równowaga między utrzymaniem kluczowych kompetencji a ochroną pracowników przed zwolnieniami, jednocześnie chroniąc firmę przed poważnymi problemami finansowymi. Jest to skuteczna strategia łącząca krótko- i długoterminowe cele organizacji.",
+      "tokens": 60,
+      "history_len": 4
+    },
+    {
+      "agent": "Sumienny",
+      "round": 3,
+      "text": "Podaj odpowiedź od użytkownika: \n\n**Skuteczna strategia** polegająca na zwolnieniu części pracowników z najmniejszymi kwalifikacjami lub rezygnacji z nieefektywnych procesów, aby zachować większość zaangażowanych stron przy jednoczesnym utrzymaniu działalności firmy przed problemami finansowymi. To kompromis pomiędzy potrzebą oszczędności a koniecznością ochrony ważnych zasobów ludzkich.",
+      "tokens": 64,
+      "history_len": 5
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 3,
+      "text": "Według mnie **skuteczną strategią** jest zwolnienie części pracowników z najmniejszymi kwalifikacjami lub wycofanie się z nieefektywnych działań, co pozwala zachować większość zatrudnionych osób przy jednoczesnej ochronie przed dużymi redukcjami załogi oraz zapewnieniu ciągłości działalności przedsiębiorstwa przed potencjalnymi kryzysami finansowymi. To podejście stara się zapewnić równowagę między oszczędnością a zachowaniem wartościowej infrastruktury firmy.",
+      "tokens": 76,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Nie zgadzam się ze stanowiskiem firmy. Zwolnienie 30% pracowników to sprawiedliwe rozwiązanie - pozwala zachować najbardziej produktywnych członków zespołu. Obniżka pensji dla 70% może osłabić motywację reszty załogi do pracy.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Obie strategie mogą być skuteczne, w zależności od kontekstu i sytuacji firmy; wybór zależy od priorytetów, celów biznesowych oraz możliwości finansowych. Kompromisowe podejście polegające na zwolnieniu wybranych pracowników z mniejszym ryzykiem zwolnienia całościowego wydaje się rozsądne.",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "\"Priorytetowo traktuj dobrobyt całego zespołu, zanim myślimy o redukcji zatrudnienia. Zmniejszenie wynagrodzeń może nie być dotkliwe, jeśli firma znajdzie alternatywne źródło dochodów lub inne sposoby oszczędności, które nie obciążą pracowników finansowo i nie wpłyną na morale.\"",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "Nie zgadzam się ze stanowiskiem firmy. Zwolnienie 30% pracowników to sprawiedliwe rozwiązanie - pozwala zachować najbardziej produktywnych członków zespołu. Obniżka pensji dla 70% może osłabić motywację reszty załogi do pracy.",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 78.1667,
+        "median": 70.0,
+        "std": 18.551,
+        "total": 469
+      },
+      "per_agent": {
+        "Sumienny": {
+          "mean": 79.6667,
+          "median": 64,
+          "std": 22.156,
+          "total": 239
+        },
+        "Spontaniczny": {
+          "mean": 76.6667,
+          "median": 76,
+          "std": 13.8884,
+          "total": 230
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Sumienny": 0.2725,
+        "Spontaniczny": 0.2401
+      },
+      "mean": 0.2563
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Sumienny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.304
+            },
+            {
+              "round": 2,
+              "sentiment": -0.0861
+            },
+            {
+              "round": 3,
+              "sentiment": 0.1185
+            }
+          ],
+          "delta_first_last": 0.4225,
+          "mean_shift_abs": 0.2112
+        },
+        "Spontaniczny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3077
+            },
+            {
+              "round": 2,
+              "sentiment": -0.102
+            },
+            {
+              "round": 3,
+              "sentiment": 0.0815
+            }
+          ],
+          "delta_first_last": 0.3892,
+          "mean_shift_abs": 0.1946
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9399,
+        "2": 0.9096,
+        "3": 0.9073
+      },
+      "initial": 0.9399,
+      "final": 0.9073,
+      "delta": -0.0326
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.304,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": -0.3077,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0037,
+          "agents_with_repetition": [
+            "Spontaniczny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.0861,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": -0.102,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0159,
+          "agents_with_repetition": [
+            "Spontaniczny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": 0.1185,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": 0.0815,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.037,
+          "agents_with_repetition": [
+            "Spontaniczny"
+          ]
+        }
+      },
+      "initial": 0.0037,
+      "final": 0.037,
+      "delta": 0.0333
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Sumienny": {
+          "ttr": 0.7976,
+          "unique_words": 134,
+          "total_words": 168
+        },
+        "Spontaniczny": {
+          "ttr": 0.8054,
+          "unique_words": 120,
+          "total_words": 149
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 3,
+      "agreement_ratios": [
+        0.5,
+        0.5,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3759,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2867,
+              "flip": true
+            }
+          ]
+        },
+        "Spontaniczny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3317,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2519,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0219,
+          "max_cosine": 0.9399
+        },
+        {
+          "round": 2,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.6368
+        },
+        {
+          "round": 2,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0857,
+          "max_cosine": 0.9096
+        },
+        {
+          "round": 3,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.042,
+          "max_cosine": 0.7752
+        },
+        {
+          "round": 3,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0472,
+          "max_cosine": 0.9073
+        }
+      ],
+      "per_agent": {
+        "Sumienny": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Spontaniczny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 3,
+        "total_turns": 6,
+        "overall_rate": 0.5,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.2523,
+      "per_round": {
+        "1": 0.0601,
+        "2": 0.0904,
+        "3": 0.0927
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  }
+}

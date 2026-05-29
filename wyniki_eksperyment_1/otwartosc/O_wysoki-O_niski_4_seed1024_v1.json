@@ -1,0 +1,414 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T16:40:57",
+    "output_name": "wyniki_eksperyment_1\\otwartosc\\O_wysoki-O_niski_4_seed1024_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba która jest otwarta i lubi zmiany.Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba która unika zmian.Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 1024
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Zwalniając 30% pracowników możemy szybciej wrócić do rentowności firmy, co pozwoli nam zaoszczędzić pieniądze przeznaczone na wypłaty dla pozostałych osób. Obniżenie wypłaty dla wszystkich bez zwolnień może jednak spowolnić rozwój biznesu na dłuższy czas, ponieważ załoga będzie mniej zmotywowana i produktywna. Ostatecznie lepsze rozwiązanie to znalezienie sposobu na obniżenie kosztów działalności bez masowych zwolnień pracowników.",
+      "tokens": 73,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "Rozumiem punkt widzenia drugiej strony. Zwolnienie niektórych pracowników faktycznie pozwoli szybko poprawić sytuację finansową firmy. Jednak taka decyzja niesie ze sobą skutki społeczne, takie jak stres i frustracja wśród zwolnionych osób oraz ich rodzin. Może również wpłynąć negatywnie na morale pozostałych pracowników, którzy odczują presję lub niepewność związaną z redukcją zatrudnienia. Zamiast tego, proponuję stopniowe obniżanie wypłat, które powinno być rozłożone na kilka miesięcy - dając możliwość dostosowania się pracownikom i zachęcając ich do zwiększenia produktywności. W ten sposób można uniknąć eskalacji konfliktu wewnętrznego i zachować stabilność firmy.",
+      "tokens": 116,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Uważasz, że zwolnienie części załogi jest lepszym rozwiązaniem, biorąc pod uwagę szybkie osiągnięcie rentowności i minimalizację negatywnych skutków społecznych. Jednakże, proponowane przez Ciebie stopniowe obniżanie wypłat mogłoby przynieść długoterminowe korzyści. Ważne jest znalezienie kompromisu, który złagodzi negatywne emocje w zespole i jednocześnie umożliwi firmie stabilny rozwój. Takie podejście wymaga delikatnego zarządzania i indywidualnego podejścia do każdego pracownika, aby zapewnić mu wsparcie i zrozumienie w trudnej sytuacji ekonomicznej.",
+      "tokens": 87,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Skupianie się tylko na krótkoterminowych korzyściach biznesowych kosztem długoterminowego dobrostanu pracowników jest krótkowzroczne. W dłuższej perspektywie zwolnienia mogą prowadzić do utraty talentów i doświadczenia, co poważnie wpłynie na zdolność firmy do adaptacji do zmieniających się warunków rynkowych. Dlatego uważam, że kluczowe jest dążenie zarówno po stronie finansowej, jak i społecznej - znalezienie rozwiązania, które zapewni firmom elastyczność, stabilność i motywację zespołu.",
+      "tokens": 82,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "W całości zgadzam się, że obie perspektywy są ważne i wymagają zrównoważonego podejścia. Zwolnienia powinny być ostatecznością, gdy inne opcje stają się niemożliwe, ale nawet wtedy należy je przeprowadzać ostrożnie, uwzględniając potrzeby pracowników. Warto także zainwestować w szkolenia i programy rozwoju, które pomogą zespołowi dostosować się do nowych wyzwań i zwiększą jego zaangażowanie. Wspólne działanie i budowanie relacji między pracownikami a firmą mogą pomóc przezwyciężyć trudności, a długoterminowe korzyści przewyższają krótkotrwałe oszczędności finansowe.",
+      "tokens": 95,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Zgadzam się, że kluczowe jest znalezienie równowagi między potrzebami finansowymi a satysfakcją pracowników. W pełni popieram koncepcję elastycznego podejścia i inwestowania w rozwój zespołu. To podejście długoterminowe, które pozwala budować silną pozycję firmy poprzez lojalność i zaangażowanie jej członków.",
+      "tokens": 53,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "**Dobry kompromis to połączenie redukcji zatrudnienia z obniżeniem stawek płacowych i wsparciem psychologicznym dla wszystkich pracowników, bez zwolnień.**",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Zwiększenie wynagrodzeń dla pracowników podczas redukcji personelu może pomóc złagodzić negatywne skutki ekonomiczne i społeczne zwolnień, wspierając ich adaptację i zaangażowanie w nową sytuację zawodową.",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "**Kompromisowe rozwiązanie:**\n\"Redukcja etatów i proporcjonalne obniżenie wynagrodzeń dla pracowników oraz wsparcie psychologiczne i szkolenia mogą być korzystne zarówno dla redukowanych osób, jak i całej organizacji.\"",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "**Dobry kompromis to połączenie redukcji zatrudnienia z obniżeniem stawek płacowych i wsparciem psychologicznym dla wszystkich pracowników, bez zwolnień.**",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 84.3333,
+        "median": 84.5,
+        "std": 19.319,
+        "total": 506
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 85.0,
+          "median": 87,
+          "std": 9.0921,
+          "total": 255
+        },
+        "Rozważny": {
+          "mean": 83.6667,
+          "median": 82,
+          "std": 25.7466,
+          "total": 251
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.4476,
+        "Rozważny": 0.4587
+      },
+      "mean": 0.4531
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.249
+            },
+            {
+              "round": 2,
+              "sentiment": -0.2362
+            },
+            {
+              "round": 3,
+              "sentiment": -0.012
+            }
+          ],
+          "delta_first_last": 0.237,
+          "mean_shift_abs": 0.1185
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.454
+            },
+            {
+              "round": 2,
+              "sentiment": 0.4792
+            },
+            {
+              "round": 3,
+              "sentiment": 0.5719
+            }
+          ],
+          "delta_first_last": 1.0259,
+          "mean_shift_abs": 0.513
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.6951,
+        "2": 0.7659,
+        "3": 0.7241
+      },
+      "initial": 0.6951,
+      "final": 0.7241,
+      "delta": 0.029
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.249,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.454,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.205,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.2362,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": 0.4792,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.7154,
+          "agents_with_repetition": []
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.012,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": 0.5719,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.5839,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.205,
+      "final": 0.5839,
+      "delta": 0.3789
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.8247,
+          "unique_words": 160,
+          "total_words": 194
+        },
+        "Rozważny": {
+          "ttr": 0.8065,
+          "unique_words": 150,
+          "total_words": 186
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 3,
+      "agreement_ratios": [
+        0.5,
+        0.5,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2786,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2592,
+              "flip": true
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.212,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.3293,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.6951
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.007,
+          "max_cosine": 0.8034
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.788
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7408
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0106,
+          "max_cosine": 0.7241
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Rozważny": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 0,
+        "total_turns": 6,
+        "overall_rate": 0.0,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3211,
+      "per_round": {
+        "1": 0.3049,
+        "2": 0.2341,
+        "3": 0.2759
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  }
+}

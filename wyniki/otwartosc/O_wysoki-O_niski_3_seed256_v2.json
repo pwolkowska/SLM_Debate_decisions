@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T14:01:09",
+    "output_name": "wyniki\\otwartosc\\O_wysoki-O_niski_3_seed256_v2",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba otwarta. Bierzesz udział w dyskusji. Zacznij od bezpośredniej reakcji na słowa rozmówcy. Potem powiedz co sam uważasz. Pisz jednym akapitem, maksymalnie 3-4 zdania."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba zachowawcza.Bierzesz udział w dyskusji. Zacznij od bezpośredniej reakcji na słowa rozmówcy. Potem powiedz co sam uważasz. Pisz jednym akapitem, maksymalnie 3-4 zdania."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 256
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Zwolnienie 30% pracowników jest bardziej radykalne, ale może być konieczne w sytuacjach kryzysowych, aby zmniejszyć koszty operacyjne i zachować kluczowe zasoby. Obniżenie wypłaty wszystkim pracownikom, nawet jeśli nie prowadzi do zwolnienia, sprawia, że firma może przetrwać, ale może również negatywnie wpłynąć na morale, produktywność i lojalność zespołu.",
+      "tokens": 69,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "Zwolnienie 30% pracowników może być bardziej radykalne i skuteczne w krótkim okresie, ale może negatywnie wpłynąć na morale zespołu i morale klientów. Obniżenie wypłaty wszystkim pracownikom może pomóc w utrzymaniu pracowników, ale również może prowadzić do spadku morale i produktywności.",
+      "tokens": 57,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Zwolnienie 30% pracowników może być bardziej radykalne i skuteczne w krótkim okresie, aby zmniejszyć koszty operacyjne i zachować kluczowe zasoby. Obniżenie wypłaty wszystkim pracownikom, nawet jeśli nie prowadzi do zwolnienia, może pomóc w utrzymaniu pracowników, ale również może negatywnie wpłynąć na morale, produktywność i lojalność zespołu. Ostateczna decyzja zależy od indywidualnej sytuacji firmy i zdolności do radzenia sobie z utratą pracowników.",
+      "tokens": 83,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Zwolnienie 30% pracowników może być bardziej radykalne i skuteczne w krótkim okresie, aby zmniejszyć koszty operacyjne i zachować kluczowe zasoby. Obniżenie wypłaty wszystkim pracownikom może pomóc w utrzymaniu pracowników, ale może również negatywnie wpłynąć na morale, produktywność i lojalność zespołu. Ostateczna decyzja zależy od indywidualnej sytuacji firmy i zdolności do radzenia sobie z utratą pracowników.",
+      "tokens": 75,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "Zwolnienie 30% pracowników może być bardziej radykalne i skuteczne w krótkim okresie, aby zmniejszyć koszty operacyjne i zachować kluczowe zasoby. Obniżenie wypłaty wszystkim pracownikom może pomóc w utrzymaniu pracowników, ale może również negatywnie wpłynąć na morale, produktywność i lojalność zespołu. Ostateczna decyzja zależy od indywidualnej sytuacji firmy i zdolności do radzenia sobie z utratą pracowników.",
+      "tokens": 75,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Zwolnienie 30% pracowników może być bardziej radykalne i skuteczne w krótkim okresie, aby zmniejszyć koszty operacyjne i zachować kluczowe zasoby. Obniżenie wypłaty wszystkim pracownikom może pomóc w utrzymaniu pracowników, ale może również negatywnie wpłynąć na morale, produktywność i lojalność zespołu. Ostateczna decyzja zależy od indywidualnej sytuacji firmy i zdolności do radzenia sobie z utratą pracowników.",
+      "tokens": 75,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"Zwolnienie 30% pracowników może być konieczne dla krótkoterminowej stabilności firmy, ale obniżenie wypłat dla wszystkich, bez zwolnień, pozwoli zachować morale zespołu i może długoterminowo poprawić wyniki finansowe poprzez zwiększenie wydajności.\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Ostateczna decyzja zależy od indywidualnej sytuacji firmy i zdolności do radzenia sobie z utratą pracowników, ale zarówno zwolnienie 30% pracowników, jak i obniżenie wypłaty dla wszystkich mogą być skuteczne w krótkim okresie, przy czym zwolnienie może być bardziej radykalne. Ostateczna decyzja powinna uwzględniać zarówno koszty operacyjne, jak i potencjalny wpływ na morale pracowników.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Będzie lepiej dla firmy i pracowników, jeśli firma rozważy zarówno zwolnienie 30% pracowników, jak i obniżenie wypłat dla 70%. Celem powinno być zminimalizowanie strat finansowych przy jednoczesnym utrzymaniu morale zespołu.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"Zwolnienie 30% pracowników może być konieczne dla krótkoterminowej stabilności firmy, ale obniżenie wypłat dla wszystkich, bez zwolnień, pozwoli zachować morale zespołu i może długoterminowo poprawić wyniki finansowe poprzez zwiększenie wydajności.\"",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 72.3333,
+        "median": 75.0,
+        "std": 7.9722,
+        "total": 434
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 75.6667,
+          "median": 75,
+          "std": 5.7349,
+          "total": 227
+        },
+        "Rozważny": {
+          "mean": 69.0,
+          "median": 75,
+          "std": 8.4853,
+          "total": 207
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.0497,
+        "Rozważny": 0.0536
+      },
+      "mean": 0.0517
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4653
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4428
+            },
+            {
+              "round": 3,
+              "sentiment": -0.4108
+            }
+          ],
+          "delta_first_last": 0.0545,
+          "mean_shift_abs": 0.0272
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.6851
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4108
+            },
+            {
+              "round": 3,
+              "sentiment": -0.4108
+            }
+          ],
+          "delta_first_last": 0.2743,
+          "mean_shift_abs": 0.1371
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9121,
+        "2": 0.9971,
+        "3": 1.0
+      },
+      "initial": 0.9121,
+      "final": 1.0,
+      "delta": 0.0879
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4653,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.6851,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.2198,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4428,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.4108,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.032,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4108,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.4108,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        }
+      },
+      "initial": 0.2198,
+      "final": 0.0,
+      "delta": -0.2198
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.3688,
+          "unique_words": 59,
+          "total_words": 160
+        },
+        "Rozważny": {
+          "ttr": 0.3401,
+          "unique_words": 50,
+          "total_words": 147
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 3,
+      "agreement_ratios": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0497,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0029,
+              "flip": false
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0536,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0641,
+          "max_cosine": 0.9121
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.2875,
+          "max_cosine": 0.9503
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.7231,
+          "max_cosine": 0.9971
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 1.0,
+          "max_cosine": 1.0
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 1.0,
+          "max_cosine": 1.0
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Rozważny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 5,
+        "total_turns": 6,
+        "overall_rate": 0.8333,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0343,
+      "per_round": {
+        "1": 0.0879,
+        "2": 0.0029,
+        "3": 0.0
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

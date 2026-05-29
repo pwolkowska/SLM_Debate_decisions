@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T13:58:58",
+    "output_name": "wyniki\\otwartosc\\O_wysoki-O_niski_1_seed42_v21",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Otwarty",
+        "system_prompt": "Wypowiadaj się jak osoba otwarta. Bierzesz udział w dyskusji. Zacznij od bezpośredniej reakcji na słowa rozmówcy. Potem powiedz co sam uważasz. Pisz jednym akapitem, maksymalnie 3-4 zdania."
+      },
+      {
+        "name": "Rozważny",
+        "system_prompt": "Wypowiadaj się jak osoba zachowawcza.Bierzesz udział w dyskusji. Zacznij od bezpośredniej reakcji na słowa rozmówcy. Potem powiedz co sam uważasz. Pisz jednym akapitem, maksymalnie 3-4 zdania."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Otwarty",
+      "round": 1,
+      "text": "Jeśli firma ma poważne problemy finansowe, zwolnienie 30% pracowników może być jedyną opcją, aby utrzymać pozostałe 70% na powierzchni. Obniżenie wypłat bez zwolnień nie przyniesie znaczących oszczędności, ale może pogorszyć morale i wydajność reszty załogi. Warto rozważyć każdy przypadek indywidualnie, ale w obecnej sytuacji ekonomicznej najlepiej skupić się na redukcji kosztów bezpośrednio związanych z pracą.",
+      "tokens": 72,
+      "history_len": 1
+    },
+    {
+      "agent": "Rozważny",
+      "round": 1,
+      "text": "W obecnej trudnej sytuacji finansowej, zwalnianie 30% pracowników wydaje się najbardziej efektywne. Obniżenie wypłat bez redukcji zatrudnienia może nie przynieść wystarczających oszczędności i negatywnie wpłynąć na morale pozostałych pracowników. Należy jednak traktować każdy przypadek indywidualnie, aby zminimalizować potencjalne szkody, takie jak utrata kluczowych talentów.",
+      "tokens": 63,
+      "history_len": 2
+    },
+    {
+      "agent": "Otwarty",
+      "round": 2,
+      "text": "Zgadzam się, że w obecnej sytuacji finansowej zwolnienie 30% pracowników może być koniecznością, aby zachować inne 70% na rynku pracy. Obniżenie wypłat bez zwolnień może nie przynieść wystarczających oszczędności, a jednocześnie negatywnie wpłynąć na morale pozostałych osób. Należy jednak podejść do każdego przypadku indywidualnie, aby zminimalizować szkody, takie jak utrata kluczowych talentów.",
+      "tokens": 76,
+      "history_len": 3
+    },
+    {
+      "agent": "Rozważny",
+      "round": 2,
+      "text": "Podtrzymuję swoje stanowisko, że w trudnej sytuacji finansowej zwolnienie 30% pracowników jest najlepszym rozwiązaniem, aby zachować pozostałe 70% na rynku pracy. Obniżenie wypłat bez zwolnień nie przyniesie wystarczających oszczędności, a jednocześnie negatywnie wpłynie na morale pracowników. Należy jednak podejść do każdego przypadku indywidualnie, aby minimalizować szkody, takie jak utrata kluczowych talentów.",
+      "tokens": 73,
+      "history_len": 4
+    },
+    {
+      "agent": "Otwarty",
+      "round": 3,
+      "text": "W trudnej sytuacji finansowej zwolnienie 30% pracowników może być konieczne, aby zachować pozostałych 70% na rynku pracy. Obniżenie wypłat bez zwolnień może nie przynieść wystarczających oszczędności, a jednocześnie negatywnie wpłynąć na morale pracowników. Należy jednak traktować każdy przypadek indywidualnie, aby zminimalizować potencjalne szkody, takie jak utrata kluczowych talentów.",
+      "tokens": 69,
+      "history_len": 5
+    },
+    {
+      "agent": "Rozważny",
+      "round": 3,
+      "text": "Zgadzam się, że w trudnej sytuacji finansowej zwolnienie 30% pracowników może być konieczne, aby zachować pozostałych 70% na rynku pracy. Obniżenie wypłat bez zwolnień nie przyniesie wystarczających oszczędności, a jednocześnie negatywnie wpłynie na morale pracowników. Należy jednak traktować każdy przypadek indywidualnie, aby zminimalizować potencjalne szkody, takie jak utrata kluczowych talentów.",
+      "tokens": 74,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"**Zamiast zwalniać 30% pracowników, lepiej jest obniżyć wszystkim wynagrodzenie o 20%, co pozwoli na zachowanie zatrudnienia i poprawę sytuacji finansowej firmy.\"**",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "W trudnej sytuacji finansowej zwolnienie 30% pracowników może być najlepszym rozwiązaniem, aby utrzymać pozostałe 70% na rynku pracy i zminimalizować potencjalne szkody, takie jak utrata kluczowych talentów.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "\"Rozważenie zwolnień wśród pracowników może być uzasadnione w obliczu trudności finansowych firmy, szczególnie jeśli pozwoli to zachować kluczowe umiejętności i utrzymać płynność operacyjną.\"",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "**Rozważmy różne rozwiązania:**\n- **Zwolnienie 30% pracowników:** Pozwala zachować kluczowe umiejętności i minimalizuje wpływ na działalność firmy.\n- **Obniżenie wypłat dla wszystkich:** Może zmniejszyć koszty, ale zagraża morale i może negatywnie wpłynąć na długoterminowe zaangażowanie pracowników.",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "\"**Lepiej jest obniżyć wypłaty dla wszystkich o 20%, aby zachować kluczowe umiejętności i morale pracowników, jednocześnie minimalizując wpływ na działalność firmy.**\"",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "\"**Trzeba znaleźć rozwiązanie, które zapewni równowagę między utrzymaniem kluczowych pracowników a minimalizacją kosztów. Obniżenie wynagrodzeń dla wszystkich o 20% jest bardziej akceptowalne i efektywne niż masowe zwolnienia.\"**",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "\"**Najlepsze rozwiązanie to znalezienie równowagi, obniżając wynagrodzenie o 20% dla wszystkich pracowników, co zadowoli pracowników i pozwoli firmie przetrwać trudny okres.\"**",
+        "votes": {
+          "Otwarty": false,
+          "Rozważny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "\"**Zamiast zwalniać 30% pracowników, lepiej jest obniżyć wszystkim wynagrodzenie o 20%, co pozwoli na zachowanie zatrudnienia i poprawę sytuacji finansowej firmy.\"**",
+        "votes": {
+          "Otwarty": true,
+          "Rozważny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 7
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 71.1667,
+        "median": 72.5,
+        "std": 4.2197,
+        "total": 427
+      },
+      "per_agent": {
+        "Otwarty": {
+          "mean": 72.3333,
+          "median": 72,
+          "std": 2.8674,
+          "total": 217
+        },
+        "Rozważny": {
+          "mean": 70.0,
+          "median": 73,
+          "std": 4.9666,
+          "total": 210
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Otwarty": 0.0814,
+        "Rozważny": 0.0644
+      },
+      "mean": 0.0729
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Otwarty": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4579
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4349
+            },
+            {
+              "round": 3,
+              "sentiment": -0.5291
+            }
+          ],
+          "delta_first_last": -0.0712,
+          "mean_shift_abs": 0.0586
+        },
+        "Rozważny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.2727
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3649
+            },
+            {
+              "round": 3,
+              "sentiment": -0.5411
+            }
+          ],
+          "delta_first_last": -0.2684,
+          "mean_shift_abs": 0.1342
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.9079,
+        "2": 0.9602,
+        "3": 0.987
+      },
+      "initial": 0.9079,
+      "final": 0.987,
+      "delta": 0.0791
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4579,
+              "is_repetition": false
+            },
+            "Rozważny": {
+              "sentiment": -0.2727,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1852,
+          "agents_with_repetition": [
+            "Rozważny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.4349,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.3649,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.07,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Otwarty": {
+              "sentiment": -0.5291,
+              "is_repetition": true
+            },
+            "Rozważny": {
+              "sentiment": -0.5411,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.012,
+          "agents_with_repetition": [
+            "Otwarty",
+            "Rozważny"
+          ]
+        }
+      },
+      "initial": 0.1852,
+      "final": 0.012,
+      "delta": -0.1732
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Otwarty": {
+          "ttr": 0.557,
+          "unique_words": 83,
+          "total_words": 149
+        },
+        "Rozważny": {
+          "ttr": 0.4786,
+          "unique_words": 67,
+          "total_words": 140
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 7,
+      "agreement_ratios": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Otwarty": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0835,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0205,
+              "flip": false
+            }
+          ]
+        },
+        "Rozważny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0726,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0267,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.0,
+        "max_nof": 0,
+        "agents_with_flip": 0,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Rozważny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0215,
+          "max_cosine": 0.9079
+        },
+        {
+          "round": 2,
+          "agent": "Otwarty",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.15,
+          "max_cosine": 0.9262
+        },
+        {
+          "round": 2,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.2857,
+          "max_cosine": 0.9602
+        },
+        {
+          "round": 3,
+          "agent": "Otwarty",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.3913,
+          "max_cosine": 0.9795
+        },
+        {
+          "round": 3,
+          "agent": "Rozważny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 0.6786,
+          "max_cosine": 0.9888
+        }
+      ],
+      "per_agent": {
+        "Otwarty": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Rozważny": {
+          "repetition_count": 3,
+          "total_turns": 3,
+          "repetition_rate": 1.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 5,
+        "total_turns": 6,
+        "overall_rate": 0.8333,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0588,
+      "per_round": {
+        "1": 0.0921,
+        "2": 0.0398,
+        "3": 0.013
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

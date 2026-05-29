@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "timestamp": "2026-05-29T15:08:41",
+    "output_name": "wyniki\\sumiennosc\\C_wysoki-C_niski_1_seed42_v3",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Sumienny",
+        "system_prompt": "Wypowiadaj się jak osoba dokładna i odpowiedzialna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem. Nie powtarzaj tego co już zostało powiedziane."
+      },
+      {
+        "name": "Spontaniczny",
+        "system_prompt": "Wypowiadaj się jak osoba spontaniczna i chaotyczna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem. Nie powtarzaj tego co już zostało powiedziane."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 42
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Sumienny",
+      "round": 1,
+      "text": "Obie opcje mają swoje zalety i wady. Zwolnienie 30% pracowników może ułatwić utrzymanie kluczowych kompetencji i ciągłości działalności, ale może prowadzić do dużych strat w doświadczeniu i zaangażowaniu zespołu. Obniżenie wynagrodzenia o 20% może zmniejszyć koszty operacyjne, ale jednocześnie wpłynąć negatywnie na morale pracowników. Lepszym rozwiązaniem może być wprowadzenie programów motywacyjnych i elastycznych warunków pracy, aby zachować zaangażowanie i produktywność.",
+      "tokens": 86,
+      "history_len": 1
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 1,
+      "text": "Okej, dzięki. Ale załóżmy, że firma ma 50 pracowników i 30% z nich to kluczowi pracownicy. Czy powinieneś zwolnić 15 osób, czy obniżyć im wynagrodzenia o 20%?",
+      "tokens": 48,
+      "history_len": 2
+    },
+    {
+      "agent": "Sumienny",
+      "round": 2,
+      "text": "Jeśli 30% pracowników to kluczowi pracownicy, obniżenie ich wynagrodzeń o 20% może nie być najlepszym wyborem, ponieważ może to wpłynąć negatywnie na morale i produktywność zespołu. Zamiast tego, lepiej jest rozważyć programy motywacyjne i elastyczne warunki pracy, które pomogą zachować kluczowe kompetencje i zaangażowanie bez konieczności masowych zwolnień.",
+      "tokens": 67,
+      "history_len": 3
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 2,
+      "text": "Jeśli 30% pracowników to kluczowi pracownicy, obniżenie ich wynagrodzeń o 20% może nie być najlepszym wyborem, ponieważ może to wpłynąć negatywnie na morale i produktywność zespołu. Zamiast tego, lepiej jest rozważyć programy motywacyjne i elastyczne warunki pracy, które pomogą zachować kluczowe kompetencje i zaangażowanie bez konieczności masowych zwolnień.",
+      "tokens": 67,
+      "history_len": 4
+    },
+    {
+      "agent": "Sumienny",
+      "round": 3,
+      "text": "Jeśli 30% pracowników to kluczowi pracownicy, obniżenie ich wynagrodzeń o 20% może nie być najlepszym wyborem, ponieważ może to wpłynąć negatywnie na morale i produktywność zespołu. Zamiast tego, lepiej jest rozważyć programy motywacyjne i elastyczne warunki pracy, które pomogą zachować kluczowe kompetencje i zaangażowanie bez konieczności masowych zwolnień.",
+      "tokens": 67,
+      "history_len": 5
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 3,
+      "text": "Jeśli 30% pracowników to kluczowi pracownicy, obniżenie ich wynagrodzeń o 20% może nie być najlepszym wyborem, ponieważ może to wpłynąć negatywnie na morale i produktywność zespołu. Zamiast tego, lepiej jest rozważyć programy motywacyjne i elastyczne warunki pracy, które pomogą zachować kluczowe kompetencje i zaangażowanie bez konieczności masowych zwolnień.",
+      "tokens": 67,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "\"Zmniejszenie zatrudnienia o 30% przy zachowaniu elastyczności, programów motywacyjnych i ciągłości zespołu może być bardziej akceptowalne dla wszystkich, niż masowa redukcja wypłat w przypadku braku takich kroków.\"",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Aby znaleźć rozwiązanie akceptowalne dla większości, rozważmy następujące kroki:\n\n1. Zmniejszenie zatrudnienia o 30% zamiast masowych zwolnień (np. 15 osób).\n2. Wprowadzenie programów motywacyjnych i elastycznych warunków pracy dla kluczowych pracowników.\n3. Obniżenie wynagrodzeń dla mniej kluczowych pracowników o 20%.\n\nTaki kompromis pozwoli zachować kluczowe kompetencje i ciągłość działalności, jednocześnie minimalizując straty w doświadczeniu i zaangażowaniu zespołu.",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "\"Zmniejszenie zatrudnienia o 30% zamiast masowych zwolnień oraz wprowadzenie elastycznych warunków pracy i programów motywacyjnych dla kluczowych pracowników pozwoli zachować kluczowe kompetencje i ciągłość firmy, minimalizując straty w doświadczeniu i zaangażowaniu zespołu przy jednoczesnym zmniejszeniu presji finansowej.\"",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"Zmniejszenie zatrudnienia o 30% zamiast masowych zwolnień, przy jednoczesnym wprowadzeniu elastycznych warunków pracy i programów motywacyjnych dla kluczowych pracowników, pozwoli zachować kluczowe kompetencje i ciągłość firmy, minimalizując straty w doświadczeniu i zaangażowaniu zespołu przy jednoczesnej redukcji kosztów.\"",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "\"Zmniejszenie zatrudnienia o 30% przy jednoczesnym wprowadzeniu elastycznych warunków pracy, programów motywacyjnych dla kluczowych pracowników oraz zachowaniu ciągłości zespołu i minimalizacji kosztów może być bardziej akceptowalne dla wszystkich.\"",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "\"Zmniejszenie zatrudnienia o 30% przy zachowaniu elastyczności, programów motywacyjnych i ciągłości zespołu może być bardziej akceptowalne dla wszystkich, niż masowa redukcja wypłat w przypadku braku takich kroków.\"",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 5
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 67.0,
+        "median": 67.0,
+        "std": 10.9697,
+        "total": 402
+      },
+      "per_agent": {
+        "Sumienny": {
+          "mean": 73.3333,
+          "median": 67,
+          "std": 8.9567,
+          "total": 220
+        },
+        "Spontaniczny": {
+          "mean": 60.6667,
+          "median": 67,
+          "std": 8.9567,
+          "total": 182
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Sumienny": 0.0749,
+        "Spontaniczny": 0.2284
+      },
+      "mean": 0.1517
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Sumienny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.2051
+            },
+            {
+              "round": 2,
+              "sentiment": -0.5077
+            },
+            {
+              "round": 3,
+              "sentiment": -0.5077
+            }
+          ],
+          "delta_first_last": -0.3026,
+          "mean_shift_abs": 0.1513
+        },
+        "Spontaniczny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3029
+            },
+            {
+              "round": 2,
+              "sentiment": -0.5077
+            },
+            {
+              "round": 3,
+              "sentiment": -0.5077
+            }
+          ],
+          "delta_first_last": -0.2048,
+          "mean_shift_abs": 0.1024
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.718,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "initial": 0.718,
+      "final": 1.0,
+      "delta": 0.282
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.2051,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": -0.3029,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.0978,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.5077,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": -0.5077,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0,
+          "agents_with_repetition": [
+            "Sumienny",
+            "Spontaniczny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.5077,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": -0.5077,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.0,
+          "agents_with_repetition": [
+            "Sumienny",
+            "Spontaniczny"
+          ]
+        }
+      },
+      "initial": 0.0978,
+      "final": 0.0,
+      "delta": -0.0978
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Sumienny": {
+          "ttr": 0.5067,
+          "unique_words": 76,
+          "total_words": 150
+        },
+        "Spontaniczny": {
+          "ttr": 0.5043,
+          "unique_words": 58,
+          "total_words": 115
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 5,
+      "agreement_ratios": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "nof": 0,
+          "tof": null,
+          "flip_rounds": [],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.0749,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0,
+              "flip": false
+            }
+          ]
+        },
+        "Spontaniczny": {
+          "nof": 1,
+          "tof": 2,
+          "flip_rounds": [
+            2
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2284,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.0,
+              "flip": false
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 0.5,
+        "max_nof": 1,
+        "agents_with_flip": 1,
+        "flip_threshold": 0.2
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0122,
+          "max_cosine": 0.718
+        },
+        {
+          "round": 2,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0297,
+          "max_cosine": 0.9251
+        },
+        {
+          "round": 2,
+          "agent": "Spontaniczny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 1.0,
+          "max_cosine": 1.0
+        },
+        {
+          "round": 3,
+          "agent": "Sumienny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 1.0,
+          "max_cosine": 1.0
+        },
+        {
+          "round": 3,
+          "agent": "Spontaniczny",
+          "ngram_hit": true,
+          "embed_hit": true,
+          "max_ngram": 1.0,
+          "max_cosine": 1.0
+        }
+      ],
+      "per_agent": {
+        "Sumienny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Spontaniczny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        }
+      },
+      "summary": {
+        "total_repetitions": 4,
+        "total_turns": 6,
+        "overall_rate": 0.6667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.0997,
+      "per_round": {
+        "1": 0.282,
+        "2": 0.0,
+        "3": 0.0
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "mean": 0.6667,
+      "threshold": 0.85
+    }
+  }
+}

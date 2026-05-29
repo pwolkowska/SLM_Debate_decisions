@@ -95,7 +95,7 @@ def main():
     print(f"\nZapisano:")
     print(f"  {out_path}.json")
     print(f"  {out_path}.txt")
-    print(f"\nOstateczna decyzja: {decision_result['final_answer'][:200]}")
+    print(f"\nOstateczna decyzja:\n{decision_result['final_answer']}")
 
 
 def _build_result(config, debate_log, decision_result, metryki, output_arg):
