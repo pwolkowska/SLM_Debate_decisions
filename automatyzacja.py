@@ -35,19 +35,54 @@ FOLDER_MAP = {
 # =====================================================================
 # SUFFIX Promptu
 # =====================================================================
+# SUFFIX_AGENT_1 = (
+#     # " Bierzesz udział w debacie. "
+#     # "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+#     # "Broń swojego zdania. "
+#     # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+#     # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+#     "Bierzesz udział w debacie. "
+#     "Przedstaw swoje stanowisko i je uzasadnij. "
+#     "Odnoś się do argumentów drugiej strony. "
+#     "Odpowiadaj krótko, maksymalnie 3-4 zdania. "
+#     "Zwracaj wyłącznie czysty tekst."
+# )
+
+# SUFFIX_AGENT_2 = (
+#     # " Bierzesz udział w debacie. "
+#     # "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+#     # "Broń swojego zdania. "
+#     # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+#     # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+#     "Bierzesz udział w debacie. "
+#     "Przedstaw swoje stanowisko i je uzasadnij. "
+#     "Odnoś się do argumentów drugiej strony. "
+#     "Odpowiadaj krótko, maksymalnie 3-4 zdania. "
+#     "Zwracaj wyłącznie czysty tekst."
+# )
 SUFFIX = (
+    # " Bierzesz udział w debacie. "
+    # "W pierwszej wypowiedzi jasno powiedz, którą opcję uważasz za lepszą i dlaczego — na podstawie swoich wartości i charakteru. "
+    # "Broń swojego zdania. "
+    # "Zwróć uwagę na argumenty przeciwnika i odpowiedz na nie. "
+    # "Odpowiadaj w maksymalnie 3-4 zdaniach. Nie formatuj odpowiedzi, zwracaj czysty tekst bez numeracji, punktorów czy pogrubień. "
+    
+    # "Bierzesz udział w dyskusji. "
+    # "Powiedz którą opcję wybierasz i dlaczego. "
+    # "Odpowiedz na to co powiedział rozmówca. "
+    # "Pisz jednym ciągłym akapitem, nie używaj myślników, cyfr ani gwiazdek. "
+    # "Maksymalnie 3-4 zdania."
+
     "Bierzesz udział w dyskusji. "
     "Odpowiedz na argument rozmówcy. "
     "Pisz jednym akapitem, maksymalnie 4-5 zdań."
     "Kontynuuj dyskusję, nie podsumowuj."
 )
 
-
 # =====================================================================
-# PARY AGENTÓW (2 agentów)
+# PARY AGENTÓW
 # =====================================================================
 pary_agentow = {
-    # ── Big Five (OCEAN) — high vs low ──────────────────────────────
     "O_wysoki-O_niski": [BIG5["O_wysoki"], BIG5["O_niski"]],
     "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
     "E_wysoki-E_niski": [BIG5["E_wysoki"], BIG5["E_niski"]],
@@ -56,28 +91,14 @@ pary_agentow = {
 }
 
 # =====================================================================
-# TRÓJKI AGENTÓW (3 agentów)
-# Klucz: dowolna nazwa; subfolder wyznaczany przez FOLDER_MAP lub "trojki"
-# dla kluczy bez prefiksu OCEAN.
-# =====================================================================
-trojki_agentow = {
-    # Przykład: jeden wysoki O, jeden wysoki C, jeden wysoki N
-    # Odkomentuj lub dodaj własne trójki poniżej.
-
-    # "O_wysoki-C_wysoki-N_wysoki": [BIG5["O_wysoki"], BIG5["C_wysoki"], BIG5["N_wysoki"]],
-    # "E_wysoki-A_wysoki-N_niski":  [BIG5["E_wysoki"], BIG5["A_wysoki"], BIG5["N_niski"]],
-}
-
-
-# =====================================================================
 # STAŁE USTAWIENIA
 # =====================================================================
 TOPIC = (
     "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, "
     "żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?"
 )
-ILOSC_POWTORZEN = 4
 SEEDS = [42, 256, 512, 1024]
+ILOSC_POWTORZEN = 4  # ile seedów użyć
 FOLDER_WYNIKOW = Path("wyniki_eksperyment_1")
 
 
