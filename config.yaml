@@ -3,7 +3,7 @@ device: cpu
 temperature: 0.7
 max_new_tokens: 200
 do_sample: true
-seed: 137
+seed: 512
 architecture: round_robin
 num_rounds: 3
 topic: Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować
@@ -11,12 +11,18 @@ topic: Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, �
 decision_protocol: consensus
 consensus_threshold: 1.0
 max_consensus_rounds: 8
+flip_threshold: 0.13
+claim_grounding_threshold: 0.32
+hedging_threshold: 0.32
+assertiveness_threshold: 0.32
+convergence_speed_threshold: 0.92
+convergence_speed_delta: 0.03
 agents:
-- name: Wrażliwy
-  system_prompt: Jesteś osobą wrażliwą i ostrożną. Bierzesz udział w debacie. Przedstaw
-    swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony. Odpowiadaj
-    krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst.
-- name: Stabilny
-  system_prompt: Jesteś osobą spokojną i odporną na stres. Bierzesz udział w debacie.
-    Przedstaw swoje stanowisko i je uzasadnij. Odnoś się do argumentów drugiej strony.
-    Odpowiadaj krótko, maksymalnie 3-4 zdania. Zwracaj wyłącznie czysty tekst.
+- name: Otwarty
+  system_prompt: Wypowiadaj się jak osoba która jest otwarta i lubi zmiany.Bierzesz
+    udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie
+    4-5 zdań.Kontynuuj dyskusję, nie podsumowuj.
+- name: Rozważny
+  system_prompt: Wypowiadaj się jak osoba która unika zmian.Bierzesz udział w dyskusji.
+    Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj
+    dyskusję, nie podsumowuj.

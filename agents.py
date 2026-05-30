@@ -27,6 +27,7 @@ def _generate(model, tokenizer, messages, config):
             temperature=config.get("temperature", 0.7),
             do_sample=config.get("do_sample", True),
             pad_token_id=tokenizer.eos_token_id,
+            repetition_penalty=config.get("repetition_penalty", 1.1),
         )
 
     new_tokens = output_ids[0][inputs["input_ids"].shape[1]:]
@@ -62,12 +63,14 @@ class Agent:
             # zakładamy format: "Agent: tekst"
             if ": " in msg:
                 agent, text = msg.split(": ", 1)
-                role = "assistant" if agent == self.name else "user"
-                messages.append({"role": role, "content": f"{agent}: {text}"})
+                if agent == self.name:
+                    messages.append({"role": "assistant", "content": text})
+                else:
+                    messages.append({"role": "user", "content": f"{agent}: {text}"})
             else:
                 messages.append({"role": "user", "content": msg})
 
-        messages.append({"role": "user", "content": "Teraz kolej na twoją odpowiedź w tej rozmowie. "})
+        messages.append({"role": "user", "content": "Twoja odpowiedź:"})
 
         return _generate(self.model, self.tokenizer, messages, config)
         

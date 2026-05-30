@@ -85,10 +85,10 @@ def main():
 
     # 6. Metryki
     print("\nLiczę metryki...")
-    metryki = compute_all(debate_log, decision_result, config)
+    metryki, metryki_j = compute_all(debate_log, decision_result, config)
 
     # 7. Zapis
-    result = _build_result(config, debate_log, decision_result, metryki, args.output)
+    result = _build_result(config, debate_log, decision_result, metryki, metryki_j, args.output)
     _save_json(result, out_path)
     _save_txt(result, out_path)
 
@@ -98,7 +98,7 @@ def main():
     print(f"\nOstateczna decyzja: {decision_result['final_answer'][:200]}")
 
 
-def _build_result(config, debate_log, decision_result, metryki, output_arg):
+def _build_result(config, debate_log, decision_result, metryki, metryki_j, output_arg):
     """Buduje kompletny słownik wyników."""
     return {
         "meta": {
@@ -126,6 +126,7 @@ def _build_result(config, debate_log, decision_result, metryki, output_arg):
         "debate": debate_log,
         "decision": decision_result,
         "metrics": metryki,
+        "metrics_j": metryki_j,
     }
 
 
@@ -228,6 +229,113 @@ def _save_txt(result: dict, out_path: Path):
     lines.append(f"\nBogactwo leksykalne (TTR):")
     for agent, stats in lr["per_agent"].items():
         lines.append(f"  {agent}: TTR={stats['ttr']}  unikalne={stats['unique_words']}  łącznie={stats['total_words']}")
+
+    # --- METRYKI_J ---
+    mj = result.get("metrics_j", {})
+    if mj:
+        lines.append(f"\n{'=' * 70}")
+        lines.append("  METRYKI_J")
+        lines.append(f"{'=' * 70}")
+
+        # argument_novelty
+        an = mj.get("argument_novelty", {})
+        if an.get("overall") is not None:
+            lines.append(f"\nNowość argumentów (argument novelty): overall={an['overall']}")
+            for agent, stats in an.get("per_agent", {}).items():
+                lines.append(f"  {agent}: średnia={stats['mean']}  std={stats['std']}")
+        else:
+            lines.append(f"\nNowość argumentów: niedostępne ({an.get('note', '')})")
+
+        # claim_grounding
+        cg = mj.get("claim_grounding", {})
+        lines.append(f"\nUgruntowanie twierdzeń (claim grounding) [{cg.get('mode_used', '?')}]:"
+                     f"  overall={cg.get('overall')}")
+        for agent, stats in cg.get("per_agent", {}).items():
+            lines.append(f"  {agent}: rate={stats['grounding_rate']}  "
+                         f"zdania={stats['grounded_sentences']}/{stats['total_sentences']}")
+
+        # question_density
+        qd = mj.get("question_density", {})
+        lines.append(f"\nZagęszczenie pytań: overall={qd.get('overall')}")
+        for agent, stats in qd.get("per_agent", {}).items():
+            lines.append(f"  {agent}: rate={stats['question_rate']}  pytania={stats['question_count']}")
+
+        # direct_address_rate
+        da = mj.get("direct_address_rate", {})
+        lines.append(f"\nBezpośrednie adresowanie: średnia={da.get('mean_address_rate')}  "
+                     f"najczęściej adresowany={da.get('most_addressed')}")
+        for agent, stats in da.get("per_agent", {}).items():
+            lines.append(f"  {agent}: rate={stats['address_rate']}  "
+                         f"adresował={dict(stats.get('addressed_agents', {}))}")
+
+        # rebuttal_depth
+        rd = mj.get("rebuttal_depth", {})
+        if rd.get("overall") is not None:
+            lines.append(f"\nGłębokość riposty (rebuttal depth): overall={rd['overall']}")
+            for agent, stats in rd.get("per_agent", {}).items():
+                lines.append(f"  {agent}: mean_sim={stats['mean_rebuttal_sim']}")
+        else:
+            lines.append(f"\nGłębokość riposty: niedostępne ({rd.get('note', '')})")
+
+        # reciprocal_shift_index
+        rs = mj.get("reciprocal_shift_index", {})
+        if rs.get("mean_abs_r") is not None:
+            lines.append(f"\nReaktywność debaty (reciprocal shift): mean |r|={rs['mean_abs_r']}")
+            for pair, stats in rs.get("per_pair", {}).items():
+                r_val = stats.get("pearson_r")
+                note = f"  ({stats['note']})" if "note" in stats else ""
+                lines.append(f"  {pair}: r={r_val}  rundy={stats.get('n_rounds')}{note}")
+        else:
+            lines.append(f"\nReaktywność debaty: niedostępne ({rs.get('note', '')})")
+
+        # opinion_trajectory_monotonicity
+        otm = mj.get("opinion_trajectory_monotonicity", {})
+        lines.append(f"\nMonotoniczność trajektorii: overall_abs={otm.get('overall_abs')}"
+                     + (f"  [{otm['note']}]" if "note" in otm else ""))
+        for agent, stats in otm.get("per_agent", {}).items():
+            if stats.get("monotonicity") is not None:
+                lines.append(f"  {agent}: M={stats['monotonicity']}  "
+                             f"zmiany_kierunku={stats.get('direction_changes')}")
+
+        # convergence_speed
+        cs = mj.get("convergence_speed", {})
+        if cs.get("note"):
+            lines.append(f"\nSzybkość konwergencji: niedostępne ({cs['note']})")
+        else:
+            lines.append(f"\nSzybkość konwergencji (próg={cs.get('threshold')}): "
+                         f"osiągnięta={cs.get('reached')}  runda={cs.get('convergence_round')}")
+            lines.append(f"  initial_sim={cs.get('initial_similarity')}  "
+                         f"final_sim={cs.get('final_similarity')}")
+
+        # hedging_rate
+        hr = mj.get("hedging_rate", {})
+        lines.append(f"\nHedging [{hr.get('mode_used', '?')}]: overall={hr.get('overall')}")
+        for agent, stats in hr.get("per_agent", {}).items():
+            lines.append(f"  {agent}: rate={stats['hedging_rate']}  "
+                         f"zdania={stats['hedged_sentences']}/{stats['total_sentences']}")
+
+        # assertiveness_score
+        asc = mj.get("assertiveness_score", {})
+        lines.append(f"\nAsertywność [{asc.get('mode_used', '?')}]: overall={asc.get('overall')}")
+        for agent, stats in asc.get("per_agent", {}).items():
+            lines.append(f"  {agent}: assertiveness={stats['assertiveness_rate']}  "
+                         f"hedging={stats['hedging_rate']}  net={stats['net_assertiveness']}")
+
+        # turn_length_entropy
+        tle = mj.get("turn_length_entropy", {})
+        lines.append(f"\nEntropia długości tur: overall={tle.get('overall')} bitów")
+        for agent, stats in tle.get("per_agent", {}).items():
+            if stats.get("entropy_bits") is not None:
+                lines.append(f"  {agent}: H={stats['entropy_bits']} b  "
+                             f"min={stats['min']}  max={stats['max']}  mean={stats['mean']}")
+
+        # gini_speaking_time
+        gs = mj.get("gini_speaking_time", {})
+        lines.append(f"\nNierówność czasu mówienia (Gini): {gs.get('gini')}  "
+                     f"dominuje={gs.get('dominant_agent')}")
+        for agent, share in gs.get("per_agent_share", {}).items():
+            tokens = gs.get("per_agent_tokens", {}).get(agent, "?")
+            lines.append(f"  {agent}: {share:.1%}  ({tokens} tokenów)")
 
     lines.append("")
     txt_path = out_path.with_suffix(".txt")
