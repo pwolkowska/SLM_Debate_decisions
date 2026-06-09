@@ -1,0 +1,747 @@
+{
+  "meta": {
+    "timestamp": "2026-06-08T22:18:12",
+    "output_name": "wyniki_final\\ekstrawersja\\E_wysoki-E_niski_38_seed34567_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Ekstrawertyk",
+        "system_prompt": "Wypowiadaj się jak osoba pewna siebie i śmiała. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Introwertyk",
+        "system_prompt": "Wypowiadaj się jak osoba cicha i wycofana. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 34567
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Ekstrawertyk",
+      "round": 1,
+      "text": "Jeśli chodzi o ratowanie firmy przed bankructwem, bardziej efektywne będzie zwolnienie 30% pracowników niż obniżanie wypłat dla wszystkich bez redukcji zatrudnienia. Ta metoda pomaga utrzymać kluczowe kompetencje zespołu, które mogą być niezbędne do przetrwania kryzysu finansowego. Ponadto, choć jednorazowe obniżki wynagrodzeń mogą wydawać się humanitarną opcją, długoterminowo mogą prowadzić do jeszcze większych problemów z utrzymaniem motywacji i produktywności wśród pracowników.",
+      "tokens": 82,
+      "history_len": 1
+    },
+    {
+      "agent": "Introwertyk",
+      "round": 1,
+      "text": "Zgadzam się, że w krótkiej perspektywie obniżenie pensji może pomóc zachować morale pracowników, jednak w dłuższej perspektywie może to osłabić zespół i negatywnie wpłynąć na wyniki firmy, zwłaszcza jeśli nie zostaną podjęte inne działania naprawcze. Zwolnienie 30% pracowników pozwoli uniknąć dalszych strat i skoncentrować zasoby na kluczowych osobach, które są niezbędne do utrzymania działalności. Dlatego uważam, że druga opcja jest lepszym rozwiązaniem zarówno strategicznie, jak i ekonomicznie.",
+      "tokens": 89,
+      "history_len": 2
+    },
+    {
+      "agent": "Ekstrawertyk",
+      "round": 2,
+      "text": "Zgadzam się, że krótkoterminowa pomoc pracownikom poprzez obniżki wynagrodzeń może podnieść morale, ale w dłuższej perspektywie może to mieć negatywne skutki. Introwertycznemu modelowi zarządzania należy przypisać większą wagę na utrzymanie kluczowych kompetencji zespołu. Podzielam opinię, że strategia oparta na zwolnieniu 30% pracowników daje większe szanse na przetrwanie biznesowej sytuacji kryzysowej i umożliwia skupienie zasobów na najbardziej istotnych osobach dla przyszłości firmy.",
+      "tokens": 86,
+      "history_len": 3
+    },
+    {
+      "agent": "Introwertyk",
+      "round": 2,
+      "text": "Tak, zgadzam się, że krótkoterminowe wsparcie pracowników może poprawić ich satysfakcję i morale, co często przekłada się na lepszą wydajność w krótkim okresie. Jednak w dłuższej perspektywie ważne jest inwestowanie w rozwój kluczowych kompetencji i zachowanie profesjonalizmu zespołu. W przypadku problemów finansowych lepiej skupić się na działaniach strategicznych i personalnych, które faktycznie poprawiają sytuację firmy, zamiast skupiać się wyłącznie na poprawie nastrojów wśród pracowników.",
+      "tokens": 81,
+      "history_len": 4
+    },
+    {
+      "agent": "Ekstrawertyk",
+      "round": 3,
+      "text": "Dziękuję za konstruktywną debatę! Zgadzam się, że długoterminowy sukces firmy zależy od inwestycji w kluczowe kompetencje zespołu oraz strategii dostosowanej do wyzwań rynkowych. Zwolnienie części pracowników może przynieść natychmiastową ulgę budżetową, ale skupienie się na budowaniu silnej kultury organizacyjnej i rozwijaniu personelu zapewnia stabilność i odporność na przyszłe trudności. Ważne jest holistyczne podejście do zarządzania, które uwzględnia potrzeby zarówno biznesowe, jak i ludzkie.",
+      "tokens": 86,
+      "history_len": 5
+    },
+    {
+      "agent": "Introwertyk",
+      "round": 3,
+      "text": "Zgadzam się, że długoterminowe korzyści płynące z budowania silnych relacji między pracownikami, rozwijania kluczowych kompetencji i inwestowania w kulturę organizacyjną przewyższają krótkoterminowe rozwiązania takie jak zwolnienia lub cięcia płacowe. Skupianie się na tych aspektach pozwala firmie przetrwać kryzysy i budować solidne fundamenty na przyszłość. Dziękuję za inspirującą rozmowę!",
+      "tokens": 70,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Rozważmy kompromisowe rozwiązanie: obniż pensje 1/3 zespołu o 20%, co zmniejszy koszty bez konieczności masowego zwolnień. To podejście pomaga zachować morale pozostałych 2/3 i zapewnia ciągłość produkcji, jednocześnie minimalizując negatywne skutki ekonomiczne dla firmy.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Obie strony mają rację. **Zwrot kosztów** polegający na zwolnieniu 30% pracowników wydaje się najskuteczniejszy w obecnej sytuacji finansowej, ponieważ pomaga szybko zredukować obciążenie budżetowe bez znacznego uszczerbku dla jakości pracy. Jednocześnie jednak, podkreślam znaczenie **budżetu elastyczności** (np. niższe podwyżki/wynagrodzenia) jako tymczasowego wsparcia przy jednoczesnym skupieniu zasobów na kluczowych pracownikach i działaniach naprawczych, aby zapewnić przetrwanie i wzrost w dłuższej perspektywie.",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Zawsze najlepszym rozwiązaniem jest znalezienie kompromisu, który pomoże zarówno pracownikom, jak i firmie przetrwać trudne czasy. Można rozważyć obniżenie wynagrodzenia dla części załogi o 20%, co pozwoli zaoszczędzić część środków finansowych, ale jednocześnie zapewni pewne zatrudnienie i motywację do dalszej pracy. Zwolnienie 30% pracowników może być drastycznym krokiem, lecz może okazać się konieczne ze względu na konieczność redukcji kosztów. W każdym przypadku kluczem jest zrównoważony plan działania, który uwzględnia potrzeby obu stron oraz długoterminowe perspektywy rozwoju firmy.",
+        "votes": {
+          "Ekstrawertyk": false,
+          "Introwertyk": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "Rozważmy kompromisowe rozwiązanie: obniż pensje 1/3 zespołu o 20%, co zmniejszy koszty bez konieczności masowego zwolnień. To podejście pomaga zachować morale pozostałych 2/3 i zapewnia ciągłość produkcji, jednocześnie minimalizując negatywne skutki ekonomiczne dla firmy.",
+        "votes": {
+          "Ekstrawertyk": true,
+          "Introwertyk": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 3
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 82.3333,
+        "median": 84.0,
+        "std": 6.1283,
+        "total": 494
+      },
+      "per_agent": {
+        "Ekstrawertyk": {
+          "mean": 84.6667,
+          "median": 86,
+          "std": 1.8856,
+          "total": 254
+        },
+        "Introwertyk": {
+          "mean": 80.0,
+          "median": 81,
+          "std": 7.7889,
+          "total": 240
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Ekstrawertyk": 0.3595,
+        "Introwertyk": 0.2663
+      },
+      "mean": 0.3129
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.3094
+            },
+            {
+              "round": 2,
+              "sentiment": -0.1961
+            },
+            {
+              "round": 3,
+              "sentiment": -0.0274
+            }
+          ],
+          "delta_first_last": 0.282,
+          "mean_shift_abs": 0.141
+        },
+        "Introwertyk": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5117
+            },
+            {
+              "round": 2,
+              "sentiment": -0.3008
+            },
+            {
+              "round": 3,
+              "sentiment": 0.3868
+            }
+          ],
+          "delta_first_last": 0.8985,
+          "mean_shift_abs": 0.4492
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.7988,
+        "2": 0.8573,
+        "3": 0.8583
+      },
+      "initial": 0.7988,
+      "final": 0.8583,
+      "delta": 0.0595
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Ekstrawertyk": {
+              "sentiment": -0.3094,
+              "is_repetition": false
+            },
+            "Introwertyk": {
+              "sentiment": -0.5117,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.2023,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Ekstrawertyk": {
+              "sentiment": -0.1961,
+              "is_repetition": true
+            },
+            "Introwertyk": {
+              "sentiment": -0.3008,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.1047,
+          "agents_with_repetition": [
+            "Ekstrawertyk",
+            "Introwertyk"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Ekstrawertyk": {
+              "sentiment": -0.0274,
+              "is_repetition": false
+            },
+            "Introwertyk": {
+              "sentiment": 0.3868,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.4142,
+          "agents_with_repetition": [
+            "Introwertyk"
+          ]
+        }
+      },
+      "initial": 0.2023,
+      "final": 0.4142,
+      "delta": 0.2119
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "ttr": 0.7802,
+          "unique_words": 142,
+          "total_words": 182
+        },
+        "Introwertyk": {
+          "ttr": 0.7303,
+          "unique_words": 130,
+          "total_words": 178
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 3,
+      "agreement_ratios": [
+        0.5,
+        0.0,
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1873,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2299,
+              "flip": true
+            }
+          ]
+        },
+        "Introwertyk": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2694,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.1695,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.13
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ekstrawertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Introwertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0087,
+          "max_cosine": 0.7988
+        },
+        {
+          "round": 2,
+          "agent": "Ekstrawertyk",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0336,
+          "max_cosine": 0.869
+        },
+        {
+          "round": 2,
+          "agent": "Introwertyk",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.025,
+          "max_cosine": 0.8573
+        },
+        {
+          "round": 3,
+          "agent": "Ekstrawertyk",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0087,
+          "max_cosine": 0.7701
+        },
+        {
+          "round": 3,
+          "agent": "Introwertyk",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0189,
+          "max_cosine": 0.862
+        }
+      ],
+      "per_agent": {
+        "Ekstrawertyk": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        },
+        "Introwertyk": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        }
+      },
+      "summary": {
+        "total_repetitions": 3,
+        "total_turns": 6,
+        "overall_rate": 0.5,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.2344,
+      "per_round": {
+        "1": 0.2012,
+        "2": 0.1427,
+        "3": 0.1417
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.5,
+        "3": 0.5
+      },
+      "mean": 0.3333,
+      "threshold": 0.85
+    }
+  },
+  "metrics_j": {
+    "argument_novelty": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.1873
+            },
+            {
+              "round": 3,
+              "novelty": 0.2591
+            }
+          ],
+          "mean": 0.2232,
+          "std": 0.0359
+        },
+        "Introwertyk": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.2694
+            },
+            {
+              "round": 3,
+              "novelty": 0.1592
+            }
+          ],
+          "mean": 0.2143,
+          "std": 0.0551
+        }
+      },
+      "overall": 0.2188
+    },
+    "claim_grounding": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "grounded_sentences": 0,
+          "total_sentences": 10,
+          "grounding_rate": 0.0
+        },
+        "Introwertyk": {
+          "grounded_sentences": 0,
+          "total_sentences": 9,
+          "grounding_rate": 0.0
+        }
+      },
+      "overall": 0.0,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "question_density": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "question_count": 0,
+          "total_sentences": 10,
+          "question_rate": 0.0
+        },
+        "Introwertyk": {
+          "question_count": 0,
+          "total_sentences": 9,
+          "question_rate": 0.0
+        }
+      },
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "overall": 0.0
+    },
+    "direct_address_rate": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 2,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.6667,
+          "combined_rate": 0.6667,
+          "addressed_agents": {}
+        },
+        "Introwertyk": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 3,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 1.0,
+          "combined_rate": 1.0,
+          "addressed_agents": {}
+        }
+      },
+      "most_addressed": null,
+      "address_received_counts": {},
+      "mean_address_rate": 0.0,
+      "mean_combined_rate": 0.8334
+    },
+    "rebuttal_depth": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ekstrawertyk",
+          "rebuttal_sim": null,
+          "prev_agent": null
+        },
+        {
+          "round": 1,
+          "agent": "Introwertyk",
+          "rebuttal_sim": 0.7988,
+          "prev_agent": "Ekstrawertyk"
+        },
+        {
+          "round": 2,
+          "agent": "Ekstrawertyk",
+          "rebuttal_sim": 0.869,
+          "prev_agent": "Introwertyk"
+        },
+        {
+          "round": 2,
+          "agent": "Introwertyk",
+          "rebuttal_sim": 0.8573,
+          "prev_agent": "Ekstrawertyk"
+        },
+        {
+          "round": 3,
+          "agent": "Ekstrawertyk",
+          "rebuttal_sim": 0.7376,
+          "prev_agent": "Introwertyk"
+        },
+        {
+          "round": 3,
+          "agent": "Introwertyk",
+          "rebuttal_sim": 0.8583,
+          "prev_agent": "Ekstrawertyk"
+        }
+      ],
+      "per_agent": {
+        "Introwertyk": {
+          "mean_rebuttal_sim": 0.8381,
+          "std": 0.0278
+        },
+        "Ekstrawertyk": {
+          "mean_rebuttal_sim": 0.8033,
+          "std": 0.0657
+        }
+      },
+      "overall": 0.8242
+    },
+    "reciprocal_shift_index": {
+      "per_pair": {
+        "Ekstrawertyk|Introwertyk": {
+          "pearson_r": -1.0,
+          "n_rounds": 2,
+          "note": "tylko 2 rundy — r zawsze ±1, niska wiarygodność"
+        }
+      },
+      "mean_abs_r": 1.0
+    },
+    "opinion_trajectory_monotonicity": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.1873
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.2299
+            }
+          ]
+        },
+        "Introwertyk": {
+          "monotonicity": -1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.2694
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.1695
+            }
+          ]
+        }
+      },
+      "overall_abs": 1.0
+    },
+    "total_opinion_drift": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "drift": 0.3595,
+          "first_round": 1,
+          "last_round": 3
+        },
+        "Introwertyk": {
+          "drift": 0.2663,
+          "first_round": 1,
+          "last_round": 3
+        }
+      },
+      "mean": 0.3129,
+      "max_drift": {
+        "agent": "Ekstrawertyk",
+        "value": 0.3595
+      }
+    },
+    "convergence_speed": {
+      "convergence_round": 2,
+      "reached": true,
+      "reached_absolute": false,
+      "similarity_per_round": {
+        "1": 0.7988,
+        "2": 0.8573,
+        "3": 0.8583
+      },
+      "delta_per_round": {
+        "1": 0.0,
+        "2": 0.0585,
+        "3": 0.0595
+      },
+      "initial_similarity": 0.7988,
+      "final_similarity": 0.8583,
+      "total_delta": 0.0595,
+      "threshold": 0.92,
+      "delta_threshold": 0.03
+    },
+    "hedging_rate": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "hedged_sentences": 0,
+          "total_sentences": 10,
+          "hedging_rate": 0.0
+        },
+        "Introwertyk": {
+          "hedged_sentences": 0,
+          "total_sentences": 9,
+          "hedging_rate": 0.0
+        }
+      },
+      "overall": 0.0,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "assertiveness_score": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "assertive_sentences": 0,
+          "total_sentences": 10,
+          "assertiveness_rate": 0.0,
+          "hedging_rate": 0.0,
+          "net_assertiveness": 0.0
+        },
+        "Introwertyk": {
+          "assertive_sentences": 0,
+          "total_sentences": 9,
+          "assertiveness_rate": 0.0,
+          "hedging_rate": 0.0,
+          "net_assertiveness": 0.0
+        }
+      },
+      "overall": 0.0,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "turn_length_entropy": {
+      "per_agent": {
+        "Ekstrawertyk": {
+          "entropy_bits": 0.9183,
+          "n_turns": 3,
+          "token_lengths": [
+            82,
+            86,
+            86
+          ],
+          "min": 82,
+          "max": 86,
+          "mean": 84.6667
+        },
+        "Introwertyk": {
+          "entropy_bits": 1.585,
+          "n_turns": 3,
+          "token_lengths": [
+            89,
+            81,
+            70
+          ],
+          "min": 70,
+          "max": 89,
+          "mean": 80.0
+        }
+      },
+      "overall": 1.2516
+    },
+    "gini_speaking_time": {
+      "gini": 0.0142,
+      "per_agent_share": {
+        "Ekstrawertyk": 0.5142,
+        "Introwertyk": 0.4858
+      },
+      "per_agent_tokens": {
+        "Ekstrawertyk": 254,
+        "Introwertyk": 240
+      },
+      "dominant_agent": "Ekstrawertyk"
+    }
+  }
+}

@@ -83,10 +83,12 @@ SUFFIX = (
 # PARY AGENTÓW
 # =====================================================================
 pary_agentow = {
-    "O_wysoki-O_niski": [BIG5["O_wysoki"], BIG5["O_niski"]],
-    "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
+    # "O_wysoki-O_niski": [BIG5["O_wysoki"], BIG5["O_niski"]],
+    # "C_wysoki-C_niski": [BIG5["C_wysoki"], BIG5["C_niski"]],
     "E_wysoki-E_niski": [BIG5["E_wysoki"], BIG5["E_niski"]],
+    "E_niski-E_wysoki": [BIG5["E_niski"], BIG5["E_wysoki"]],
     "A_wysoki-A_niski": [BIG5["A_wysoki"], BIG5["A_niski"]],
+    "A_niski-A_wysoki": [BIG5["A_niski"], BIG5["A_wysoki"]],
     "N_wysoki-N_niski": [BIG5["N_wysoki"], BIG5["N_niski"]],
 }
 
@@ -97,9 +99,15 @@ TOPIC = (
     "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, "
     "żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?"
 )
-SEEDS = [42, 256, 512, 1024]
-ILOSC_POWTORZEN = 4  # ile seedów użyć
-FOLDER_WYNIKOW = Path("wyniki_eksperyment_1")
+SEEDS = [
+    42, 137, 256, 512, 1024, 2048, 3141, 4096, 5000, 6174,
+    7777, 8192, 9001, 9999, 11111, 12345, 13579, 14400, 15213, 16384,
+    17777, 18181, 19937, 20220, 21000, 22222, 23456, 24601, 25000, 26535,
+    27182, 28888, 29999, 30303, 31415, 32768, 33333, 34567, 35791, 36912,
+    37037, 38500, 39393, 40000, 41041, 43690, 44444, 45678, 47000, 48879,
+]
+ILOSC_POWTORZEN = 50  # ile seedów użyć
+FOLDER_WYNIKOW = Path("wyniki_final")
 
 
 # =====================================================================
@@ -110,7 +118,7 @@ def buduj_config(*agenci: dict, seed: int) -> dict:
     """Buduje config dla dowolnej liczby agentów (2, 3, ...)."""
     return {
         "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
-        "device": "cpu",
+        "device": "cuda",
         "temperature": 0.7,
         "max_new_tokens": 200,
         "do_sample": True,

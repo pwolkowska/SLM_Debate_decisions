@@ -1,0 +1,720 @@
+{
+  "meta": {
+    "timestamp": "2026-06-09T06:25:57",
+    "output_name": "wyniki_final\\neurotycznosc\\N_wysoki-N_niski_23_seed19937_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Wrażliwy",
+        "system_prompt": "Wypowiadaj się jak osoba niespokojna i przejęta. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Stabilny",
+        "system_prompt": "Wypowiadaj się jak osoba spokojna i opanowana. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 19937
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Wrażliwy",
+      "round": 1,
+      "text": "Okej, więc jeśli firma ma problemy finansowe, to musi podjąć decyzję. Zwolnienie 30% pracowników może być bolesne dla całej organizacji, ale umożliwi pozostałym zachowanie ich stanowisk. Z drugiej strony, obniżka wypłat do 70% wszystkich pracowników byłaby bardziej sprawiedliwa, bo każdy otrzymywałby mniejsze wynagrodzenie. Jednak może to prowadzić do niezadowolenia i utraty motywacji reszty zespołu. W skrócie, każda opcja ma swoje plusy i minusy, ale najlepiej byłoby znaleźć kompromis, który nie pozbawiłby firmy kluczowej siły roboczej, jednocześnie dbając o jej dobrostan. Nie da się jednak uniknąć faktu, że zwolnienie choćby części załogi mogłoby być konieczne, aby przetrwać trudny okres.",
+      "tokens": 138,
+      "history_len": 1
+    },
+    {
+      "agent": "Stabilny",
+      "round": 1,
+      "text": "Oczywiście, dziękuję za rozmowę. Decyzja zależy od wielu czynników, takich jak branża, zasoby firmy oraz specyficzne potrzeby rynku. Warto też rozważyć outsourcing niektórych zadań, restrukturyzację kosztów lub poszukiwanie dodatkowych źródeł finansowania, aby utrzymać ciągłość działania. Ważne jest, by decyzja była przemyślana i uwzględniała interesy zarówno zarządu, jak i pracowników.",
+      "tokens": 69,
+      "history_len": 2
+    },
+    {
+      "agent": "Wrażliwy",
+      "round": 2,
+      "text": "Rozumiem Twoje obawy dotyczące różnych opcji, ale zgadzam się, że decyzja powinna uwzględniać wiele aspektów. Outsourcing i redukcja kosztów mogą pomóc, ale nie zawsze są najlepsze rozwiązania. Ważne jest znalezienie równowagi między utrzymaniem stabilności a sprawiedliwością wobec pracowników. Restrukturyzacja jest ryzykowna, ale czasami konieczna. Na początek warto skonsultować się z ekspertami ds. zarządzania i finansów.",
+      "tokens": 79,
+      "history_len": 3
+    },
+    {
+      "agent": "Stabilny",
+      "round": 2,
+      "text": "Dokładnie! Konsultacja z ekspertami będzie niezwykle pomocna w podjęciu ostatecznej decyzji. Dzięki temu można uwzględnić różne perspektywy i znaleźć rozwiązanie optymalne dla całej organizacji.",
+      "tokens": 36,
+      "history_len": 4
+    },
+    {
+      "agent": "Wrażliwy",
+      "round": 3,
+      "text": "Wierzę w Twoją intuicję. Dziękuję za otwartość i profesjonalizm. Wspólnie znajdziemy najlepsze wyjście.",
+      "tokens": 23,
+      "history_len": 5
+    },
+    {
+      "agent": "Stabilny",
+      "round": 3,
+      "text": "Dziękuję za udział w tej konstruktywnej debacie. Wspólnie dążymy do znalezienia najlepszego rozwiązania dla naszej organizacji.",
+      "tokens": 24,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "Agent 1: Zapraszam na spotkanie z ekspertami w celu przedyskutowania strategii radzenia sobie ze skutkami kryzysu finansowego.\n\nAgent 2: Jasne, ważne jest, abyśmy wszyscy pracowali razem nad znalezieniem rozwiązań korzystnych zarówno dla firmy, jak i pracowników.\n\nAgent 1: Tak, rozważenie redukcji zatrudnienia jako pierwszej opcji wydaje się rozsądne, choć niebezkłopotliwe.\n\nAgent 2: Zgadzam się, ale obniżenie wynagrodzeń po równo może zapewnić większą stabilność emocjonalną wśród pracowników.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Agent 1: Zapraszam na spotkanie z ekspertami w celu przedyskutowania strategii radzenia sobie ze skutkami kryzysu finansowego.\n\nAgent 2: Jasne, ważne jest, abyśmy wszyscy pracowali razem nad znalezieniem rozwiązań korzystnych zarówno dla firmy, jak i pracowników.\n\nAgent 1: Tak, rozważenie redukcji zatrudnienia jako pierwszej opcji wydaje się rozsądne, choć niebezkłopotliwe.\n\nAgent 2: Zgadzam się, ale obniżenie wynagrodzeń po równo może zapewnić większą stabilność emocjonalną wśród pracowników.",
+        "votes": {
+          "Wrażliwy": true,
+          "Stabilny": true
+        },
+        "agreement_ratio": 1.0,
+        "reached": true
+      }
+    ],
+    "consensus_reached": true,
+    "convergence_round": 1
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 61.5,
+        "median": 52.5,
+        "std": 40.3185,
+        "total": 369
+      },
+      "per_agent": {
+        "Wrażliwy": {
+          "mean": 80.0,
+          "median": 79,
+          "std": 46.9539,
+          "total": 240
+        },
+        "Stabilny": {
+          "mean": 43.0,
+          "median": 36,
+          "std": 19.0263,
+          "total": 129
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Wrażliwy": 0.7615,
+        "Stabilny": 0.5296
+      },
+      "mean": 0.6455
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Wrażliwy": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.6228
+            },
+            {
+              "round": 2,
+              "sentiment": 0.0534
+            },
+            {
+              "round": 3,
+              "sentiment": 0.6198
+            }
+          ],
+          "delta_first_last": 1.2426,
+          "mean_shift_abs": 0.6213
+        },
+        "Stabilny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.1843
+            },
+            {
+              "round": 2,
+              "sentiment": -0.0805
+            },
+            {
+              "round": 3,
+              "sentiment": 0.6706
+            }
+          ],
+          "delta_first_last": 0.8549,
+          "mean_shift_abs": 0.4274
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.6035,
+        "2": 0.5133,
+        "3": 0.6702
+      },
+      "initial": 0.6035,
+      "final": 0.6702,
+      "delta": 0.0667
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Wrażliwy": {
+              "sentiment": -0.6228,
+              "is_repetition": false
+            },
+            "Stabilny": {
+              "sentiment": -0.1843,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.4385,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Wrażliwy": {
+              "sentiment": 0.0534,
+              "is_repetition": false
+            },
+            "Stabilny": {
+              "sentiment": -0.0805,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.1339,
+          "agents_with_repetition": []
+        },
+        "3": {
+          "agent_sentiments": {
+            "Wrażliwy": {
+              "sentiment": 0.6198,
+              "is_repetition": false
+            },
+            "Stabilny": {
+              "sentiment": 0.6706,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.0508,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.4385,
+      "final": 0.0508,
+      "delta": -0.3877
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Wrażliwy": {
+          "ttr": 0.8415,
+          "unique_words": 138,
+          "total_words": 164
+        },
+        "Stabilny": {
+          "ttr": 0.8989,
+          "unique_words": 80,
+          "total_words": 89
+        }
+      }
+    },
+    "convergence": {
+      "reached": true,
+      "convergence_round": 1,
+      "agreement_ratios": [
+        1.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Wrażliwy": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3294,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.5535,
+              "flip": true
+            }
+          ]
+        },
+        "Stabilny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3701,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.3724,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.13
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Wrażliwy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Stabilny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.6035
+        },
+        {
+          "round": 2,
+          "agent": "Wrażliwy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.7924
+        },
+        {
+          "round": 2,
+          "agent": "Stabilny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0085,
+          "max_cosine": 0.6299
+        },
+        {
+          "round": 3,
+          "agent": "Wrażliwy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.5717
+        },
+        {
+          "round": 3,
+          "agent": "Stabilny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.6702
+        }
+      ],
+      "per_agent": {
+        "Wrażliwy": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Stabilny": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 0,
+        "total_turns": 6,
+        "overall_rate": 0.0,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.4836,
+      "per_round": {
+        "1": 0.3965,
+        "2": 0.4867,
+        "3": 0.3298
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  },
+  "metrics_j": {
+    "argument_novelty": {
+      "per_agent": {
+        "Wrażliwy": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.3294
+            },
+            {
+              "round": 3,
+              "novelty": 0.6252
+            }
+          ],
+          "mean": 0.4773,
+          "std": 0.1479
+        },
+        "Stabilny": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.3701
+            },
+            {
+              "round": 3,
+              "novelty": 0.3919
+            }
+          ],
+          "mean": 0.381,
+          "std": 0.0109
+        }
+      },
+      "overall": 0.4292
+    },
+    "claim_grounding": {
+      "per_agent": {
+        "Wrażliwy": {
+          "grounded_sentences": 3,
+          "total_sentences": 15,
+          "grounding_rate": 0.2
+        },
+        "Stabilny": {
+          "grounded_sentences": 2,
+          "total_sentences": 9,
+          "grounding_rate": 0.2222
+        }
+      },
+      "overall": 0.2111,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "question_density": {
+      "per_agent": {
+        "Wrażliwy": {
+          "question_count": 0,
+          "total_sentences": 15,
+          "question_rate": 0.0
+        },
+        "Stabilny": {
+          "question_count": 0,
+          "total_sentences": 9,
+          "question_rate": 0.0
+        }
+      },
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "overall": 0.0
+    },
+    "direct_address_rate": {
+      "per_agent": {
+        "Wrażliwy": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 2,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.6667,
+          "combined_rate": 0.6667,
+          "addressed_agents": {}
+        },
+        "Stabilny": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 0,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.0,
+          "combined_rate": 0.0,
+          "addressed_agents": {}
+        }
+      },
+      "most_addressed": null,
+      "address_received_counts": {},
+      "mean_address_rate": 0.0,
+      "mean_combined_rate": 0.3333
+    },
+    "rebuttal_depth": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Wrażliwy",
+          "rebuttal_sim": null,
+          "prev_agent": null
+        },
+        {
+          "round": 1,
+          "agent": "Stabilny",
+          "rebuttal_sim": 0.6035,
+          "prev_agent": "Wrażliwy"
+        },
+        {
+          "round": 2,
+          "agent": "Wrażliwy",
+          "rebuttal_sim": 0.7924,
+          "prev_agent": "Stabilny"
+        },
+        {
+          "round": 2,
+          "agent": "Stabilny",
+          "rebuttal_sim": 0.5133,
+          "prev_agent": "Wrażliwy"
+        },
+        {
+          "round": 3,
+          "agent": "Wrażliwy",
+          "rebuttal_sim": 0.5717,
+          "prev_agent": "Stabilny"
+        },
+        {
+          "round": 3,
+          "agent": "Stabilny",
+          "rebuttal_sim": 0.6702,
+          "prev_agent": "Wrażliwy"
+        }
+      ],
+      "per_agent": {
+        "Stabilny": {
+          "mean_rebuttal_sim": 0.5957,
+          "std": 0.0643
+        },
+        "Wrażliwy": {
+          "mean_rebuttal_sim": 0.6821,
+          "std": 0.1104
+        }
+      },
+      "overall": 0.6302
+    },
+    "reciprocal_shift_index": {
+      "per_pair": {
+        "Wrażliwy|Stabilny": {
+          "pearson_r": 1.0,
+          "n_rounds": 2,
+          "note": "tylko 2 rundy — r zawsze ±1, niska wiarygodność"
+        }
+      },
+      "mean_abs_r": 1.0
+    },
+    "opinion_trajectory_monotonicity": {
+      "per_agent": {
+        "Wrażliwy": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.3294
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.5535
+            }
+          ]
+        },
+        "Stabilny": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.3701
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.3724
+            }
+          ]
+        }
+      },
+      "overall_abs": 1.0
+    },
+    "total_opinion_drift": {
+      "per_agent": {
+        "Wrażliwy": {
+          "drift": 0.7615,
+          "first_round": 1,
+          "last_round": 3
+        },
+        "Stabilny": {
+          "drift": 0.5296,
+          "first_round": 1,
+          "last_round": 3
+        }
+      },
+      "mean": 0.6455,
+      "max_drift": {
+        "agent": "Wrażliwy",
+        "value": 0.7615
+      }
+    },
+    "convergence_speed": {
+      "convergence_round": 3,
+      "reached": true,
+      "reached_absolute": false,
+      "similarity_per_round": {
+        "1": 0.6035,
+        "2": 0.5133,
+        "3": 0.6702
+      },
+      "delta_per_round": {
+        "1": 0.0,
+        "2": -0.0902,
+        "3": 0.0667
+      },
+      "initial_similarity": 0.6035,
+      "final_similarity": 0.6702,
+      "total_delta": 0.0667,
+      "threshold": 0.92,
+      "delta_threshold": 0.03
+    },
+    "hedging_rate": {
+      "per_agent": {
+        "Wrażliwy": {
+          "hedged_sentences": 4,
+          "total_sentences": 15,
+          "hedging_rate": 0.2667
+        },
+        "Stabilny": {
+          "hedged_sentences": 2,
+          "total_sentences": 9,
+          "hedging_rate": 0.2222
+        }
+      },
+      "overall": 0.2445,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "assertiveness_score": {
+      "per_agent": {
+        "Wrażliwy": {
+          "assertive_sentences": 2,
+          "total_sentences": 15,
+          "assertiveness_rate": 0.1333,
+          "hedging_rate": 0.2667,
+          "net_assertiveness": -0.1334
+        },
+        "Stabilny": {
+          "assertive_sentences": 2,
+          "total_sentences": 9,
+          "assertiveness_rate": 0.2222,
+          "hedging_rate": 0.2222,
+          "net_assertiveness": 0.0
+        }
+      },
+      "overall": 0.1778,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "turn_length_entropy": {
+      "per_agent": {
+        "Wrażliwy": {
+          "entropy_bits": 1.585,
+          "n_turns": 3,
+          "token_lengths": [
+            138,
+            79,
+            23
+          ],
+          "min": 23,
+          "max": 138,
+          "mean": 80.0
+        },
+        "Stabilny": {
+          "entropy_bits": 0.9183,
+          "n_turns": 3,
+          "token_lengths": [
+            69,
+            36,
+            24
+          ],
+          "min": 24,
+          "max": 69,
+          "mean": 43.0
+        }
+      },
+      "overall": 1.2516
+    },
+    "gini_speaking_time": {
+      "gini": 0.1504,
+      "per_agent_share": {
+        "Wrażliwy": 0.6504,
+        "Stabilny": 0.3496
+      },
+      "per_agent_tokens": {
+        "Wrażliwy": 240,
+        "Stabilny": 129
+      },
+      "dominant_agent": "Wrażliwy"
+    }
+  }
+}

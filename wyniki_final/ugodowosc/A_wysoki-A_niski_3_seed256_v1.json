@@ -1,0 +1,799 @@
+{
+  "meta": {
+    "timestamp": "2026-06-09T00:55:21",
+    "output_name": "wyniki_final\\ugodowosc\\A_wysoki-A_niski_3_seed256_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Ugodowy",
+        "system_prompt": "Wypowiadaj się jak osoba miła i chętna do kompromisu. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Niezależny",
+        "system_prompt": "Wypowiadaj się jak osoba która się nie zgadza i broni swojego zdania.Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 256
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Ugodowy",
+      "round": 1,
+      "text": "Zwolnienie 30% pracowników pozwoli szybko pozbyć się problemu finansowego, redukując koszty operacyjne. Jednakże, 70% pracowników pozostanie, co może prowadzić do spadku produktywności i morale zespołu. Obniżenie wynagrodzeń dla wszystkich bez zwolnień może zapewnić stabilność zatrudnienia, ale pracownicy mogą odczuwać większe obciążenie finansowe. To zależy od strategii firmy - kluczowe jest znalezienie rozwiązania, które nie tylko ratuje biznes, ale także dba o dobrostan pracowników.",
+      "tokens": 90,
+      "history_len": 1
+    },
+    {
+      "agent": "Niezależny",
+      "round": 1,
+      "text": "Zgadzam się z argumentem, że zwolnienie 30% pracowników może przynieść natychmiastowe korzyści finansowe, jednak zwracam uwagę na potencjalne negatywne konsekwencje dla morale i produktywności pozostałej części zespołu. Obniżenie wynagrodzenia dla wszystkich bez zwolnień gwarantuje utrzymanie stabilności zatrudnienia, choć może być bardziej obciążające dla indywidualnych budżetów pracowników. Ostatecznie, strategia powinna uwzględniać zarówno aspekty ekonomiczne, jak i społeczne, dążąc do zrównoważonego podejścia.",
+      "tokens": 86,
+      "history_len": 2
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 2,
+      "text": "Doceniam Twoje uwagi, ale zgadzam się, że obie strategie mają swoje zalety i wady. Zwolnienie pracowników pozwala szybciej skupić się na przetrwaniu, ale może negatywnie wpłynąć na morale zespołu. Z drugiej strony, obniżenie wynagrodzeń dla wszystkich zapewnia stabilność zatrudnienia bez konieczności masowych zwolnień. Ostateczna decyzja powinna brać pod uwagę nie tylko krótkoterminowe cele biznesowe, ale również długoterminowy dobrostan społeczny i motywację pracowników. Ważne jest znalezienie równowagi między efektywnością finansową a ludzką stroną biznesu.",
+      "tokens": 96,
+      "history_len": 3
+    },
+    {
+      "agent": "Niezależny",
+      "round": 2,
+      "text": "Dokładnie. Warto rozważyć możliwość wdrożenia elastycznych rozwiązań, takich jak częściowa redukcja etatów przy jednoczesnym dostosowaniu warunków pracy lub wprowadzenie programów wsparcia dla zwalnianych pracowników. Takie podejście może pomóc utrzymać morale zespołu podczas trudności finansowych i jednocześnie zadbać o sprawiedliwe traktowanie pracowników. Kluczowe jest znalezienie kompromisu, który zabezpieczy interesy obu stron.",
+      "tokens": 69,
+      "history_len": 4
+    },
+    {
+      "agent": "Ugodowy",
+      "round": 3,
+      "text": "Dziękuję za rozważną propozycję. Wdrażanie elastyczności i wsparcia dla zwalnianych pracowników rzeczywiście może być skutecznym rozwiązaniem. Dzięki temu nie tylko zapewnimy przetrwanie firmy, ale też zachowamy pozytywny klimat w zespole. Takie podejście promuje równowagę między ekonomicznymi potrzebami a ludzkimi aspektami działalności. Dobrze, że zgadzamy się na rozważenie tych opcji.",
+      "tokens": 72,
+      "history_len": 5
+    },
+    {
+      "agent": "Niezależny",
+      "round": 3,
+      "text": "Dziękuję za konstruktywną debatę. Ostatecznie, kwestia decyzji leży w rękach zarządu, ale zgadzam się, że należy uwzględnić wszystkie perspektywy, aby znaleźć najlepsze rozwiązanie. Ważne jest, aby firma dbała o dobre relacje z pracownikami i wspierała ich w trudnych czasach.",
+      "tokens": 54,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "W obecnej sytuacji rozważmy rozwiązanie pośrednie: zmniejszmy liczbę pracowników o 30%. Ale zamiast zwalniać ich wszystkich od razu, wprowadźmy elastyczność w umowach (np. praca zdalna, nowe formy umów). Dzięki temu zachowamy większość ludzi zaangażowanych w pracę, a także zachęcimy część do pozostania i zwiększenia wydajności.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Zgadzam się, że każda ze strategii ma swoje mocne i słabe strony. Najlepszym rozwiązaniem wydaje się znalezienie sposobu na elastyczne zarządzanie kosztami bez masowego zwalniania pracowników, np. poprzez zmniejszenie godzin pracy lub benefitów zamiast redukcji etatów. Takie podejście chroni zarówno finanse firmy, jak i morale zespołu.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Osobiście preferuję drugą opcję - obniżenie wypłat przez wszystkich pracowników zamiast masowych zwolnień. Nie tylko pomaga to zachować zatrudnienie, ale także zmniejsza obciążenia finansowe firmy bez kosztownych działań restrukturyzacyjnych.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "\"W moim przekonaniu, bardziej pożądanym rozwiązaniem jest zachowanie miejsc pracy poprzez równomierne obniżenie wynagrodzeń zamiast drastycznych zwolnień grupowych. Taka strategia pozwala szybko zredukować koszty bez konieczności dodatkowych obciążeń administracyjnych związanych z redukcją zatrudnienia.\"",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "\"Moim zdaniem, najlepszym rozwiązaniem dla firmy jest znalezienie kompromisu między oszczędnością godzinową a ochroną miejsc pracy - np. wprowadzenie elastycznego harmonogramu pracy lub skrócenie czasu pracy niektórych pracowników.\"",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "\"Oszczędzanie godzinowe może być skuteczniejsze niż redukcja zatrudnienia, zwłaszcza jeśli pracownicy są zadowoleni z obecnej sytuacji finansowej firmy. Można rozważyć hybrydowy model pracy, który pozwoli zachować motywację i produktywność zespołu przy jednoczesnym zmniejszeniu kosztów.\"",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "Być może można znaleźć kompromisowe rozwiązanie. Zamiast masowych zwolnień, firma powinna rozważyć obniżenie wynagrodzeń bez redukcji etatów, jednocześnie zachowując elastyczność w postaci hybrydowego modelu pracy. To pozwoli zwiększyć satysfakcję pracowników i efektywność zespołu.",
+        "votes": {
+          "Ugodowy": true,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "Może warto rozważyć wprowadzenie elastycznych warunków pracy, jak np. częściowa praca zdalna lub krótszy tydzień roboczy, zamiast masowego zwalniania. Takie rozwiązania mogą zmniejszyć koszty pracownicze i jednocześnie poprawić morale zespołu.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 8,
+        "proposal": "Rozumiem Twoje stanowisko i doceniam chęć znalezienia kompromisowego rozwiązania. Może warto rozważyć połączenie obu strategii - zmniejszenie liczby etatów o 30% oraz wprowadzenie elastycznych form zatrudnienia dla reszty zespołu. To pozwoli zminimalizować koszty bez masowych zwolnień i może poprawić wydajność pracy, co przełoży się na lepsze wyniki firmy.",
+        "votes": {
+          "Ugodowy": false,
+          "Niezależny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      }
+    ],
+    "consensus_reached": false,
+    "convergence_round": null
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 77.8333,
+        "median": 79.0,
+        "std": 14.2877,
+        "total": 467
+      },
+      "per_agent": {
+        "Ugodowy": {
+          "mean": 86.0,
+          "median": 90,
+          "std": 10.198,
+          "total": 258
+        },
+        "Niezależny": {
+          "mean": 69.6667,
+          "median": 69,
+          "std": 13.0724,
+          "total": 209
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Ugodowy": 0.3113,
+        "Niezależny": 0.504
+      },
+      "mean": 0.4077
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Ugodowy": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.1014
+            },
+            {
+              "round": 2,
+              "sentiment": -0.286
+            },
+            {
+              "round": 3,
+              "sentiment": 0.0426
+            }
+          ],
+          "delta_first_last": 0.144,
+          "mean_shift_abs": 0.2566
+        },
+        "Niezależny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.2474
+            },
+            {
+              "round": 2,
+              "sentiment": 0.1783
+            },
+            {
+              "round": 3,
+              "sentiment": -0.1404
+            }
+          ],
+          "delta_first_last": 0.107,
+          "mean_shift_abs": 0.3722
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8928,
+        "2": 0.7457,
+        "3": 0.6935
+      },
+      "initial": 0.8928,
+      "final": 0.6935,
+      "delta": -0.1993
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.1014,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": -0.2474,
+              "is_repetition": true
+            }
+          },
+          "mean_pair_diff": 0.146,
+          "agents_with_repetition": [
+            "Niezależny"
+          ]
+        },
+        "2": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": -0.286,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": 0.1783,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.4643,
+          "agents_with_repetition": []
+        },
+        "3": {
+          "agent_sentiments": {
+            "Ugodowy": {
+              "sentiment": 0.0426,
+              "is_repetition": false
+            },
+            "Niezależny": {
+              "sentiment": -0.1404,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.183,
+          "agents_with_repetition": []
+        }
+      },
+      "initial": 0.146,
+      "final": 0.183,
+      "delta": 0.037
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Ugodowy": {
+          "ttr": 0.7582,
+          "unique_words": 138,
+          "total_words": 182
+        },
+        "Niezależny": {
+          "ttr": 0.8446,
+          "unique_words": 125,
+          "total_words": 148
+        }
+      }
+    },
+    "convergence": {
+      "reached": false,
+      "convergence_round": null,
+      "agreement_ratios": [
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Ugodowy": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.1986,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.2601,
+              "flip": true
+            }
+          ]
+        },
+        "Niezależny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.3294,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.3431,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 2.0,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.13
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0261,
+          "max_cosine": 0.8928
+        },
+        {
+          "round": 2,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0172,
+          "max_cosine": 0.816
+        },
+        {
+          "round": 2,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0093,
+          "max_cosine": 0.7457
+        },
+        {
+          "round": 3,
+          "agent": "Ugodowy",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0215,
+          "max_cosine": 0.8299
+        },
+        {
+          "round": 3,
+          "agent": "Niezależny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0189,
+          "max_cosine": 0.6935
+        }
+      ],
+      "per_agent": {
+        "Ugodowy": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        },
+        "Niezależny": {
+          "repetition_count": 1,
+          "total_turns": 3,
+          "repetition_rate": 0.3333
+        }
+      },
+      "summary": {
+        "total_repetitions": 1,
+        "total_turns": 6,
+        "overall_rate": 0.1667,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3023,
+      "per_round": {
+        "1": 0.1072,
+        "2": 0.2543,
+        "3": 0.3065
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "mean": 0.0,
+      "threshold": 0.85
+    }
+  },
+  "metrics_j": {
+    "argument_novelty": {
+      "per_agent": {
+        "Ugodowy": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.1986
+            },
+            {
+              "round": 3,
+              "novelty": 0.2474
+            }
+          ],
+          "mean": 0.223,
+          "std": 0.0244
+        },
+        "Niezależny": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.3294
+            },
+            {
+              "round": 3,
+              "novelty": 0.3693
+            }
+          ],
+          "mean": 0.3494,
+          "std": 0.0199
+        }
+      },
+      "overall": 0.2862
+    },
+    "claim_grounding": {
+      "per_agent": {
+        "Ugodowy": {
+          "grounded_sentences": 1,
+          "total_sentences": 14,
+          "grounding_rate": 0.0714
+        },
+        "Niezależny": {
+          "grounded_sentences": 1,
+          "total_sentences": 10,
+          "grounding_rate": 0.1
+        }
+      },
+      "overall": 0.0857,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "question_density": {
+      "per_agent": {
+        "Ugodowy": {
+          "question_count": 0,
+          "total_sentences": 14,
+          "question_rate": 0.0
+        },
+        "Niezależny": {
+          "question_count": 0,
+          "total_sentences": 10,
+          "question_rate": 0.0
+        }
+      },
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "overall": 0.0
+    },
+    "direct_address_rate": {
+      "per_agent": {
+        "Ugodowy": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 1,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.3333,
+          "combined_rate": 0.3333,
+          "addressed_agents": {}
+        },
+        "Niezależny": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 2,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.6667,
+          "combined_rate": 0.6667,
+          "addressed_agents": {}
+        }
+      },
+      "most_addressed": null,
+      "address_received_counts": {},
+      "mean_address_rate": 0.0,
+      "mean_combined_rate": 0.5
+    },
+    "rebuttal_depth": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Ugodowy",
+          "rebuttal_sim": null,
+          "prev_agent": null
+        },
+        {
+          "round": 1,
+          "agent": "Niezależny",
+          "rebuttal_sim": 0.8928,
+          "prev_agent": "Ugodowy"
+        },
+        {
+          "round": 2,
+          "agent": "Ugodowy",
+          "rebuttal_sim": 0.816,
+          "prev_agent": "Niezależny"
+        },
+        {
+          "round": 2,
+          "agent": "Niezależny",
+          "rebuttal_sim": 0.7457,
+          "prev_agent": "Ugodowy"
+        },
+        {
+          "round": 3,
+          "agent": "Ugodowy",
+          "rebuttal_sim": 0.8299,
+          "prev_agent": "Niezależny"
+        },
+        {
+          "round": 3,
+          "agent": "Niezależny",
+          "rebuttal_sim": 0.6935,
+          "prev_agent": "Ugodowy"
+        }
+      ],
+      "per_agent": {
+        "Niezależny": {
+          "mean_rebuttal_sim": 0.7773,
+          "std": 0.0844
+        },
+        "Ugodowy": {
+          "mean_rebuttal_sim": 0.8229,
+          "std": 0.007
+        }
+      },
+      "overall": 0.7956
+    },
+    "reciprocal_shift_index": {
+      "per_pair": {
+        "Ugodowy|Niezależny": {
+          "pearson_r": 1.0,
+          "n_rounds": 2,
+          "note": "tylko 2 rundy — r zawsze ±1, niska wiarygodność"
+        }
+      },
+      "mean_abs_r": 1.0
+    },
+    "opinion_trajectory_monotonicity": {
+      "per_agent": {
+        "Ugodowy": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.1986
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.2601
+            }
+          ]
+        },
+        "Niezależny": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.3294
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.3431
+            }
+          ]
+        }
+      },
+      "overall_abs": 1.0
+    },
+    "total_opinion_drift": {
+      "per_agent": {
+        "Ugodowy": {
+          "drift": 0.3113,
+          "first_round": 1,
+          "last_round": 3
+        },
+        "Niezależny": {
+          "drift": 0.504,
+          "first_round": 1,
+          "last_round": 3
+        }
+      },
+      "mean": 0.4077,
+      "max_drift": {
+        "agent": "Niezależny",
+        "value": 0.504
+      }
+    },
+    "convergence_speed": {
+      "convergence_round": null,
+      "reached": false,
+      "reached_absolute": false,
+      "similarity_per_round": {
+        "1": 0.8928,
+        "2": 0.7457,
+        "3": 0.6935
+      },
+      "delta_per_round": {
+        "1": 0.0,
+        "2": -0.1471,
+        "3": -0.1993
+      },
+      "initial_similarity": 0.8928,
+      "final_similarity": 0.6935,
+      "total_delta": -0.1993,
+      "threshold": 0.92,
+      "delta_threshold": 0.03
+    },
+    "hedging_rate": {
+      "per_agent": {
+        "Ugodowy": {
+          "hedged_sentences": 0,
+          "total_sentences": 14,
+          "hedging_rate": 0.0
+        },
+        "Niezależny": {
+          "hedged_sentences": 1,
+          "total_sentences": 10,
+          "hedging_rate": 0.1
+        }
+      },
+      "overall": 0.05,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "assertiveness_score": {
+      "per_agent": {
+        "Ugodowy": {
+          "assertive_sentences": 1,
+          "total_sentences": 14,
+          "assertiveness_rate": 0.0714,
+          "hedging_rate": 0.0,
+          "net_assertiveness": 0.0714
+        },
+        "Niezależny": {
+          "assertive_sentences": 1,
+          "total_sentences": 10,
+          "assertiveness_rate": 0.1,
+          "hedging_rate": 0.1,
+          "net_assertiveness": 0.0
+        }
+      },
+      "overall": 0.0857,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "turn_length_entropy": {
+      "per_agent": {
+        "Ugodowy": {
+          "entropy_bits": 0.9183,
+          "n_turns": 3,
+          "token_lengths": [
+            90,
+            96,
+            72
+          ],
+          "min": 72,
+          "max": 96,
+          "mean": 86.0
+        },
+        "Niezależny": {
+          "entropy_bits": 1.585,
+          "n_turns": 3,
+          "token_lengths": [
+            86,
+            69,
+            54
+          ],
+          "min": 54,
+          "max": 86,
+          "mean": 69.6667
+        }
+      },
+      "overall": 1.2516
+    },
+    "gini_speaking_time": {
+      "gini": 0.0525,
+      "per_agent_share": {
+        "Ugodowy": 0.5525,
+        "Niezależny": 0.4475
+      },
+      "per_agent_tokens": {
+        "Ugodowy": 258,
+        "Niezależny": 209
+      },
+      "dominant_agent": "Ugodowy"
+    }
+  }
+}

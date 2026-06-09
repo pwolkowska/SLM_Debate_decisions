@@ -1,0 +1,800 @@
+{
+  "meta": {
+    "timestamp": "2026-06-08T20:03:58",
+    "output_name": "wyniki_final\\sumiennosc\\C_wysoki-C_niski_35_seed31415_v1",
+    "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "architecture": "round_robin",
+    "protocol": "consensus",
+    "num_rounds": 3,
+    "topic": "Firma ma kłopoty finansowe. Czy lepiej jest zwolnić 30% pracowników, żeby uratować pozostałych 70%, czy wszystkim obniżyć wypłatę o 20%, ale nikogo nie zwalniać?",
+    "agents": [
+      {
+        "name": "Sumienny",
+        "system_prompt": "Wypowiadaj się jak osoba dokładna i odpowiedzialna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      },
+      {
+        "name": "Spontaniczny",
+        "system_prompt": "Wypowiadaj się jak osoba spontaniczna i chaotyczna. Bierzesz udział w dyskusji. Odpowiedz na argument rozmówcy. Pisz jednym akapitem, maksymalnie 4-5 zdań.Kontynuuj dyskusję, nie podsumowuj."
+      }
+    ],
+    "generation": {
+      "temperature": 0.7,
+      "max_new_tokens": 200,
+      "do_sample": true,
+      "seed": 31415
+    },
+    "consensus_threshold": 1.0,
+    "max_consensus_rounds": 8
+  },
+  "debate": [
+    {
+      "agent": "Sumienny",
+      "round": 1,
+      "text": "Zwolnienie 30% pracowników pozwoliłoby zmniejszyć koszty operacyjne firmy bez ryzyka utraty kluczowych talentów. Obniżenie wypłat dla wszystkich pracowników może osłabić morale zespołu i zniechęcić do dalszego zaangażowania, co może mieć długotrwałe negatywne konsekwencje dla efektywności pracy i produktywności. Warto rozważyć te opcje, aby wybrać najbardziej odpowiednią strategię wobec kryzysu finansowego firmy.",
+      "tokens": 71,
+      "history_len": 1
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 1,
+      "text": "To zależy od sytuacji - jeśli firma ma ograniczone zasoby, zwolnienie części pracowników mogłoby być nieuniknione, ale obniżka pensji dla wszystkich mogłaby przyciągnąć najlepszych kandydatów z rynku pracowniczego. Ostatecznie, to pracodawca musi zdecydować, czym ważniejsze są krótkoterminowe oszczędności czy długoterminowy dobrostan zespołu.",
+      "tokens": 56,
+      "history_len": 2
+    },
+    {
+      "agent": "Sumienny",
+      "round": 2,
+      "text": "Moje stanowisko pozostaje niezmienne: Zwolnienie 30% pracowników jest bardziej efektywne w krótkim okresie, ponieważ redukuje koszty operacyjne i zmniejsza ryzyko dalszych strat finansowych. Jednakże, długoterminowo takie działanie może negatywnie wpłynąć na morale zespołu i efektywność pracy, co może utrudnić powrót firmy na ścieżkę wzrostu. Alternatywnie, obniżenie pensji dla wszystkich pracowników może przyciągnąć lepszych kandydatów, ale krótkotrwale osłabia motywację i zaangażowanie zespołu, co również może prowadzić do obniżenia wydajności. Wybór strategii powinien uwzględniać zarówno czasowe potrzeby firmy, jak i długoterminową strategię zarządzania zasobami ludzkimi oraz stabilności organizacyjnej.",
+      "tokens": 118,
+      "history_len": 3
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 2,
+      "text": "Okej, rozumiem Twoje stanowisko. Obie perspektywy mają swoje zalety i wady. Zwolnienie części pracowników pozwala szybko zredukować koszty i zachować kluczowe zasoby ludzkie, podczas gdy obniżenie pensji dla wszystkich wzmacnia zespół. Ważne jest znalezienie równowagi między tymi dwoma podejściami, biorąc pod uwagę specyfikę branży, kulturę organizacyjną oraz aktualne możliwości zatrudnienia. To trudne wybory, które wymagają przemyślanej decyzji.",
+      "tokens": 76,
+      "history_len": 4
+    },
+    {
+      "agent": "Sumienny",
+      "round": 3,
+      "text": "Oczywiście, równowaga między zwolnieniami a obniżkami płac jest kluczowa. W niektórych branżach czy środowiskach pracy, gdzie stabilność zespołu jest szczególnie ważna (np. IT, medycyna), zwolnienia mogą być lepszym rozwiązaniem. W innych przypadkach (np. w handlu detalicznym), elastyczność zatrudnienia i możliwość szybkiej redukcji kosztów mogą przeważyć nad ryzykiem utraty pracownika. Ostateczny wybór zależy od konkretnej sytuacji firmy, jej kultury organizacyjnej oraz dostępnych zasobów ludzkich i finansowych.",
+      "tokens": 92,
+      "history_len": 5
+    },
+    {
+      "agent": "Spontaniczny",
+      "round": 3,
+      "text": "Proszę kontynuować rozmowę na dowolny temat.",
+      "tokens": 10,
+      "history_len": 6
+    }
+  ],
+  "decision": {
+    "protocol": "consensus",
+    "final_answer": "W trosce o dobro firmy i naszych pracowników, proponuję wprowadzenie indywidualnych obniżek wynagrodzeń o 20%, z równoczesnym zapewnieniem wsparcia rozwojowego oraz możliwości rozwoju zawodowego. Dzięki temu zachowamy morale całego zespołu.",
+    "consensus_rounds": [
+      {
+        "round": 1,
+        "proposal": "Ustalić kompromis polegający na proporcjonalnym zmniejszeniu etatów lub wynagrodzenia dla wszystkich pracowników, zachowując jednocześnie najlepsze praktyki zarządzania zasobami ludzkimi, takie jak szkolenia, programy rozwojowe i wsparcie w znalezieniu nowych miejsc pracy.",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 2,
+        "proposal": "Oferta kompromisowa: \"Zapewnić pracownikom możliwość dobrowolnego wyboru między obniżeniem wypłat (20%) bez zwolnień lub utrzymaniem stanowisk przy zachowaniu wynagrodzeń (30%), wspierając rozwój zawodowy i pomoc w poszukiwaniu nowej pracy\".",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 3,
+        "proposal": "Możemy rozważyć kompromisowe rozwiązanie, które zadowoli większość stron: obniżenie wypłat o 20%, ale z możliwością zachowania miejsc pracy poprzez szkolenia i wsparcie w poszukiwaniu nowych możliwości zawodowych.",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 4,
+        "proposal": "**Oferta kompromisu może brzmieć następująco:** 30% pracowników zostanie zwolnionych po niższych wynagrodzeniach, pozostali otrzymają obniżone wypłaty. Przyspieszenie procesów rekrutacyjnych i szkolenia będą wspierane przez firmę, aby pomóc pracownikom w znalezieniu nowych ról.",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 5,
+        "proposal": "**Całkowicie zgadzam się, że decyzja powinna być zrównoważona i sprawiedliwa dla wszystkich stron. Rozważmy następujące rozwiązanie:**\n\n**Odpowiedź:** Każdy otrzyma proporcjonalną obniżkę pensji (np. 10%) lub zostanie zwolniony z możliwością przejścia do mniej płatnej pracy. Wszystkie działania zostaną koordynowane poprzez programy szkoleniowe.",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": true
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      },
+      {
+        "round": 6,
+        "proposal": "**Rozważmy takie rozwiązanie: wszyscy pracownicy otrzymają proporcjonalną obniżkę pensji lub zostaną zwolnieni, zapewniając im możliwość realnej zmiany sytuacji finansowej przy jednoczesnym wsparciu szkoleń zawodowych.**",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 7,
+        "proposal": "Oferujemy wszystkim pracownikom 20% obniżkę wynagrodzenia, umożliwiając jednocześnie każdemu uczestnictwo w szkoleniach zawodowych oraz zapewnieniem możliwości rozwoju zawodowego.",
+        "votes": {
+          "Sumienny": false,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.0,
+        "reached": false
+      },
+      {
+        "round": 8,
+        "proposal": "\"Zamiast zwolnienia części zespołu, proponujemy wszystkim pracownikom obniżki płac o 20%. Dodatkowo zapewnimy indywidualne wsparcie rozwojowe i możliwość dalszego rozwijania kariery poprzez szkolenia, co pozwoli zachować motywację i zaangażowanie pozostałych pracowników.\"",
+        "votes": {
+          "Sumienny": true,
+          "Spontaniczny": false
+        },
+        "agreement_ratio": 0.5,
+        "reached": false
+      }
+    ],
+    "consensus_reached": false,
+    "convergence_round": null
+  },
+  "metrics": {
+    "tokens_per_turn": {
+      "overall": {
+        "mean": 70.5,
+        "median": 73.5,
+        "std": 33.2152,
+        "total": 423
+      },
+      "per_agent": {
+        "Sumienny": {
+          "mean": 93.6667,
+          "median": 92,
+          "std": 19.2238,
+          "total": 281
+        },
+        "Spontaniczny": {
+          "mean": 47.3333,
+          "median": 56,
+          "std": 27.6325,
+          "total": 142
+        }
+      }
+    },
+    "opinion_shift": {
+      "per_agent": {
+        "Sumienny": 0.1851,
+        "Spontaniczny": 0.8014
+      },
+      "mean": 0.4932
+    },
+    "opinion_shift_sentiment": {
+      "per_agent": {
+        "Sumienny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.4536
+            },
+            {
+              "round": 2,
+              "sentiment": -0.4085
+            },
+            {
+              "round": 3,
+              "sentiment": 0.0567
+            }
+          ],
+          "delta_first_last": 0.5103,
+          "mean_shift_abs": 0.2551
+        },
+        "Spontaniczny": {
+          "trajectory": [
+            {
+              "round": 1,
+              "sentiment": -0.5756
+            },
+            {
+              "round": 2,
+              "sentiment": 0.1228
+            },
+            {
+              "round": 3,
+              "sentiment": 0.1325
+            }
+          ],
+          "delta_first_last": 0.7081,
+          "mean_shift_abs": 0.3541
+        }
+      }
+    },
+    "between_agent_similarity": {
+      "per_round": {
+        "1": 0.8264,
+        "2": 0.7676,
+        "3": 0.3002
+      },
+      "initial": 0.8264,
+      "final": 0.3002,
+      "delta": -0.5262
+    },
+    "between_agent_similarity_sentiment": {
+      "per_round": {
+        "1": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.4536,
+              "is_repetition": false
+            },
+            "Spontaniczny": {
+              "sentiment": -0.5756,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.122,
+          "agents_with_repetition": []
+        },
+        "2": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": -0.4085,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": 0.1228,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.5313,
+          "agents_with_repetition": [
+            "Sumienny"
+          ]
+        },
+        "3": {
+          "agent_sentiments": {
+            "Sumienny": {
+              "sentiment": 0.0567,
+              "is_repetition": true
+            },
+            "Spontaniczny": {
+              "sentiment": 0.1325,
+              "is_repetition": false
+            }
+          },
+          "mean_pair_diff": 0.0758,
+          "agents_with_repetition": [
+            "Sumienny"
+          ]
+        }
+      },
+      "initial": 0.122,
+      "final": 0.0758,
+      "delta": -0.0462
+    },
+    "lexical_richness": {
+      "per_agent": {
+        "Sumienny": {
+          "ttr": 0.755,
+          "unique_words": 151,
+          "total_words": 200
+        },
+        "Spontaniczny": {
+          "ttr": 0.9038,
+          "unique_words": 94,
+          "total_words": 104
+        }
+      }
+    },
+    "convergence": {
+      "reached": false,
+      "convergence_round": null,
+      "agreement_ratios": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        0.5
+      ]
+    },
+    "answer_flip_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "nof": 1,
+          "tof": 3,
+          "flip_rounds": [
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.102,
+              "flip": false
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.1836,
+              "flip": true
+            }
+          ]
+        },
+        "Spontaniczny": {
+          "nof": 2,
+          "tof": 2,
+          "flip_rounds": [
+            2,
+            3
+          ],
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist_prev": null,
+              "flip": false
+            },
+            {
+              "round": 2,
+              "cos_dist_prev": 0.2328,
+              "flip": true
+            },
+            {
+              "round": 3,
+              "cos_dist_prev": 0.6575,
+              "flip": true
+            }
+          ]
+        }
+      },
+      "summary": {
+        "mean_nof": 1.5,
+        "max_nof": 2,
+        "agents_with_flip": 2,
+        "flip_threshold": 0.13
+      }
+    },
+    "history_repetition": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": null,
+          "max_cosine": null
+        },
+        {
+          "round": 1,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8264
+        },
+        {
+          "round": 2,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0388,
+          "max_cosine": 0.898
+        },
+        {
+          "round": 2,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0217,
+          "max_cosine": 0.7676
+        },
+        {
+          "round": 3,
+          "agent": "Sumienny",
+          "ngram_hit": false,
+          "embed_hit": true,
+          "max_ngram": 0.0,
+          "max_cosine": 0.8597
+        },
+        {
+          "round": 3,
+          "agent": "Spontaniczny",
+          "ngram_hit": false,
+          "embed_hit": false,
+          "max_ngram": 0.0,
+          "max_cosine": 0.3425
+        }
+      ],
+      "per_agent": {
+        "Sumienny": {
+          "repetition_count": 2,
+          "total_turns": 3,
+          "repetition_rate": 0.6667
+        },
+        "Spontaniczny": {
+          "repetition_count": 0,
+          "total_turns": 3,
+          "repetition_rate": 0.0
+        }
+      },
+      "summary": {
+        "total_repetitions": 2,
+        "total_turns": 6,
+        "overall_rate": 0.3333,
+        "ngram_threshold": 0.25,
+        "embed_threshold": 0.85,
+        "prefix_words": 60
+      }
+    },
+    "semantic_diversity": {
+      "overall": 0.3695,
+      "per_round": {
+        "1": 0.1736,
+        "2": 0.2324,
+        "3": 0.6998
+      }
+    },
+    "redundancy_ratio": {
+      "per_round": {
+        "1": 0.0,
+        "2": 0.5,
+        "3": 0.5
+      },
+      "mean": 0.3333,
+      "threshold": 0.85
+    }
+  },
+  "metrics_j": {
+    "argument_novelty": {
+      "per_agent": {
+        "Sumienny": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.102
+            },
+            {
+              "round": 3,
+              "novelty": 0.1627
+            }
+          ],
+          "mean": 0.1323,
+          "std": 0.0304
+        },
+        "Spontaniczny": {
+          "per_turn": [
+            {
+              "round": 1,
+              "novelty": null
+            },
+            {
+              "round": 2,
+              "novelty": 0.2328
+            },
+            {
+              "round": 3,
+              "novelty": 0.7122
+            }
+          ],
+          "mean": 0.4725,
+          "std": 0.2397
+        }
+      },
+      "overall": 0.3024
+    },
+    "claim_grounding": {
+      "per_agent": {
+        "Sumienny": {
+          "grounded_sentences": 3,
+          "total_sentences": 13,
+          "grounding_rate": 0.2308
+        },
+        "Spontaniczny": {
+          "grounded_sentences": 1,
+          "total_sentences": 8,
+          "grounding_rate": 0.125
+        }
+      },
+      "overall": 0.1779,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "question_density": {
+      "per_agent": {
+        "Sumienny": {
+          "question_count": 0,
+          "total_sentences": 13,
+          "question_rate": 0.0
+        },
+        "Spontaniczny": {
+          "question_count": 0,
+          "total_sentences": 8,
+          "question_rate": 0.0
+        }
+      },
+      "per_round": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "overall": 0.0
+    },
+    "direct_address_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 0,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.0,
+          "combined_rate": 0.0,
+          "addressed_agents": {}
+        },
+        "Spontaniczny": {
+          "direct_turns": 0,
+          "interaction_marker_turns": 1,
+          "total_turns": 3,
+          "address_rate": 0.0,
+          "interaction_rate": 0.3333,
+          "combined_rate": 0.3333,
+          "addressed_agents": {}
+        }
+      },
+      "most_addressed": null,
+      "address_received_counts": {},
+      "mean_address_rate": 0.0,
+      "mean_combined_rate": 0.1666
+    },
+    "rebuttal_depth": {
+      "per_entry": [
+        {
+          "round": 1,
+          "agent": "Sumienny",
+          "rebuttal_sim": null,
+          "prev_agent": null
+        },
+        {
+          "round": 1,
+          "agent": "Spontaniczny",
+          "rebuttal_sim": 0.8264,
+          "prev_agent": "Sumienny"
+        },
+        {
+          "round": 2,
+          "agent": "Sumienny",
+          "rebuttal_sim": 0.8425,
+          "prev_agent": "Spontaniczny"
+        },
+        {
+          "round": 2,
+          "agent": "Spontaniczny",
+          "rebuttal_sim": 0.7676,
+          "prev_agent": "Sumienny"
+        },
+        {
+          "round": 3,
+          "agent": "Sumienny",
+          "rebuttal_sim": 0.8597,
+          "prev_agent": "Spontaniczny"
+        },
+        {
+          "round": 3,
+          "agent": "Spontaniczny",
+          "rebuttal_sim": 0.3002,
+          "prev_agent": "Sumienny"
+        }
+      ],
+      "per_agent": {
+        "Spontaniczny": {
+          "mean_rebuttal_sim": 0.6314,
+          "std": 0.2354
+        },
+        "Sumienny": {
+          "mean_rebuttal_sim": 0.8511,
+          "std": 0.0086
+        }
+      },
+      "overall": 0.7193
+    },
+    "reciprocal_shift_index": {
+      "per_pair": {
+        "Sumienny|Spontaniczny": {
+          "pearson_r": 1.0,
+          "n_rounds": 2,
+          "note": "tylko 2 rundy — r zawsze ±1, niska wiarygodność"
+        }
+      },
+      "mean_abs_r": 1.0
+    },
+    "opinion_trajectory_monotonicity": {
+      "per_agent": {
+        "Sumienny": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.102
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.1836
+            }
+          ]
+        },
+        "Spontaniczny": {
+          "monotonicity": 1.0,
+          "direction_changes": 0,
+          "n_turns": 3,
+          "trajectory": [
+            {
+              "round": 1,
+              "cos_dist": null
+            },
+            {
+              "round": 2,
+              "cos_dist": 0.2328
+            },
+            {
+              "round": 3,
+              "cos_dist": 0.6575
+            }
+          ]
+        }
+      },
+      "overall_abs": 1.0
+    },
+    "total_opinion_drift": {
+      "per_agent": {
+        "Sumienny": {
+          "drift": 0.1851,
+          "first_round": 1,
+          "last_round": 3
+        },
+        "Spontaniczny": {
+          "drift": 0.8014,
+          "first_round": 1,
+          "last_round": 3
+        }
+      },
+      "mean": 0.4932,
+      "max_drift": {
+        "agent": "Spontaniczny",
+        "value": 0.8014
+      }
+    },
+    "convergence_speed": {
+      "convergence_round": null,
+      "reached": false,
+      "reached_absolute": false,
+      "similarity_per_round": {
+        "1": 0.8264,
+        "2": 0.7676,
+        "3": 0.3002
+      },
+      "delta_per_round": {
+        "1": 0.0,
+        "2": -0.0588,
+        "3": -0.5262
+      },
+      "initial_similarity": 0.8264,
+      "final_similarity": 0.3002,
+      "total_delta": -0.5262,
+      "threshold": 0.92,
+      "delta_threshold": 0.03
+    },
+    "hedging_rate": {
+      "per_agent": {
+        "Sumienny": {
+          "hedged_sentences": 1,
+          "total_sentences": 13,
+          "hedging_rate": 0.0769
+        },
+        "Spontaniczny": {
+          "hedged_sentences": 3,
+          "total_sentences": 8,
+          "hedging_rate": 0.375
+        }
+      },
+      "overall": 0.2259,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "assertiveness_score": {
+      "per_agent": {
+        "Sumienny": {
+          "assertive_sentences": 1,
+          "total_sentences": 13,
+          "assertiveness_rate": 0.0769,
+          "hedging_rate": 0.0769,
+          "net_assertiveness": 0.0
+        },
+        "Spontaniczny": {
+          "assertive_sentences": 3,
+          "total_sentences": 8,
+          "assertiveness_rate": 0.375,
+          "hedging_rate": 0.375,
+          "net_assertiveness": 0.0
+        }
+      },
+      "overall": 0.2259,
+      "mode_used": "soft",
+      "threshold": 0.32
+    },
+    "turn_length_entropy": {
+      "per_agent": {
+        "Sumienny": {
+          "entropy_bits": 1.585,
+          "n_turns": 3,
+          "token_lengths": [
+            71,
+            118,
+            92
+          ],
+          "min": 71,
+          "max": 118,
+          "mean": 93.6667
+        },
+        "Spontaniczny": {
+          "entropy_bits": 0.9183,
+          "n_turns": 3,
+          "token_lengths": [
+            56,
+            76,
+            10
+          ],
+          "min": 10,
+          "max": 76,
+          "mean": 47.3333
+        }
+      },
+      "overall": 1.2516
+    },
+    "gini_speaking_time": {
+      "gini": 0.1643,
+      "per_agent_share": {
+        "Sumienny": 0.6643,
+        "Spontaniczny": 0.3357
+      },
+      "per_agent_tokens": {
+        "Sumienny": 281,
+        "Spontaniczny": 142
+      },
+      "dominant_agent": "Sumienny"
+    }
+  }
+}
